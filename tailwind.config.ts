@@ -20,6 +20,9 @@ const config: Config = {
         "1.1xl": "1.3125rem",
         "3.5xl": "2rem",
       },
+      spacing: {
+        "page-elements": "445px",
+      },
     },
   },
   plugins: [],
