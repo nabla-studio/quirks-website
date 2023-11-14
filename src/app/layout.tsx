@@ -7,7 +7,7 @@ import { Navbar } from "@/app/components/navbar";
 const axifoma = localFont({
   src: [
     {
-      path: "../../public/fonts/axiforma/Axiforma SemiBold.woff",
+      path: "../../public/fonts/axiforma/Axiforma Regular.woff",
       weight: "600",
     },
   ],
