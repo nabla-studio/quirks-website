@@ -2,7 +2,7 @@ import React from "react";
 
 function Features() {
   return (
-    <div className="flex flex-col gap-5 mt-[100px] xl:mx-page-elements">
+    <div className="mt-[100px] flex flex-col gap-5 xl:mx-page-elements">
       <p className="text-lg leading-10 text-primary">FEATURES</p>
       <h3 className="text-3.5xl leading-[48px]">
         Web3Modal: <br className="xl:hidden" /> Simple, intuitive{" "}

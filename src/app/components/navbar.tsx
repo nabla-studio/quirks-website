@@ -4,31 +4,31 @@ import React from "react";
 
 export function Navbar() {
   return (
-    <div className="flex text-white flex-col xl:flex-row xl:pt-24 xl:pb-16 xl:px-80 pt-12 pb-10 items-center justify-between">
-      <div className="flex items-center flex-col xl:flex-row gap-y-5 gap-x-9">
+    <div className="flex flex-col items-center justify-between pb-10 pt-12 text-white xl:flex-row xl:px-80 xl:pb-16 xl:pt-24">
+      <div className="flex flex-col items-center gap-x-9 gap-y-5 xl:flex-row">
         <Image
           src={"/quirks-logo.svg"}
           alt="Quirks small logo"
           width={46}
           height={41}
-          className="xl:w-24 xl:h-[86px]"
+          className="xl:h-[86px] xl:w-24"
         />
         <Image
           src={"/quirks-text.svg"}
           alt="Quirks text logo"
           width={94}
           height={30}
-          className="xl:w-40 xl:h-14"
+          className="xl:h-14 xl:w-40"
         />
       </div>
-      <div className="hidden xl:flex items-center gap-6">
+      <div className="hidden items-center gap-6 xl:flex">
         <p className="text-lg leading-10">features</p>
         <p className="text-lg leading-10">commie</p>
         <Link
           href={"/docs"}
-          className="ml-5 inline-flex min-h-[55px] items-center  gap-x-3 pl-7 pr-6 bg-primary rounded-std"
+          className="ml-5 inline-flex min-h-[55px] items-center  gap-x-3 rounded-std bg-primary pl-7 pr-6"
         >
-          <p className="text-lg pt-2.5 pb-1.5">View Docs</p>
+          <p className="pb-1.5 pt-2.5 text-lg">View Docs</p>
           <Image
             src={"/icons/arrow-up-right.svg"}
             alt="Arrow Up Right icon"
