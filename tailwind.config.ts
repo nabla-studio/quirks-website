@@ -22,6 +22,7 @@ const config: Config = {
       },
       spacing: {
         "page-elements": "445px",
+        30: "120px",
       },
     },
   },
