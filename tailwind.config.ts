@@ -8,9 +8,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundColor: {
+      colors: {
         primary: "#0029FF",
         secondary: "#121212",
+        "connect-wallet-b": "#0d199a",
+      },
+      borderRadius: {
+        std: "50px",
+      },
+      fontSize: {
+        "1.1xl": "1.3125rem",
+        "3.5xl": "2rem",
       },
     },
   },
