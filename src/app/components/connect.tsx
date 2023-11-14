@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useConfig, useConnect } from '@quirks/react';
+import { useConfig, useConnect } from "@quirks/react";
 
 const ConnectBtn = () => {
   const { wallets } = useConfig();
@@ -30,7 +30,7 @@ const ConnectBtn = () => {
           href={
             wallet.options.downloads && wallet.options.downloads.length > 0
               ? wallet.options.downloads[0].link
-              : '#'
+              : "#"
           }
           target="_blank"
         >
@@ -41,4 +41,4 @@ const ConnectBtn = () => {
   ));
 };
 
-export default ConnectBtn
+export default ConnectBtn;

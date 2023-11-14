@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import { useChains, useConnect } from '@quirks/react';
+import { useChains, useConnect } from "@quirks/react";
 
 const send = async () => {
-  const cosmos = (await import('osmojs')).cosmos;
-  const sign = (await import('@quirks/store')).sign;
-  const getAddress = (await import('@quirks/store')).getAddress;
+  const cosmos = (await import("osmojs")).cosmos;
+  const sign = (await import("@quirks/store")).sign;
+  const getAddress = (await import("@quirks/store")).getAddress;
   const { send } = cosmos.bank.v1beta1.MessageComposer.withTypeUrl;
 
-  const address = getAddress('osmosis');
+  const address = getAddress("osmosis");
 
   const msg = send({
     amount: [
       {
-        denom: 'uosmo',
-        amount: '1',
+        denom: "uosmo",
+        amount: "1",
       },
     ],
     toAddress: address,
@@ -23,11 +23,11 @@ const send = async () => {
 
   console.log(msg);
 
-  const txRaw = await sign('osmosis', [msg]);
+  const txRaw = await sign("osmosis", [msg]);
 
-  const broadcast = (await import('@quirks/store')).broadcast;
+  const broadcast = (await import("@quirks/store")).broadcast;
 
-  const res = await broadcast('osmosis', txRaw);
+  const res = await broadcast("osmosis", txRaw);
 
   console.log(res);
 };
@@ -58,6 +58,6 @@ const SendBtn = () => {
       )}
     </div>
   );
-}
+};
 
-export default SendBtn
+export default SendBtn;
