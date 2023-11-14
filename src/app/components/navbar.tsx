@@ -22,13 +22,13 @@ export function Navbar() {
         />
       </div>
       <div className="hidden xl:flex items-center gap-6">
-        <p className="text-lg font-semibold leading-10">features</p>
-        <p className="text-lg font-semibold leading-10">commie</p>
+        <p className="text-lg leading-10">features</p>
+        <p className="text-lg leading-10">commie</p>
         <Link
           href={"/docs"}
-          className="ml-5 inline-flex min-h-[55px] items-center  gap-x-3 pl-7 pr-6 bg-primary rounded-[50px]"
+          className="ml-5 inline-flex min-h-[55px] items-center  gap-x-3 pl-7 pr-6 bg-primary rounded-std"
         >
-          <p className="text-lg font-semibold pt-2.5 pb-1.5">View Docs</p>
+          <p className="text-lg pt-2.5 pb-1.5">View Docs</p>
           <Image
             src={"/icons/arrow-up-right.svg"}
             alt="Arrow Up Right icon"
