@@ -1,5 +1,5 @@
-import ConnectHero from "@/app/components/connect-hero";
-import Features from "@/app/components/features";
+import ConnectHero from "@/app/components/ConnectHero";
+import Features from "@/app/components/Features";
 
 export default function Home() {
   return (
