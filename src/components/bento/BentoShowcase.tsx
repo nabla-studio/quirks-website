@@ -1,4 +1,4 @@
-import MultiChain from "@/app/components/bento/MultiChain";
+import MultiChain from "@/components/bento/MultiChain";
 import React from "react";
 
 function BentoShowcase() {

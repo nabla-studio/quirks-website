@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Provider } from "./providers";
-import { Navbar } from "@/app/components/Navbar";
+import { Navbar } from "@/components/Navbar";
 
 const axifoma = localFont({
   src: [

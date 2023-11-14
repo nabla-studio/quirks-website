@@ -1,6 +1,6 @@
-import ConnectHero from "@/app/components/ConnectHero";
-import Features from "@/app/components/Features";
-import BentoShowcase from "@/app/components/bento/BentoShowcase";
+import ConnectHero from "@/components/ConnectHero";
+import Features from "@/components/Features";
+import BentoShowcase from "@/components/bento/BentoShowcase";
 
 export default function Home() {
   return (
