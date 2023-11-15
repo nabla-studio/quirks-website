@@ -6,8 +6,10 @@ export default function Home() {
   return (
     <main className="flex flex-col text-white max-xl:px-5">
       <ConnectHero />
-      <Features />
-      <BentoShowcase />
+      <div className="flex flex-col self-center">
+        <Features />
+        <BentoShowcase />
+      </div>
     </main>
   );
 }
