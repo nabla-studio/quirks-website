@@ -4,7 +4,7 @@ import React from "react";
 
 export function Navbar() {
   return (
-    <div className="flex flex-col items-center justify-between pb-10 pt-12 text-white xl:flex-row xl:px-80 xl:pb-16 xl:pt-24">
+    <div className="flex w-full max-w-[1336px] flex-col items-center justify-between self-center px-5 pb-10 pt-12 text-white xl:flex-row xl:pb-16 xl:pt-24">
       <div className="flex flex-col items-center gap-x-9 gap-y-5 xl:flex-row">
         <Image
           src={"/quirks-logo.svg"}

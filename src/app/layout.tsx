@@ -26,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${axifoma.className} bg-secondary`}>
+      <body className={`${axifoma.className} flex flex-col bg-secondary`}>
         <Provider>
           <Navbar />
           {children}
