@@ -54,3 +54,18 @@ export const SHOWCASE_ICONS = [
     },
   ],
 ];
+
+export const FRAMEWORKS = [
+  {
+    uri: "/frameworks/react.png",
+    name: "react",
+  },
+  {
+    uri: "/frameworks/vue.png",
+    name: "vue",
+  },
+  {
+    uri: "/frameworks/js.png",
+    name: "js",
+  },
+];
