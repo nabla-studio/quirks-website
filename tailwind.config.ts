@@ -25,6 +25,7 @@ const config: Config = {
         "page-elements": "445px",
         30: "120px",
         "6.5": "26px",
+        13: "52px",
       },
     },
   },
