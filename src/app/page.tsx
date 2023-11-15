@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="flex flex-col overflow-hidden text-white max-xl:px-5">
       <ConnectHero />
-      <div className="flex flex-col self-center">
+      <div className="flex max-w-[1030px] flex-col self-center">
         <Features />
         <BentoShowcase />
       </div>
