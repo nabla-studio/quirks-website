@@ -19,10 +19,12 @@ const config: Config = {
       fontSize: {
         "1.1xl": "1.3125rem",
         "3.5xl": "2rem",
+        "bento-h": "27px",
       },
       spacing: {
         "page-elements": "445px",
         30: "120px",
+        "6.5": "26px",
       },
     },
   },
