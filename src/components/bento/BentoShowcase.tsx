@@ -1,6 +1,7 @@
 import FrameworkAgnostic from "@/components/bento/FrameworkAgnostic";
 import MobileSupport from "@/components/bento/MobileSupport";
 import MultiChain from "@/components/bento/MultiChain";
+import MultiWallet from "@/components/bento/MultiWallet";
 import Web3Modal from "@/components/bento/Web3Modal";
 import React from "react";
 
@@ -11,6 +12,7 @@ function BentoShowcase() {
       <FrameworkAgnostic />
       <Web3Modal />
       <MobileSupport />
+      <MultiWallet />
     </div>
   );
 }
