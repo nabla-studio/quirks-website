@@ -2,6 +2,7 @@ import ConnectHero from "@/components/ConnectHero";
 import Discuss from "@/components/Discuss";
 import Docs from "@/components/Docs";
 import Features from "@/components/Features";
+import Footer from "@/components/Footer";
 import BentoShowcase from "@/components/bento/BentoShowcase";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
         <BentoShowcase />
         <Docs />
         <Discuss />
+        <Footer />
       </div>
     </main>
   );
