@@ -1,8 +1,10 @@
+import DXFocused from "@/components/bento/DXFocused";
 import FrameworkAgnostic from "@/components/bento/FrameworkAgnostic";
 import MobileSupport from "@/components/bento/MobileSupport";
 import MultiChain from "@/components/bento/MultiChain";
 import MultiWallet from "@/components/bento/MultiWallet";
 import Web3Modal from "@/components/bento/Web3Modal";
+import Image from "next/image";
 import React from "react";
 
 function BentoShowcase() {
@@ -13,6 +15,7 @@ function BentoShowcase() {
       <Web3Modal />
       <MobileSupport />
       <MultiWallet />
+      <DXFocused />
     </div>
   );
 }
