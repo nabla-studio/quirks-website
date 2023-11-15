@@ -3,7 +3,7 @@ import React from "react";
 
 function Web3Modal() {
   return (
-    <div className="relative flex min-h-[372px] flex-col gap-[18px] overflow-hidden rounded-std border border-zinc-300 border-opacity-30 xl:col-span-5 xl:flex-row">
+    <div className="bento-card-base relative flex min-h-[372px] flex-col gap-[18px] overflow-hidden xl:col-span-5 xl:flex-row">
       <div className="z-10 flex flex-col justify-between">
         <div className="ml-10 mt-10 flex items-center gap-5">
           <p className="xl:text-bento-h text-lg leading-none">Web3 Modal</p>
