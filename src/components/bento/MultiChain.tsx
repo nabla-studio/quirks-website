@@ -4,8 +4,8 @@ import React from "react";
 
 function MultiChain() {
   return (
-    <div className="relative min-h-[334px] overflow-hidden rounded-std border-2 border-zinc-300 border-opacity-30 pl-8 pt-8 xl:col-span-2 xl:col-start-1">
-      <p className="text-lg">Multi Chain</p>
+    <div className="relative min-h-[334px] overflow-hidden rounded-std border-2 border-zinc-300 border-opacity-30 pl-8 pt-8 xl:col-span-2 xl:col-start-1 xl:pl-10 xl:pt-10">
+      <p className="xl:text-bento-h text-lg">Multi Chain</p>
       <div className="absolute -bottom-8 left-0 right-0 flex flex-col gap-2 xl:-bottom-9">
         {SHOWCASE_ICONS.map((row, i) => (
           <div key={`row ${i}`} className="flex items-center gap-5">
