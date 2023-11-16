@@ -6,12 +6,12 @@ function MobileSupport() {
   return (
     <div className="bento-card-base relative min-h-[481px] overflow-hidden xl:col-span-3 xl:col-start-1">
       <div className="ml-11 mt-10 flex flex-col gap-3.5 xl:flex-row xl:items-center">
-        <p className="xl:text-bento-h text-lg leading-none">Mobile Support</p>
-        <div className="inline-flex h-[35px] items-center justify-center rounded-std bg-primary px-5 max-xl:max-w-[73px]">
+        <h3 className="text-lg leading-none xl:text-bento-h">Mobile Support</h3>
+        <span className="inline-flex h-[35px] items-center justify-center rounded-std bg-primary px-5 max-xl:max-w-[73px]">
           <p className="text-sm">SOON</p>
-        </div>
+        </span>
       </div>
-      <div className="xl:-bottom-13 absolute bottom-0 right-0 flex flex-col gap-[15px] xl:right-20">
+      <div className="absolute bottom-0 right-0 flex flex-col gap-[15px] xl:-bottom-13 xl:right-20">
         {MOBILE_SUPPORT_ITEMS.map((row, i) => (
           <div
             key={`mobile support row ${i}`}

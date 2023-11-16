@@ -6,10 +6,10 @@ function Web3Modal() {
     <div className="bento-card-base relative flex min-h-[372px] flex-col gap-[18px] overflow-hidden xl:col-span-5 xl:flex-row">
       <div className="z-10 flex flex-col justify-between">
         <div className="ml-10 mt-10 flex items-center gap-5">
-          <p className="xl:text-bento-h text-lg leading-none">Web3 Modal</p>
-          <div className="inline-flex h-[35px] items-center justify-center rounded-std bg-primary px-5">
+          <h3 className="text-lg leading-none xl:text-bento-h">Web3 Modal</h3>
+          <span className="inline-flex h-[35px] items-center justify-center rounded-std bg-primary px-5">
             <p className="text-sm">ALPHA</p>
-          </div>
+          </span>
         </div>
         <div className="ml-9 flex items-center gap-2.5 max-xl:mt-9 xl:mb-4">
           <Image
@@ -19,7 +19,7 @@ function Web3Modal() {
             height={31}
             className="h-16 w-16"
           />
-          <p className="text-xs xl:text-base">Wallet Connect Support</p>
+          <small className="text-xs xl:text-base">Wallet Connect Support</small>
         </div>
       </div>
       <div className="z-10">
@@ -35,7 +35,7 @@ function Web3Modal() {
           alt="desktop banner"
           width={578}
           height={400}
-          className="right-13 absolute top-8 max-xl:hidden"
+          className="absolute right-13 top-8 max-xl:hidden"
         />
       </div>
       <div className="absolute -left-40 top-2.5 h-[230px] w-[230px] rounded-full bg-primary blur-[100px] filter" />
