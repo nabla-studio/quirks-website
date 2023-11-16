@@ -2,9 +2,9 @@ import React from "react";
 
 function Features() {
   return (
-    <div className="mt-[100px] flex flex-col gap-5">
-      <p className="text-lg leading-10 text-primary">FEATURES</p>
-      <h3 className="text-3.5xl leading-[48px]">
+    <section className="mt-[100px] flex flex-col gap-5">
+      <h5 className="text-lg leading-10 text-primary">FEATURES</h5>
+      <h2 className="text-3.5xl leading-[48px]">
         Web3Modal: <br className="xl:hidden" /> Simple, intuitive{" "}
         <br className="xl:hidden" />
         wallet login. With
@@ -14,8 +14,8 @@ function Features() {
         a
         <br className="xl:hidden" /> smooth, <br className="max-lg:hidden" />
         unified experience.
-      </h3>
-    </div>
+      </h2>
+    </section>
   );
 }
 
