@@ -3,7 +3,7 @@ import React from "react";
 function TinyBundle() {
   return (
     <div className="bento-card-base flex flex-col px-10 pb-8 pt-10 xl:col-span-3 xl:col-start-3">
-      <p className="xl:text-bento-h text-lg leading-none">Tiny Bundle</p>
+      <h3 className="text-lg leading-none xl:text-bento-h">Tiny Bundle</h3>
       <div className="mt-30 flex flex-col xl:mt-14 xl:flex-row xl:items-center xl:gap-x-[60px]">
         <div className="flex items-baseline gap-4 xl:translate-y-12">
           <p className="text-[180px] leading-[48px] text-primary">7</p>

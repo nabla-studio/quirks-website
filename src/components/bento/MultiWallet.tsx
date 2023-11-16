@@ -4,7 +4,7 @@ import React from "react";
 function MultiWallet() {
   return (
     <div className="bento-card-base relative min-h-[433px] overflow-hidden pl-10 pt-9 xl:col-span-2 xl:col-start-4">
-      <p className="xl:text-bento-h text-lg leading-none">Multi Wallet</p>
+      <h3 className="text-lg leading-none xl:text-bento-h">Multi Wallet</h3>
       <Image
         src={"/wallet/wallet.png"}
         alt="Wallets"
