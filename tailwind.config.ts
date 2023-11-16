@@ -8,6 +8,28 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateZ(0)" },
+          "100%": {
+            transform:
+              "translate3d(calc((82px * 4 + 20px * 3) * -1 - 20px),0,0)",
+          },
+        },
+        "marquee-sm": {
+          "0%": { transform: "translateZ(0)" },
+          "100%": {
+            transform:
+              "translate3d(calc((74px * 4 + 20px * 3) * -1 - 20px),0,0)",
+          },
+        },
+      },
+      animation: {
+        marquee: "marquee 5s linear infinite",
+        "marquee-reverse": "marquee 5s linear infinite reverse",
+        "marquee-sm": "marquee-sm 5s linear infinite",
+        "marquee-sm-reverse": "marquee-sm 5s linear infinite reverse",
+      },
       colors: {
         primary: "#0029FF",
         secondary: "#121212",

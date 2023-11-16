@@ -6,4 +6,10 @@
   .bento-card-base {
     @apply rounded-std border-2 border-zinc-300 border-opacity-30;
   }
+  .row-width-xl {
+    width: calc((82px * 4 + 20px * 3) * 2);
+  }
+  .row-width {
+    width: calc((74 * 4 + 20px * 3) * 2);
+  }
 }
