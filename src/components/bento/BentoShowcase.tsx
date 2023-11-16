@@ -5,7 +5,6 @@ import MultiChain from "@/components/bento/MultiChain";
 import MultiWallet from "@/components/bento/MultiWallet";
 import TinyBundle from "@/components/bento/TinyBundle";
 import Web3Modal from "@/components/bento/Web3Modal";
-import React from "react";
 
 function BentoShowcase() {
   return (

@@ -1,23 +1,10 @@
-"use client";
-
-import { fadeIn } from "@/utils/animations";
-import { useFadeIn } from "@/utils/useFadeIn";
-import { motion } from "framer-motion";
+import SectionFadeIn from "@/components/animations/SectionFadeIn";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 function Discuss() {
-  const { controls, ref } = useFadeIn();
-
   return (
-    <motion.section
-      ref={ref}
-      animate={controls}
-      variants={fadeIn}
-      initial="hidden"
-      className="relative mt-44 flex flex-col rounded-std bg-discuss-card px-10 pb-8 pt-10 xl:min-h-[370px] xl:justify-between"
-    >
+    <SectionFadeIn className="relative mt-44 flex flex-col rounded-std bg-discuss-card px-10 pb-8 pt-10 xl:min-h-[370px] xl:justify-between">
       <h2 className="text-bento-h leading-9 xl:text-3.5xl xl:leading-12">
         Web3Modal: Simple, <br className="max-xl:hidden" /> intuitive wallet
         login.
@@ -61,7 +48,7 @@ function Discuss() {
           </Link>
         </li>
       </ul>
-    </motion.section>
+    </SectionFadeIn>
   );
 }
 

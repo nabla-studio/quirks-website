@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 export function Navbar() {
   return (
-    <header className="max-w-wide-element w-full self-center">
+    <header className="w-full max-w-wide-element self-center">
       <nav className="flex flex-col items-center justify-between px-5 pb-10 pt-12 text-white xl:flex-row xl:pb-16 xl:pt-24">
         <div className="flex flex-col items-center gap-x-9 gap-y-5 xl:flex-row">
           <Image
@@ -36,7 +35,7 @@ export function Navbar() {
           <li>
             <Link
               href={"#"}
-              className="min-h-13.75 ml-5 inline-flex items-center  gap-x-3 rounded-std bg-primary pl-7 pr-6"
+              className="ml-5 inline-flex min-h-13.75 items-center  gap-x-3 rounded-std bg-primary pl-7 pr-6"
             >
               <span className="pb-1.5 pt-2.5 text-lg">View Docs</span>
               <Image

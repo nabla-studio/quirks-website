@@ -1,23 +1,10 @@
-"use client";
-
-import { fadeIn } from "@/utils/animations";
-import { useFadeIn } from "@/utils/useFadeIn";
-import { motion } from "framer-motion";
+import SectionFadeIn from "@/components/animations/SectionFadeIn";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 function Docs() {
-  const { controls, ref } = useFadeIn();
-
   return (
-    <motion.section
-      ref={ref}
-      animate={controls}
-      variants={fadeIn}
-      initial="hidden"
-      className="relative mt-44 flex flex-col xl:mt-24"
-    >
+    <SectionFadeIn className="relative mt-44 flex flex-col xl:mt-24">
       <h5 className="text-lg leading-10 text-primary">DOCS</h5>
       <h2 className="mt-10 text-3.5xl leading-12">
         Web3Modal:
@@ -46,7 +33,7 @@ function Docs() {
         height={91}
         className="absolute bottom-20 right-0 xl:bottom-14 xl:h-33 xl:w-33"
       />
-    </motion.section>
+    </SectionFadeIn>
   );
 }
 
