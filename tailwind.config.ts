@@ -25,10 +25,10 @@ const config: Config = {
         },
       },
       animation: {
-        marquee: "marquee 5s linear infinite",
-        "marquee-reverse": "marquee 5s linear infinite reverse",
-        "marquee-sm": "marquee-sm 5s linear infinite",
-        "marquee-sm-reverse": "marquee-sm 5s linear infinite reverse",
+        marquee: "marquee 20s linear infinite",
+        "marquee-reverse": "marquee 20s linear infinite reverse",
+        "marquee-sm": "marquee-sm 20s linear infinite",
+        "marquee-sm-reverse": "marquee-sm 20s linear infinite reverse",
       },
       colors: {
         primary: "#0029FF",
