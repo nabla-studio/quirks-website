@@ -2,9 +2,9 @@ import React from "react";
 
 function Features() {
   return (
-    <section className="mt-[100px] flex flex-col gap-5">
+    <section className="mt-24 flex flex-col gap-5">
       <h5 className="text-lg leading-10 text-primary">FEATURES</h5>
-      <h2 className="text-3.5xl leading-[48px]">
+      <h2 className="leading-12 text-3.5xl">
         Web3Modal: <br className="xl:hidden" /> Simple, intuitive{" "}
         <br className="xl:hidden" />
         wallet login. With

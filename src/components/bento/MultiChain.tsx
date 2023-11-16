@@ -16,7 +16,7 @@ function MultiChain() {
                 alt={name}
                 width={74}
                 height={74}
-                className="xl:h-[82px] xl:w-[82px]"
+                className="xl:h-chain-icon xl:w-chain-icon"
               />
             ))}
           </div>

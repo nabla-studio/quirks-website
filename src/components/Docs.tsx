@@ -6,7 +6,7 @@ function Docs() {
   return (
     <section className="relative mt-44 flex flex-col xl:mt-24">
       <h5 className="text-lg leading-10 text-primary">DOCS</h5>
-      <h2 className="mt-10 text-3.5xl leading-[48px]">
+      <h2 className="leading-12 mt-10 text-3.5xl">
         Web3Modal:
         <br className="xl:hidden" /> Simple, intuitive{" "}
         <br className="xl:hidden" /> wallet login. With this{" "}
@@ -15,7 +15,7 @@ function Docs() {
       </h2>
       <Link
         href={"/docs"}
-        className="mt-36 inline-flex min-h-[55px] max-w-[185px] items-center gap-x-3 rounded-std bg-primary pl-7 pr-6 xl:mt-12"
+        className="min-h-13.75 mt-36 inline-flex max-w-[185px] items-center gap-x-3 rounded-std bg-primary pl-7 pr-6 xl:mt-12"
       >
         <span className="pb-1.5 pt-2.5 text-lg">View Docs</span>
         <Image
@@ -31,7 +31,7 @@ function Docs() {
         alt="Pointer"
         width={91}
         height={91}
-        className="absolute bottom-20 right-0 xl:bottom-14 xl:h-[134px] xl:w-[134px]"
+        className="xl:h-33 xl:w-33 absolute bottom-20 right-0 xl:bottom-14"
       />
     </section>
   );

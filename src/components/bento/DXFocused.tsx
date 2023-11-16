@@ -10,7 +10,7 @@ function DXFocused() {
         alt="Brackets"
         width={264}
         height={167}
-        className="h-[183px] w-[290px] self-center"
+        className="h-[183px] w-72 self-center"
       />
     </div>
   );

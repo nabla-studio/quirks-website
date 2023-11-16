@@ -7,9 +7,9 @@ import BentoShowcase from "@/components/bento/BentoShowcase";
 
 export default function Home() {
   return (
-    <main className="flex w-full max-w-[1336px] flex-col self-center overflow-hidden px-5 text-white">
+    <main className="max-w-wide-element flex w-full flex-col self-center overflow-hidden px-5 text-white">
       <ConnectHero />
-      <div className="flex max-w-[1030px] flex-col self-center">
+      <div className="max-w-regular-element flex flex-col self-center">
         <Features />
         <BentoShowcase />
         <Docs />

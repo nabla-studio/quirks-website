@@ -3,11 +3,11 @@ import React from "react";
 
 function Web3Modal() {
   return (
-    <div className="bento-card-base relative flex min-h-[372px] flex-col gap-[18px] overflow-hidden xl:col-span-5 xl:flex-row">
+    <div className="bento-card-base gap-4.5 relative flex min-h-[372px] flex-col overflow-hidden xl:col-span-5 xl:flex-row">
       <div className="z-10 flex flex-col justify-between">
         <div className="ml-10 mt-10 flex items-center gap-5">
           <h3 className="text-lg leading-none xl:text-bento-h">Web3 Modal</h3>
-          <span className="inline-flex h-[35px] items-center justify-center rounded-std bg-primary px-5">
+          <span className="h-8.75 inline-flex items-center justify-center rounded-std bg-primary px-5">
             <p className="text-sm">ALPHA</p>
           </span>
         </div>
@@ -38,8 +38,8 @@ function Web3Modal() {
           className="absolute right-13 top-8 max-xl:hidden"
         />
       </div>
-      <div className="absolute -left-40 top-2.5 h-[230px] w-[230px] rounded-full bg-primary blur-[100px] filter" />
-      <div className="absolute -bottom-36 -right-80 h-[353px] w-[353px] rounded-full bg-primary blur-[100px] filter xl:-bottom-[136px] xl:left-[325px]" />
+      <div className="absolute -left-40 top-2.5 h-56 w-56 rounded-full bg-primary blur-[100px] filter" />
+      <div className="xl:-bottom-33 h-88 w-88 absolute -bottom-36 -right-80 rounded-full bg-primary blur-[100px] filter xl:left-[325px]" />
     </div>
   );
 }

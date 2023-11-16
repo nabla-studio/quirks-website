@@ -6,11 +6,11 @@ function TinyBundle() {
       <h3 className="text-lg leading-none xl:text-bento-h">Tiny Bundle</h3>
       <div className="mt-30 flex flex-col xl:mt-14 xl:flex-row xl:items-center xl:gap-x-[60px]">
         <div className="flex items-baseline gap-4 xl:translate-y-12">
-          <p className="text-[180px] leading-[48px] text-primary">7</p>
-          <p className="text-[80px]">kb</p>
+          <p className="leading-12 text-perc-big text-primary">7</p>
+          <p className="text-perc-unit">kb</p>
         </div>
         <div className="flex flex-col xl:text-center">
-          <p className="text-[90px] text-primary">87%</p>
+          <p className="text-perc-half text-primary">87%</p>
           <p className="text-1.1xl">Less than Cosmoskit *</p>
         </div>
       </div>

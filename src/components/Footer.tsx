@@ -11,7 +11,7 @@ function Footer() {
           alt="Quirks logo"
           width={46}
           height={41}
-          className="xl:h-[86px] xl:w-24"
+          className="xl:h-21.5 xl:w-24"
         />
         <ul className="flex flex-col items-end text-right max-xl:mt-2">
           <Image
@@ -33,7 +33,7 @@ function Footer() {
           </li>
         </ul>
       </div>
-      <div className="mt-[72px] flex items-start justify-between">
+      <div className="mt-18.5 flex items-start justify-between">
         <p className="text-xs opacity-30 xl:text-lg">
           © 2023 nabla benefit company
         </p>
