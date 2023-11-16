@@ -1,10 +1,22 @@
+"use client";
+
+import { fadeIn } from "@/utils/animations";
+import { useFadeIn } from "@/utils/useFadeIn";
+import { motion } from "framer-motion";
 import React from "react";
 
 function Features() {
+  const { controls, ref } = useFadeIn();
   return (
-    <section className="mt-24 flex flex-col gap-5">
+    <motion.section
+      ref={ref}
+      animate={controls}
+      variants={fadeIn}
+      initial="hidden"
+      className="mt-24 flex flex-col gap-5"
+    >
       <h5 className="text-lg leading-10 text-primary">FEATURES</h5>
-      <h2 className="leading-12 text-3.5xl">
+      <h2 className="text-3.5xl leading-12">
         Web3Modal: <br className="xl:hidden" /> Simple, intuitive{" "}
         <br className="xl:hidden" />
         wallet login. With
@@ -15,7 +27,7 @@ function Features() {
         <br className="xl:hidden" /> smooth, <br className="max-lg:hidden" />
         unified experience.
       </h2>
-    </section>
+    </motion.section>
   );
 }
 

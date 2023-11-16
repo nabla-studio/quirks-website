@@ -1,11 +1,24 @@
+"use client";
+
+import { fadeIn } from "@/utils/animations";
+import { useFadeIn } from "@/utils/useFadeIn";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 function Discuss() {
+  const { controls, ref } = useFadeIn();
+
   return (
-    <section className="bg-discuss-card relative mt-44 flex flex-col rounded-std px-10 pb-8 pt-10 xl:min-h-[370px] xl:justify-between">
-      <h2 className="xl:leading-12 text-bento-h leading-9 xl:text-3.5xl">
+    <motion.section
+      ref={ref}
+      animate={controls}
+      variants={fadeIn}
+      initial="hidden"
+      className="relative mt-44 flex flex-col rounded-std bg-discuss-card px-10 pb-8 pt-10 xl:min-h-[370px] xl:justify-between"
+    >
+      <h2 className="text-bento-h leading-9 xl:text-3.5xl xl:leading-12">
         Web3Modal: Simple, <br className="max-xl:hidden" /> intuitive wallet
         login.
       </h2>
@@ -20,7 +33,7 @@ function Discuss() {
         <li>
           <Link
             href={"#"}
-            className="min-h-13.75 inline-flex items-center justify-center gap-x-3 rounded-std bg-primary pl-7 pr-6 xl:mt-12"
+            className="inline-flex min-h-13.75 items-center justify-center gap-x-3 rounded-std bg-primary pl-7 pr-6 xl:mt-12"
           >
             <p className="pb-1.5 pt-2.5 text-lg">View Docs</p>
             <Image
@@ -35,7 +48,7 @@ function Discuss() {
         <li>
           <Link
             href={"#"}
-            className="min-h-13.75 inline-flex items-center justify-center gap-x-3 rounded-std bg-secondary pl-7 pr-6 xl:mt-12"
+            className="inline-flex min-h-13.75 items-center justify-center gap-x-3 rounded-std bg-secondary pl-7 pr-6 xl:mt-12"
           >
             <p className="pb-1.5 pt-2.5 text-lg">View Docs</p>
             <Image
@@ -48,7 +61,7 @@ function Discuss() {
           </Link>
         </li>
       </ul>
-    </section>
+    </motion.section>
   );
 }
 
