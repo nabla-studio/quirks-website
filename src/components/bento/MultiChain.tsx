@@ -15,9 +15,9 @@ function MultiChain() {
                 : "animate-marquee-sm xl:animate-marquee"
             } xl:row-width-xl max-xl:row-width relative flex items-center gap-5 transition-transform`}
           >
-            {row.map(({ name, uri }) => (
+            {row.map(({ name, uri }, i) => (
               <Image
-                key={`${name} icon`}
+                key={`${name} ${i} icon`}
                 src={uri}
                 alt={name}
                 width={74}
