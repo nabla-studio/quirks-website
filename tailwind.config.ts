@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xsm: "410px",
+      },
       keyframes: {
         marquee: {
           "0%": { transform: "translateZ(0)" },

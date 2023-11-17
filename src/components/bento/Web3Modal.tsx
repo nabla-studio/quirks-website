@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function Web3Modal() {
   return (
-    <div className="bento-card-base relative flex min-h-[372px] flex-col gap-4.5 overflow-hidden xl:col-span-5 xl:flex-row">
+    <div className="bento-card-base relative flex min-h-[372px] flex-col gap-4.5 overflow-hidden min-[750px]:flex-row xl:col-span-5">
       <div className="z-20 flex flex-col justify-between">
         <div className="ml-10 mt-10 flex items-center gap-5">
           <h3 className="text-lg leading-none xl:text-bento-h">Web3 Modal</h3>
@@ -27,7 +27,7 @@ function Web3Modal() {
           alt="mobile banner"
           width={400}
           height={280}
-          className="absolute -bottom-12 max-sm:left-10 sm:right-10 xl:hidden"
+          className="max-xsm:left-10 xsm:right-10 absolute -bottom-12 xl:hidden"
         />
         <Image
           src={"/hero-banners/d.png"}
