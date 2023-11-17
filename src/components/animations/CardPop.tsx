@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 interface CardPopProps {
   name: string;
   uri: string;
-  cn: string;
+  className: string;
 }
 
-function CardPop({ name, uri, cn }: CardPopProps) {
+function CardPop({ name, uri, className }: CardPopProps) {
   return (
     <motion.img
       initial={{ y: 0 }}
@@ -17,7 +17,7 @@ function CardPop({ name, uri, cn }: CardPopProps) {
       src={uri}
       width={297}
       height={418}
-      className={"absolute " + cn}
+      className={className}
     />
   );
 }

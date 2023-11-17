@@ -153,16 +153,19 @@ export const WALLET_CARDS = [
   {
     uri: "/wallet/xdefi.png",
     name: "xdefi",
-    cn: "-top-12 w-[264px] h-[418px] xl:w-[293px] xl:h-[464px] -left-4 xl:-left-2",
+    className:
+      "absolute -top-12 w-[264px] h-[418px] xl:w-[293px] xl:h-[464px] -left-4 xl:-left-2",
   },
   {
     uri: "/wallet/leap.png",
     name: "leap",
-    cn: "top-8 w-[280px] h-[418px] xl:w-[311px] xl:h-[464px] -left-6 xl:-left-4",
+    className:
+      "absolute top-8 w-[280px] h-[418px] xl:w-[311px] xl:h-[464px] -left-6 xl:-left-4",
   },
   {
     uri: "/wallet/keplr.png",
     name: "keplr",
-    cn: "top-28 w-[297px] h-[418px] xl:w-[329px] xl:h-[464px] -left-8 xl:-left-6",
+    className:
+      "absolute top-28 w-[297px] h-[418px] xl:w-[329px] xl:h-[464px] -left-8 xl:-left-6",
   },
 ];
