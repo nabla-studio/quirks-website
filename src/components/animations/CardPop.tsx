@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 interface CardPopProps {
   name: string;
@@ -10,7 +10,7 @@ interface CardPopProps {
 
 function CardPop({ name, uri, className }: CardPopProps) {
   return (
-    <motion.img
+    <m.img
       initial={{ y: 0 }}
       whileHover={{ y: -20 }}
       alt={`${name} wallet card`}

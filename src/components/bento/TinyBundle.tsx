@@ -1,7 +1,7 @@
 "use client";
 
 import { useCounterAnimation } from "@/utils/useCounterAnimation";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Link from "next/link";
 
 function TinyBundle() {
@@ -19,22 +19,19 @@ function TinyBundle() {
       <h3 className="text-lg leading-none xl:text-bento-h">Tiny Bundle</h3>
       <div className="mt-30 flex flex-col max-xl:self-center xl:mt-14 xl:flex-row xl:items-center xl:justify-end xl:gap-x-[60px]">
         <div className="relative flex items-baseline gap-4 xl:translate-y-12">
-          <motion.p
+          <m.p
             ref={kbRef}
             className="text-perc-big leading-12 text-primary xl:absolute xl:right-28 xl:top-3"
           >
             {kbValue}
-          </motion.p>
+          </m.p>
           <p className="text-perc-unit">KB</p>
         </div>
         <div className="flex flex-col xl:text-center">
           <div className="flex">
-            <motion.p
-              ref={bundleSizeRef}
-              className="text-perc-half text-primary"
-            >
+            <m.p ref={bundleSizeRef} className="text-perc-half text-primary">
               {budleSize}
-            </motion.p>
+            </m.p>
             <span className="text-perc-half text-primary">%</span>
           </div>
           <p className="text-1.1xl">Less than Cosmoskit *</p>

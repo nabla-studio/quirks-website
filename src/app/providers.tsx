@@ -13,6 +13,7 @@ import {
   keplrExtension,
   leapExtension,
 } from "@quirks/wallets";
+import { LazyMotion, domAnimation } from "framer-motion";
 import { PropsWithChildren } from "react";
 
 const config: Config = {
@@ -24,8 +25,10 @@ const config: Config = {
 
 export const Provider = ({ children }: PropsWithChildren<unknown>) => {
   return (
-    <QuirksConfig config={config}>
-      <QuirksNextProvider>{children}</QuirksNextProvider>
-    </QuirksConfig>
+    <LazyMotion features={domAnimation}>
+      <QuirksConfig config={config}>
+        <QuirksNextProvider>{children}</QuirksNextProvider>
+      </QuirksConfig>
+    </LazyMotion>
   );
 };
