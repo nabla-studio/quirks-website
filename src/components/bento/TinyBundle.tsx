@@ -14,7 +14,7 @@ function TinyBundle() {
   return (
     <div className="bento-card-base flex flex-col px-10 pb-8 pt-10 xl:col-span-3 xl:col-start-3">
       <h3 className="text-lg leading-none xl:text-bento-h">Tiny Bundle</h3>
-      <div className="mt-30 flex flex-col xl:mt-14 xl:flex-row xl:items-center xl:justify-end xl:gap-x-[60px]">
+      <div className="mt-30 flex flex-col max-xl:self-center xl:mt-14 xl:flex-row xl:items-center xl:justify-end xl:gap-x-[60px]">
         <div className="relative flex items-baseline gap-4 xl:translate-y-12">
           <motion.p
             ref={kbRef}
@@ -37,7 +37,7 @@ function TinyBundle() {
           <p className="text-1.1xl">Less than Cosmoskit *</p>
         </div>
       </div>
-      <p className="mt-5 text-xs opacity-30 xl:text-lg">
+      <p className="mt-5 text-xs opacity-30 max-xl:self-center xl:text-lg">
         * Orem upsum dolor sit amet <br className="xl:hidden" /> consectetuer
         adipiscit elit.
       </p>

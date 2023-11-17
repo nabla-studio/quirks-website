@@ -3,14 +3,14 @@ import Image from "next/image";
 function Web3Modal() {
   return (
     <div className="bento-card-base relative flex min-h-[372px] flex-col gap-4.5 overflow-hidden xl:col-span-5 xl:flex-row">
-      <div className="z-10 flex flex-col justify-between">
+      <div className="z-20 flex flex-col justify-between">
         <div className="ml-10 mt-10 flex items-center gap-5">
           <h3 className="text-lg leading-none xl:text-bento-h">Web3 Modal</h3>
           <span className="inline-flex h-8.75 items-center justify-center rounded-std bg-primary px-5">
             <p className="text-sm">ALPHA</p>
           </span>
         </div>
-        <div className="ml-9 flex items-center gap-2.5 max-xl:mt-9 xl:mb-4">
+        <div className="relative ml-9 flex items-center gap-2.5 max-xl:mt-9 xl:mb-4">
           <Image
             src={"/icons/wallet-connect-logo.svg"}
             alt="Wallet Connect Logo"
@@ -27,7 +27,7 @@ function Web3Modal() {
           alt="mobile banner"
           width={400}
           height={280}
-          className="absolute -bottom-12 left-10 xl:hidden"
+          className="absolute -bottom-12 max-sm:left-10 sm:right-10 xl:hidden"
         />
         <Image
           src={"/hero-banners/d.png"}

@@ -14,13 +14,13 @@ function Discuss() {
         alt="Chat Bubbles"
         width={227}
         height={227}
-        className="-top-36 right-0 mt-8 -rotate-[8deg] xl:absolute xl:h-[551px] xl:w-[551px]"
+        className="mt-8 -rotate-[8deg] max-xl:self-center xl:absolute xl:-top-36 xl:right-0 xl:h-[551px] xl:w-[551px]"
       />
       <ul className="mt-5 flex flex-col gap-4 xl:mt-0 xl:flex-row">
         <li>
           <Link
             href={"#"}
-            className="inline-flex min-h-13.75 items-center justify-center gap-x-3 rounded-std bg-primary pl-7 pr-6 xl:mt-12"
+            className="inline-flex min-h-13.75 w-full items-center justify-center gap-x-3 rounded-std bg-primary pl-7 pr-6 xl:mt-12"
           >
             <p className="pb-1.5 pt-2.5 text-lg">View Docs</p>
             <Image
@@ -35,7 +35,7 @@ function Discuss() {
         <li>
           <Link
             href={"#"}
-            className="inline-flex min-h-13.75 items-center justify-center gap-x-3 rounded-std bg-secondary pl-7 pr-6 xl:mt-12"
+            className="inline-flex min-h-13.75 w-full items-center justify-center gap-x-3 rounded-std bg-secondary pl-7 pr-6 xl:mt-12"
           >
             <p className="pb-1.5 pt-2.5 text-lg">View Docs</p>
             <Image

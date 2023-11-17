@@ -10,7 +10,7 @@ function MobileSupport() {
           <p className="text-sm">SOON</p>
         </span>
       </div>
-      <div className="absolute bottom-0 right-0 flex flex-col gap-4 xl:-bottom-13 xl:right-20">
+      <div className="absolute bottom-0 right-0 flex flex-col gap-4 max-xl:mx-auto max-xl:max-w-sm max-xl:sm:left-0 xl:-bottom-13 xl:right-20">
         {MOBILE_SUPPORT_ITEMS.map((row, i) => (
           <div
             key={`mobile support row ${i}`}
