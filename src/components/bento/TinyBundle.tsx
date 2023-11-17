@@ -2,13 +2,16 @@
 
 import { useCounterAnimation } from "@/utils/useCounterAnimation";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 function TinyBundle() {
-  const { ref: kbRef, rounded: kbValue } = useCounterAnimation(0, 7);
+  const { ref: kbRef, rounded: kbValue } = useCounterAnimation(0, 2, {
+    duration: 0.5,
+  });
   const { ref: bundleSizeRef, rounded: budleSize } = useCounterAnimation(
     0,
-    87,
-    { delay: 1 },
+    86,
+    { duration: 0.5 },
   );
 
   return (
@@ -22,7 +25,7 @@ function TinyBundle() {
           >
             {kbValue}
           </motion.p>
-          <p className="text-perc-unit">kb</p>
+          <p className="text-perc-unit">KB</p>
         </div>
         <div className="flex flex-col xl:text-center">
           <div className="flex">
@@ -38,8 +41,24 @@ function TinyBundle() {
         </div>
       </div>
       <p className="mt-5 text-xs opacity-30 max-xl:self-center xl:text-lg">
-        * Orem upsum dolor sit amet <br className="xl:hidden" /> consectetuer
-        adipiscit elit.
+        * Bundlephobia compare{" "}
+        <Link
+          href="https://bundlephobia.com/package/@quirks/react@0.3.10"
+          target="_blank"
+          rel="external"
+          className="underline"
+        >
+          Quirks
+        </Link>{" "}
+        vs{" "}
+        <Link
+          href="https://bundlephobia.com/package/@cosmos-kit/react-lite@2.5.9"
+          target="_blank"
+          rel="external"
+          className="underline"
+        >
+          Cosmos Kit
+        </Link>
       </p>
     </div>
   );
