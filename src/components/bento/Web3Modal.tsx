@@ -27,7 +27,7 @@ function Web3Modal() {
           alt="mobile banner"
           width={400}
           height={280}
-          className="max-xsm:left-10 xsm:right-10 xsm:-bottom-20 absolute -bottom-12 xl:hidden"
+          className="absolute -bottom-12 max-xsm:left-10 xsm:-bottom-20 xsm:right-10 md:right-6 xl:hidden"
         />
         <Image
           src={"/hero-banners/d.png"}
