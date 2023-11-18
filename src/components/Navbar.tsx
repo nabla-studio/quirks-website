@@ -34,8 +34,10 @@ export function Navbar() {
           </li>
           <li>
             <Link
-              href={"#"}
+              href="https://github.com/nabla-studio/quirks"
               className="ml-5 inline-flex min-h-13.75 items-center  gap-x-3 rounded-std bg-primary pl-7 pr-6"
+              rel="external"
+              target="_blank"
             >
               <span className="pb-1.5 pt-2.5 text-lg">View Docs</span>
               <Image

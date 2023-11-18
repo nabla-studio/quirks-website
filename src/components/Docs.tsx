@@ -14,8 +14,10 @@ function Docs() {
         SDK, enable any <br className="xl:hidden" /> wallet&apos;s users to.
       </h2>
       <Link
-        href={"/docs"}
+        href="https://github.com/nabla-studio/quirks"
         className="mt-36 inline-flex min-h-13.75 max-w-[185px] items-center gap-x-3 rounded-std bg-primary pl-7 pr-6 xl:mt-12"
+        rel="external"
+        target="_blank"
       >
         <span className="pb-1.5 pt-2.5 text-lg">View Docs</span>
         <Image
