@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@nabla-studio/chain-registry": "^0.3.1",
-    "@quirks/react": "^0.3.9",
-    "@quirks/store": "^0.7.2",
-    "@quirks/wallets": "^0.5.1",
+    "@quirks/react": "^0.3.10",
+    "@quirks/store": "^0.7.3",
+    "@quirks/wallets": "^0.6.0",
     "framer-motion": "^10.16.5",
     "next": "canary",
     "osmojs": "^16.5.1",
