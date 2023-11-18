@@ -7,6 +7,7 @@ import { fadeIn } from "@/utils/animations";
 
 interface SectionFadeInProps {
   className?: string;
+  id?: string;
 }
 
 const SectionFadeIn = (props: PropsWithChildren<SectionFadeInProps>) => {

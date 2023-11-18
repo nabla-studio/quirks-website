@@ -4,7 +4,10 @@ import Link from "next/link";
 
 function Discuss() {
   return (
-    <SectionFadeIn className="relative mt-44 flex flex-col rounded-std bg-discuss-card px-10 pb-8 pt-10 xl:min-h-[370px] xl:justify-between">
+    <SectionFadeIn
+      className="relative mt-44 flex flex-col rounded-std bg-discuss-card px-10 pb-8 pt-10 xl:min-h-[370px] xl:justify-between"
+      id="community"
+    >
       <h2 className="text-bento-h leading-9 xl:text-3.5xl xl:leading-12">
         Web3Modal: Simple, <br className="max-xl:hidden" /> intuitive wallet
         login.

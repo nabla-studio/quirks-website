@@ -23,13 +23,13 @@ export function Navbar() {
         </div>
         <ul className="hidden items-center gap-6 xl:flex">
           <li>
-            <Link href={"#"} className="text-lg leading-10">
+            <Link href="#features" className="text-lg leading-10">
               features
             </Link>
           </li>
           <li>
-            <Link href={"#"} className="text-lg leading-10">
-              commie
+            <Link href="#community" className="text-lg leading-10">
+              community
             </Link>
           </li>
           <li>
