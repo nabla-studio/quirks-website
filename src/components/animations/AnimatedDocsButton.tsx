@@ -24,6 +24,15 @@ const clickAnimation: Variants = {
   },
 };
 
+const clickCursorAnimation: Variants = {
+  hidle: {
+    scale: 1,
+  },
+  visible: {
+    scale: [1, 0.9, 1],
+  },
+};
+
 const AnimatedDocsButton = () => {
   const docsButton = useRef<HTMLAnchorElement | null>(null);
   const [animationCompleted, setAnimationCompleted] = useState(false);
@@ -110,7 +119,7 @@ const AnimatedDocsButton = () => {
           variants={clickAnimation}
           initial="hidle"
           transition={{
-            delay: 1.2,
+            delay: 1.45,
             duration: 250,
             type: "spring",
             damping: 50,
@@ -120,11 +129,20 @@ const AnimatedDocsButton = () => {
           }}
           className="absolute left-0 top-0 will-change-transform"
         />
-        <Image
+        <AnimatedImage
           src={"/cursor-pointer.png"}
           alt="Pointer"
           width={91}
           height={91}
+          animate={controls}
+          variants={clickCursorAnimation}
+          initial="hidle"
+          transition={{
+            delay: 1.3,
+            duration: 0.25,
+            ease: "easeInOut",
+            times: [0, 0.5, 1],
+          }}
           className="relative z-10 xl:h-33 xl:w-33"
         />
       </m.div>
