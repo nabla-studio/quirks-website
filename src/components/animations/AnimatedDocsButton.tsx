@@ -1,10 +1,28 @@
 "use client";
 
 import AnimatedImage from "@/components/animations/AnimatedImage";
-import { useAnimationControls, useInView, type Variants } from "framer-motion";
+import {
+  useAnimationControls,
+  useInView,
+  m,
+  type Variants,
+} from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+
+const clickAnimation: Variants = {
+  hidle: {
+    opacity: 1,
+    scale: 0,
+    translate: "0 -50%",
+  },
+  visible: {
+    opacity: 0,
+    scale: 3,
+    translate: "0 -50%",
+  },
+};
 
 const AnimatedDocsButton = () => {
   const docsButton = useRef<HTMLAnchorElement | null>(null);
@@ -63,12 +81,8 @@ const AnimatedDocsButton = () => {
           className="py-4"
         />
       </Link>
-      <AnimatedImage
-        src={"/cursor-pointer.png"}
-        alt="Pointer"
-        width={91}
-        height={91}
-        className={`pointer-events-none absolute bottom-20 right-0 xl:bottom-14 xl:h-33 xl:w-33 ${
+      <m.div
+        className={`pointer-events-none absolute bottom-20 right-0 xl:bottom-14 ${
           animationCompleted
             ? "!left-0 !top-0 translate-x-[91px] translate-y-[28px]"
             : ""
@@ -86,7 +100,34 @@ const AnimatedDocsButton = () => {
         }}
         onAnimationComplete={onAnimationComplete}
         initial="hidle"
-      />
+      >
+        <AnimatedImage
+          src={"/click-effect.svg"}
+          alt="Click Effect"
+          width={60}
+          height={60}
+          animate={controls}
+          variants={clickAnimation}
+          initial="hidle"
+          transition={{
+            delay: 1.2,
+            duration: 250,
+            type: "spring",
+            damping: 50,
+            bounce: 0,
+            stiffness: 250,
+            restDelta: 0.001,
+          }}
+          className="absolute left-0 top-0 will-change-transform"
+        />
+        <Image
+          src={"/cursor-pointer.png"}
+          alt="Pointer"
+          width={91}
+          height={91}
+          className="relative z-10 xl:h-33 xl:w-33"
+        />
+      </m.div>
     </div>
   );
 };
