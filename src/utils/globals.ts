@@ -180,17 +180,20 @@ export const WALLET_CARDS = [
     name: "xdefi",
     className:
       "absolute -top-12 w-[264px] h-[418px] xl:w-[293px] xl:h-[464px] -left-4 xl:-left-2",
+    websiteURL: "https://www.xdefi.io/",
   },
   {
     uri: "/wallet/leap.png",
     name: "leap",
     className:
       "absolute top-8 w-[280px] h-[418px] xl:w-[311px] xl:h-[464px] -left-6 xl:-left-4",
+    websiteURL: "https://www.leapwallet.io/",
   },
   {
     uri: "/wallet/keplr.png",
     name: "keplr",
     className:
       "absolute top-28 w-[297px] h-[418px] xl:w-[329px] xl:h-[464px] -left-8 xl:-left-6",
+    websiteURL: "https://www.keplr.app/",
   },
 ];
