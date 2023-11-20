@@ -12,7 +12,7 @@ export function middleware(request: NextRequest) {
         : `'nonce-${nonce}' 'strict-dynamic'`
     } https://www.googletagmanager.com;
     style-src 'self' ${isDev ? "'unsafe-inline'" : `'nonce-${nonce}'`};
-    img-src 'self' blob: data: https://quirks.nabla.studio;
+    img-src 'self' blob: data: ${process.env.VERCEL_URL};
     font-src 'self';
     object-src 'none';
     base-uri 'self';
@@ -32,7 +32,7 @@ export function middleware(request: NextRequest) {
   requestHeaders.set(
     "Content-Security-Policy",
     // Replace newline characters and spaces
-    cspHeader.replace(/\s{2,}/g, " ").trim()
+    cspHeader.replace(/\s{2,}/g, " ").trim(),
   );
 
   return NextResponse.next({
