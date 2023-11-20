@@ -11,7 +11,7 @@ export function ModalBanners() {
         width={400}
         height={280}
         initial={{
-          y: 50,
+          y: 30,
         }}
         whileInView={{
           y: 0,
@@ -22,6 +22,7 @@ export function ModalBanners() {
             stiffness: 100,
           },
         }}
+        viewport={{ once: true }}
         className="absolute -bottom-12 max-xsm:left-10 xsm:-bottom-20 xsm:right-10 md:right-6 xl:hidden"
       />
       <m.img
@@ -30,7 +31,7 @@ export function ModalBanners() {
         width={578}
         height={400}
         initial={{
-          y: 100,
+          y: 40,
         }}
         whileInView={{
           y: 0,
@@ -41,6 +42,7 @@ export function ModalBanners() {
             stiffness: 100,
           },
         }}
+        viewport={{ once: true }}
         className="absolute right-13 top-8 max-xl:hidden"
       />
     </>
