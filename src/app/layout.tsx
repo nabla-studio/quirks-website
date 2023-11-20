@@ -5,6 +5,7 @@ import { Provider } from "./providers";
 import { Navbar } from "@/components/Navbar";
 import Script from "next/script";
 import { headers } from "next/headers";
+import { Analytics } from "@vercel/analytics/react";
 
 const axifoma = localFont({
   src: [
@@ -40,6 +41,7 @@ export default function RootLayout({
           <Navbar />
           {children}
         </Provider>
+        <Analytics />
       </body>
     </html>
   );

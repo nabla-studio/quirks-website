@@ -70,6 +70,9 @@ const config: Config = {
         43.75: "175px",
         88: "352px",
       },
+      minWidth: {
+        "chain-icon": "82px",
+      },
       maxWidth: {
         "wide-element": "1336px",
         "regular-element": "1030px",
