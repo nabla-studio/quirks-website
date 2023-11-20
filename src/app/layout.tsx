@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Provider } from "./providers";
 import { Navbar } from "@/components/Navbar";
+import Script from "next/script";
+import { headers } from "next/headers";
 
 const axifoma = localFont({
   src: [
@@ -24,8 +26,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const nonce = headers().get("x-nonce");
+
   return (
     <html lang="en" className="scroll-smooth">
+      <Script
+        src="https://..."
+        strategy="afterInteractive"
+        nonce={nonce ?? undefined}
+      />
       <body className={`${axifoma.className} flex flex-col bg-secondary`}>
         <Provider>
           <Navbar />
