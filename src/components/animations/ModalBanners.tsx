@@ -6,7 +6,7 @@ export function ModalBanners() {
   return (
     <>
       <m.img
-        src={"/hero-banners/m.png"}
+        src={"/hero-banners/m.webp"}
         alt="mobile banner"
         width={400}
         height={280}
@@ -26,7 +26,7 @@ export function ModalBanners() {
         className="absolute -bottom-12 max-xsm:left-10 xsm:-bottom-20 xsm:right-10 lg:right-6 lg:hidden"
       />
       <m.img
-        src={"/hero-banners/d.png"}
+        src={"/hero-banners/d.webp"}
         alt="desktop banner"
         width={578}
         height={400}
