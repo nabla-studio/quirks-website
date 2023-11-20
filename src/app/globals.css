@@ -10,6 +10,6 @@
     width: calc((82px * 4 + 20px * 3) * 2);
   }
   .row-width {
-    width: calc((74 * 4 + 20px * 3) * 2);
+    width: calc((74px * 4 + 20px * 3) * 2);
   }
 }

@@ -23,7 +23,7 @@ function MultiChain() {
                   alt={name}
                   width={74}
                   height={74}
-                  className="xl:h-chain-icon xl:w-chain-icon"
+                  className="xl:min-w-chain-icon xl:h-chain-icon"
                 />
               </Link>
             ))}
