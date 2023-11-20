@@ -6,11 +6,9 @@ function Docs() {
     <SectionFadeIn className="relative mt-44 flex flex-col xl:mt-24">
       <h5 className="text-lg leading-10 text-primary">DOCS</h5>
       <h2 className="mt-10 text-3.5xl leading-12">
-        Web3Modal:
-        <br className="xl:hidden" /> Simple, intuitive{" "}
-        <br className="xl:hidden" /> wallet login. With this{" "}
-        <br className="max-xl:hidden" /> drop-in UI <br className="xl:hidden" />{" "}
-        SDK, enable any <br className="xl:hidden" /> wallet&apos;s users to.
+        Explore the code:
+        <br />
+        Access the project repository to test and install Quirks.
       </h2>
       <AnimatedDocsButton />
     </SectionFadeIn>

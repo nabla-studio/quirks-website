@@ -9,8 +9,10 @@ function Discuss() {
       id="community"
     >
       <h2 className="text-bento-h leading-9 xl:text-3.5xl xl:leading-12">
-        Web3Modal: Simple, <br className="max-xl:hidden" /> intuitive wallet
-        login.
+        Questions or Assistance?
+        <br />
+        Engage with us on our
+        <br className="hidden xl:inline" /> channels.
       </h2>
       <Image
         src={"/chat-bubbles.png"}
@@ -22,10 +24,12 @@ function Discuss() {
       <ul className="mt-5 flex flex-col gap-4 xl:mt-0 xl:flex-row">
         <li>
           <Link
-            href={"#"}
+            href="https://github.com/nabla-studio/quirks/issues/new"
             className="inline-flex min-h-13.75 w-full items-center justify-center gap-x-3 rounded-std bg-primary pl-7 pr-6 xl:mt-12"
+            rel="external"
+            target="_blank"
           >
-            <p className="pb-1.5 pt-2.5 text-lg">View Docs</p>
+            <p className="pb-1.5 pt-2.5 text-lg">Open an issue</p>
             <Image
               src={"/icons/arrow-up-right.svg"}
               alt="Arrow Up Right icon"
@@ -37,10 +41,12 @@ function Discuss() {
         </li>
         <li>
           <Link
-            href={"#"}
+            href="https://discord.gg/rnEkXYPmhX"
             className="inline-flex min-h-13.75 w-full items-center justify-center gap-x-3 rounded-std bg-secondary pl-7 pr-6 xl:mt-12"
+            rel="external"
+            target="_blank"
           >
-            <p className="pb-1.5 pt-2.5 text-lg">View Docs</p>
+            <p className="pb-1.5 pt-2.5 text-lg">Discord</p>
             <Image
               src={"/icons/arrow-up-right.svg"}
               alt="Arrow Up Right icon"
