@@ -13,13 +13,15 @@ function Footer() {
           className="lg:h-21.5 lg:w-24"
         />
         <ul className="flex flex-col items-end text-right max-lg:mt-2">
-          <Image
-            src="/quirks-text.svg"
-            alt="Quirks text logo"
-            width={94}
-            height={30}
-            className="lg:h-13 lg:w-40"
-          />
+          <li>
+            <Image
+              src="/quirks-text.svg"
+              alt="Quirks text logo"
+              width={94}
+              height={30}
+              className="lg:h-13 lg:w-40"
+            />
+          </li>
           <li>
             <Link
               href="https://nabla.studio/privacy-policy"
@@ -46,19 +48,21 @@ function Footer() {
               Privacy Policy
             </Link>
           </li>
-          <Link
-            className="opacity-20 transition-opacity duration-200 hover:opacity-100"
-            href="https://nabla.studio/"
-            target="_blank"
-          >
-            <Image
-              src={"/nabla-logo.svg"}
-              alt="Nabla logo"
-              width={44}
-              height={30}
-              className="lg:ml-2.5"
-            />
-          </Link>
+          <li>
+            <Link
+              className="opacity-20 transition-opacity duration-200 hover:opacity-100"
+              href="https://nabla.studio/"
+              target="_blank"
+            >
+              <Image
+                src={"/nabla-logo.svg"}
+                alt="Nabla logo"
+                width={44}
+                height={30}
+                className="lg:ml-2.5"
+              />
+            </Link>
+          </li>
         </ul>
       </div>
     </footer>
