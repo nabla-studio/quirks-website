@@ -1,0 +1,48 @@
+"use client";
+
+import { m } from "framer-motion";
+
+export function ModalBanners() {
+  return (
+    <>
+      <m.img
+        src={"/hero-banners/m.png"}
+        alt="mobile banner"
+        width={400}
+        height={280}
+        initial={{
+          y: 50,
+        }}
+        whileInView={{
+          y: 0,
+          transition: {
+            type: "spring",
+            duration: 1,
+            delay: 0.2,
+            stiffness: 100,
+          },
+        }}
+        className="absolute -bottom-12 max-xsm:left-10 xsm:-bottom-20 xsm:right-10 md:right-6 xl:hidden"
+      />
+      <m.img
+        src={"/hero-banners/d.png"}
+        alt="desktop banner"
+        width={578}
+        height={400}
+        initial={{
+          y: 100,
+        }}
+        whileInView={{
+          y: 0,
+          transition: {
+            type: "spring",
+            duration: 1,
+            delay: 0.2,
+            stiffness: 100,
+          },
+        }}
+        className="absolute right-13 top-8 max-xl:hidden"
+      />
+    </>
+  );
+}
