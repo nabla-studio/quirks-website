@@ -1,28 +1,35 @@
+import SectionFadeIn from "@/components/animations/SectionFadeIn";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 function Discuss() {
   return (
-    <section className="bg-discuss-card relative mt-44 flex flex-col rounded-std px-10 pb-8 pt-10 xl:min-h-[370px] xl:justify-between">
-      <h2 className="xl:leading-12 text-bento-h leading-9 xl:text-3.5xl">
-        Web3Modal: Simple, <br className="max-xl:hidden" /> intuitive wallet
-        login.
+    <SectionFadeIn
+      className="relative mt-44 flex flex-col rounded-std bg-discuss-card px-10 pb-8 pt-10 lg:min-h-[370px] lg:justify-between"
+      id="community"
+    >
+      <h2 className="text-bento-h leading-9 lg:text-3.5xl lg:leading-12">
+        Questions or Assistance?
+        <br />
+        Engage with us on our
+        <br className="hidden lg:inline" /> channels.
       </h2>
       <Image
         src={"/chat-bubbles.png"}
         alt="Chat Bubbles"
         width={227}
         height={227}
-        className="-top-36 right-0 mt-8 -rotate-[8deg] xl:absolute xl:h-[551px] xl:w-[551px]"
+        className="mt-8 -rotate-[8deg] max-lg:self-center lg:absolute lg:-top-36 lg:right-0 lg:h-[551px] lg:w-[551px]"
       />
-      <ul className="mt-5 flex flex-col gap-4 xl:mt-0 xl:flex-row">
+      <ul className="mt-5 flex flex-col gap-4 lg:mt-0 lg:flex-row">
         <li>
           <Link
-            href={"#"}
-            className="min-h-13.75 inline-flex items-center justify-center gap-x-3 rounded-std bg-primary pl-7 pr-6 xl:mt-12"
+            href="https://github.com/nabla-studio/quirks/issues/new"
+            className="inline-flex min-h-13.75 w-full items-center justify-center gap-x-3 rounded-std bg-primary pl-7 pr-6 lg:mt-12"
+            rel="external"
+            target="_blank"
           >
-            <p className="pb-1.5 pt-2.5 text-lg">View Docs</p>
+            <p className="pb-1.5 pt-2.5 text-lg">Open an issue</p>
             <Image
               src={"/icons/arrow-up-right.svg"}
               alt="Arrow Up Right icon"
@@ -34,10 +41,12 @@ function Discuss() {
         </li>
         <li>
           <Link
-            href={"#"}
-            className="min-h-13.75 inline-flex items-center justify-center gap-x-3 rounded-std bg-secondary pl-7 pr-6 xl:mt-12"
+            href="https://discord.gg/rnEkXYPmhX"
+            className="inline-flex min-h-13.75 w-full items-center justify-center gap-x-3 rounded-std bg-secondary pl-7 pr-6 lg:mt-12"
+            rel="external"
+            target="_blank"
           >
-            <p className="pb-1.5 pt-2.5 text-lg">View Docs</p>
+            <p className="pb-1.5 pt-2.5 text-lg">Discord</p>
             <Image
               src={"/icons/arrow-up-right.svg"}
               alt="Arrow Up Right icon"
@@ -48,7 +57,7 @@ function Discuss() {
           </Link>
         </li>
       </ul>
-    </section>
+    </SectionFadeIn>
   );
 }
 

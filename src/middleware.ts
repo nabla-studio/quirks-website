@@ -1,5 +1,24 @@
 import { NextRequest, NextResponse } from "next/server";
 
+export const config = {
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     */
+    {
+      source: "/((?!api|_vercel|_next/static|_next/image|favicon.ico).*)",
+      missing: [
+        { type: "header", key: "next-router-prefetch" },
+        { type: "header", key: "purpose", value: "prefetch" },
+      ],
+    },
+  ],
+};
+
 export function middleware(request: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
   const isDev = process.env.NODE_ENV !== "production";
@@ -14,6 +33,7 @@ export function middleware(request: NextRequest) {
     style-src 'self' ${isDev ? "'unsafe-inline'" : `'nonce-${nonce}'`};
     img-src 'self' blob: data: ${process.env.VERCEL_URL};
     font-src 'self';
+    connect-src vitals.vercel-insights.com;
     object-src 'none';
     base-uri 'self';
     form-action 'self';
