@@ -15,19 +15,19 @@ function TinyBundle() {
   );
 
   return (
-    <div className="bento-card-base flex flex-col px-10 pb-8 pt-10 xl:col-span-3 xl:col-start-3">
-      <h3 className="text-lg leading-none xl:text-bento-h">Tiny Bundle</h3>
-      <div className="mt-30 flex flex-col max-xl:self-center xl:mt-14 xl:flex-row xl:items-center xl:justify-end xl:gap-x-[60px]">
-        <div className="relative flex items-baseline gap-4 xl:translate-y-12">
+    <div className="bento-card-base flex flex-col px-10 pb-8 pt-10 lg:col-span-3 lg:col-start-3">
+      <h3 className="text-lg leading-none lg:text-bento-h">Tiny Bundle</h3>
+      <div className="mt-30 flex flex-col max-lg:self-center lg:mt-14 lg:flex-row lg:items-center lg:justify-end lg:gap-x-[60px]">
+        <div className="relative flex items-baseline gap-4 lg:translate-y-12">
           <m.p
             ref={kbRef}
-            className="text-perc-big leading-12 text-primary xl:absolute xl:right-28 xl:top-3"
+            className="text-perc-big leading-12 text-primary lg:absolute lg:right-28 lg:top-3"
           >
             {kbValue}
           </m.p>
           <p className="text-perc-unit">KB</p>
         </div>
-        <div className="flex flex-col xl:text-center">
+        <div className="flex flex-col lg:text-center">
           <div className="flex">
             <m.p ref={bundleSizeRef} className="text-perc-half text-primary">
               {budleSize}
@@ -37,7 +37,7 @@ function TinyBundle() {
           <p className="text-1.1xl">Less than Cosmoskit *</p>
         </div>
       </div>
-      <p className="mt-5 text-xs opacity-30 max-xl:self-center xl:text-lg">
+      <p className="mt-5 text-xs opacity-30 max-lg:self-center lg:text-lg">
         * Bundlephobia compare{" "}
         <Link
           href="https://bundlephobia.com/package/@quirks/react@0.3.10"

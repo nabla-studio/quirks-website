@@ -23,7 +23,7 @@ export function ModalBanners() {
           },
         }}
         viewport={{ once: true }}
-        className="absolute -bottom-12 max-xsm:left-10 xsm:-bottom-20 xsm:right-10 md:right-6 xl:hidden"
+        className="absolute -bottom-12 max-xsm:left-10 xsm:-bottom-20 xsm:right-10 lg:right-6 lg:hidden"
       />
       <m.img
         src={"/hero-banners/d.png"}
@@ -43,7 +43,7 @@ export function ModalBanners() {
           },
         }}
         viewport={{ once: true }}
-        className="absolute right-13 top-8 max-xl:hidden"
+        className="absolute right-13 top-8 max-lg:hidden"
       />
     </>
   );

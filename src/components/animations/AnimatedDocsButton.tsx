@@ -71,7 +71,7 @@ const AnimatedDocsButton = () => {
   return (
     <div
       className={
-        animationCompleted ? "relative mt-36 xl:mt-12" : "mt-36 xl:mt-12"
+        animationCompleted ? "relative mt-36 lg:mt-12" : "mt-36 lg:mt-12"
       }
     >
       <Link
@@ -91,7 +91,7 @@ const AnimatedDocsButton = () => {
         />
       </Link>
       <m.div
-        className={`pointer-events-none absolute bottom-20 right-0 xl:bottom-14 ${
+        className={`pointer-events-none absolute bottom-20 right-0 lg:bottom-14 ${
           animationCompleted
             ? "!left-0 !top-0 translate-x-[91px] translate-y-[28px]"
             : ""
@@ -143,7 +143,7 @@ const AnimatedDocsButton = () => {
             ease: "easeInOut",
             times: [0, 0.5, 1],
           }}
-          className="relative z-10 xl:h-33 xl:w-33"
+          className="relative z-10 lg:h-33 lg:w-33"
         />
       </m.div>
     </div>
