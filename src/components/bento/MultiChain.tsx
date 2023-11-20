@@ -1,5 +1,6 @@
 import { SHOWCASE_ICONS } from "@/utils/globals";
 import Image from "next/image";
+import Link from "next/link";
 
 function MultiChain() {
   return (
@@ -15,15 +16,16 @@ function MultiChain() {
                 : "animate-marquee-sm xl:animate-marquee"
             } xl:row-width-xl max-xl:row-width relative flex items-center gap-5 transition-transform`}
           >
-            {row.map(({ name, uri }, i) => (
-              <Image
-                key={`${name} ${i} icon`}
-                src={uri}
-                alt={name}
-                width={74}
-                height={74}
-                className="xl:h-chain-icon xl:w-chain-icon"
-              />
+            {row.map(({ name, uri, websiteURL }, i) => (
+              <Link href={websiteURL} target="_blank" key={`${name} ${i} icon`}>
+                <Image
+                  src={uri}
+                  alt={name}
+                  width={74}
+                  height={74}
+                  className="xl:h-chain-icon xl:w-chain-icon"
+                />
+              </Link>
             ))}
           </div>
         ))}

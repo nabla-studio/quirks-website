@@ -3,106 +3,131 @@ export const SHOWCASE_ICONS = [
     {
       uri: "/showcase/celestia.png",
       name: "celestia",
+      websiteURL: "https://celestia.org/",
     },
     {
       uri: "/showcase/osmosis.png",
       name: "osmosis",
+      websiteURL: "https://osmosis.zone/",
     },
     {
       uri: "/showcase/mars.png",
       name: "mars",
+      websiteURL: "https://mars.osmosis.zone/redbank",
     },
     {
       uri: "/showcase/atom.png",
       name: "atom",
+      websiteURL: "https://cosmos.network/",
     },
     {
       uri: "/showcase/celestia.png",
       name: "celestia",
+      websiteURL: "https://celestia.org/",
     },
     {
       uri: "/showcase/osmosis.png",
       name: "osmosis",
+      websiteURL: "https://osmosis.zone/",
     },
     {
       uri: "/showcase/mars.png",
       name: "mars",
+      websiteURL: "https://mars.osmosis.zone/redbank",
     },
     {
       uri: "/showcase/atom.png",
       name: "atom",
+      websiteURL: "https://cosmos.network/",
     },
   ],
   [
     {
       uri: "/showcase/desmos.png",
       name: "desmos",
+      websiteURL: "https://desmos.network/",
     },
     {
       uri: "/showcase/evmos.png",
       name: "evmos",
+      websiteURL: "https://evmos.org/",
     },
     {
       uri: "/showcase/dydx.png",
       name: "dydx",
+      websiteURL: "https://dydx.exchange/",
     },
     {
       uri: "/showcase/cre.png",
       name: "cre",
+      websiteURL: "https://crescent.network/",
     },
     {
       uri: "/showcase/desmos.png",
       name: "desmos",
+      websiteURL: "https://desmos.network/",
     },
     {
       uri: "/showcase/evmos.png",
       name: "evmos",
+      websiteURL: "https://evmos.org/",
     },
     {
       uri: "/showcase/dydx.png",
       name: "dydx",
+      websiteURL: "https://dydx.exchange/",
     },
     {
       uri: "/showcase/cre.png",
       name: "cre",
+      websiteURL: "https://crescent.network/",
     },
   ],
   [
     {
       uri: "/showcase/akt.png",
       name: "akt",
+      websiteURL: "https://akash.network/",
     },
     {
       uri: "/showcase/kuji.png",
       name: "kuji",
+      websiteURL: "https://kujira.network/",
     },
     {
       uri: "/showcase/neutron.png",
       name: "neutron",
+      websiteURL: "https://neutron.org/",
     },
     {
       uri: "/showcase/juno.png",
       name: "juno",
+      websiteURL: "https://junonetwork.io/",
     },
     {
       uri: "/showcase/akt.png",
       name: "akt",
+      websiteURL: "https://akash.network/",
     },
     {
       uri: "/showcase/kuji.png",
       name: "kuji",
+      websiteURL: "https://kujira.network/",
     },
     {
       uri: "/showcase/neutron.png",
       name: "neutron",
+      websiteURL: "https://neutron.org/",
     },
     {
       uri: "/showcase/juno.png",
       name: "juno",
+      websiteURL: "https://junonetwork.io/",
     },
     {
       uri: "/showcase/akt.png",
       name: "akt",
+      websiteURL: "https://akash.network/",
     },
   ],
 ];
