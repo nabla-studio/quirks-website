@@ -12,7 +12,4 @@
   .row-width {
     width: calc((74px * 16 + 20px * 12) * 2);
   }
-  .paused-animation {
-    animation-play-state: paused;
-  }
 }
