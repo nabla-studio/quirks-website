@@ -6,12 +6,12 @@ import Link from "next/link";
 
 function TinyBundle() {
   const { ref: kbRef, rounded: kbValue } = useCounterAnimation(0, 2, {
-    duration: 0.5,
+    duration: 1.5,
   });
   const { ref: bundleSizeRef, rounded: budleSize } = useCounterAnimation(
     0,
     86,
-    { duration: 0.5 },
+    { duration: 2.5 },
   );
 
   return (
