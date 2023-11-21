@@ -249,16 +249,19 @@ export const SHOWCASE_ICONS = [
 
 export const FRAMEWORKS = [
   {
-    uri: "/frameworks/react.webp",
+    uri: "/frameworks/react.svg",
     name: "react",
+    color: "#2B9FCA",
   },
   {
-    uri: "/frameworks/vue.webp",
+    uri: "/frameworks/vue.svg",
     name: "vue",
+    color: "#347A59",
   },
   {
-    uri: "/frameworks/js.webp",
+    uri: "/frameworks/js.svg",
     name: "js",
+    color: "#FDE70A",
   },
 ];
 
