@@ -56,7 +56,6 @@ const config: Config = {
       spacing: {
         "page-elements": "445px",
         "chain-icon": "82px",
-        "framework-icon": "167px",
         4.5: "18px",
         6.5: "26px",
         8.75: "35px",
