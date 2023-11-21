@@ -1,17 +1,13 @@
-<svg width="45" height="27" viewBox="0 0 45 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect id="Rectangle 45" width="6.36585" height="6.36585" fill="white"/>
-<rect id="Rectangle 46" x="6.36572" width="6.36585" height="6.36585" fill="white"/>
-<rect id="Rectangle 47" x="12.7317" width="6.36585" height="6.36585" fill="white"/>
-<rect id="Rectangle 48" x="19.0977" width="6.36585" height="6.36585" fill="white"/>
-<rect id="Rectangle 49" x="25.4634" width="6.25609" height="6.36585" fill="white"/>
-<rect id="Rectangle 50" x="31.7195" width="6.36585" height="6.36585" fill="white"/>
-<rect id="Rectangle 51" x="38.0854" width="6.36585" height="6.36585" fill="white"/>
-<rect id="Rectangle 58" x="12.7317" y="6.36572" width="6.36585" height="6.36585" fill="white"/>
-<rect id="Rectangle 60" x="25.4634" y="6.36572" width="6.25609" height="6.36585" fill="white"/>
-<rect id="Rectangle 59" x="6.36572" y="12.7314" width="6.36585" height="6.36585" fill="white"/>
-<rect id="Rectangle 62" x="19.0977" y="25.4634" width="6.36585" height="1.53658" fill="white"/>
-<rect id="Rectangle 61" x="31.7195" y="12.7314" width="6.36585" height="6.36585" fill="white"/>
-<rect id="Rectangle 55" x="19.0977" y="6.36572" width="6.36585" height="6.36585" fill="white"/>
-<rect id="Rectangle 56" x="19.0977" y="12.7314" width="6.36585" height="6.36585" fill="white"/>
-<rect id="Rectangle 57" x="19.0977" y="19.0977" width="6.36585" height="6.36585" fill="white"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 44.6 27" style="enable-background:new 0 0 44.6 27;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#ffffff;}
+</style>
+<g>
+	<rect x="31.8" y="12.7" class="st0" width="6.4" height="6.4"/>
+	<polygon class="st0" points="38.2,0 31.8,0 25.5,0 19.1,0 12.7,0 6.4,0 0,0 0,6.4 6.4,6.4 12.7,6.4 12.7,12.7 6.5,12.7 6.5,19.1 
+		12.9,19.1 12.9,12.7 19.1,12.7 19.1,19.1 19.1,27 25.5,27 25.5,19.1 25.5,12.7 31.8,12.7 31.8,6.4 38.2,6.4 44.6,6.4 44.6,0 	"/>
+</g>
 </svg>
