@@ -291,24 +291,24 @@ export const MOBILE_SUPPORT_ITEMS = [
 
 export const WALLET_CARDS = [
   {
-    uri: "/wallet/xdefi.webp",
+    uri: "/wallet/xdefi-logo.svg",
     name: "xdefi",
     className:
-      "absolute -top-12 w-[264px] h-[418px] lg:w-[293px] lg:h-[464px] -left-4 lg:-left-2",
+      "absolute bg-[#161616] -top-12 w-[264px] h-[418px] lg:w-[293px] lg:h-[464px] -left-4 lg:-left-2",
     websiteURL: "https://www.xdefi.io/",
   },
   {
-    uri: "/wallet/leap.webp",
+    uri: "/wallet/leap-logo.svg",
     name: "leap",
     className:
-      "absolute top-8 w-[280px] h-[418px] lg:w-[311px] lg:h-[464px] -left-6 lg:-left-4",
+      "absolute bg-[#1A1A1A] top-8 w-[280px] h-[418px] lg:w-[311px] lg:h-[464px] -left-6 lg:-left-4",
     websiteURL: "https://www.leapwallet.io/",
   },
   {
-    uri: "/wallet/keplr.webp",
+    uri: "/wallet/keplr-logo.svg",
     name: "keplr",
     className:
-      "absolute top-28 w-[297px] h-[418px] lg:w-[329px] lg:h-[464px] -left-8 lg:-left-6",
+      "absolute bg-mobile-support-inactive top-28 w-[297px] h-[418px] lg:w-[329px] lg:h-[464px] -left-8 lg:-left-6",
     websiteURL: "https://www.keplr.app/",
   },
 ];
