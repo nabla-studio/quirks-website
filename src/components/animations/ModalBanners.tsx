@@ -4,47 +4,21 @@ import { m } from "framer-motion";
 
 export function ModalBanners() {
   return (
-    <>
+    <m.div className="absolute -bottom-20 -right-24 flex items-start gap-5 lg:-bottom-14 lg:right-13 lg:items-center lg:gap-7">
       <m.img
-        src={"/hero-banners/m.webp"}
-        alt="mobile banner"
-        width={400}
-        height={280}
-        initial={{
-          y: 30,
-        }}
-        whileInView={{
-          y: 0,
-          transition: {
-            type: "spring",
-            duration: 1,
-            delay: 0.2,
-            stiffness: 100,
-          },
-        }}
-        viewport={{ once: true }}
-        className="absolute -bottom-12 max-xsm:left-10 xsm:-bottom-20 xsm:right-10 lg:right-6 lg:hidden"
+        src={"/hero-banners/1.png"}
+        alt="first banner"
+        className="h-auto lg:w-[271px]"
+        width={190}
+        height={224}
       />
       <m.img
-        src={"/hero-banners/d.webp"}
-        alt="desktop banner"
-        width={578}
-        height={400}
-        initial={{
-          y: 40,
-        }}
-        whileInView={{
-          y: 0,
-          transition: {
-            type: "spring",
-            duration: 1,
-            delay: 0.2,
-            stiffness: 100,
-          },
-        }}
-        viewport={{ once: true }}
-        className="absolute right-13 top-8 max-lg:hidden"
+        src={"/hero-banners/2.png"}
+        alt="second banner"
+        className="h-auto lg:w-[271px]"
+        width={190}
+        height={278}
       />
-    </>
+    </m.div>
   );
 }
