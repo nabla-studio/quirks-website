@@ -10,6 +10,7 @@ const AnimatedBubbles = () => {
         width={158}
         height={158}
         className="absolute left-0 top-0 lg:-top-28 lg:left-auto lg:right-28 lg:h-[430px] lg:w-[430px]"
+        quality={100}
         initial={{
           scale: 0,
           rotate: "-6deg",
@@ -31,6 +32,7 @@ const AnimatedBubbles = () => {
         width={140}
         height={140}
         className="absolute right-0 top-[70px] lg:-right-6 lg:h-[340px] lg:w-[340px]"
+        quality={85}
         initial={{
           scale: 0,
           rotate: "-6deg",
