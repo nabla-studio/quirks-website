@@ -62,6 +62,7 @@ const AnimatedDocsButton = () => {
         top,
       },
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [docsButton.current]);
 
   const onAnimationComplete = useCallback(() => {
