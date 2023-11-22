@@ -33,13 +33,18 @@ export function Navbar() {
             </Link>
           </li>
           <li>
+            <Link href="#docs" className="text-lg leading-10">
+              docs
+            </Link>
+          </li>
+          <li>
             <Link
-              href="https://github.com/nabla-studio/quirks"
+              href="https://github.com/sponsors/nabla-studio"
               className="ml-5 inline-flex min-h-13.75 items-center  gap-x-3 rounded-std bg-primary pl-7 pr-6"
               rel="external"
               target="_blank"
             >
-              <span className="pb-1.5 pt-2.5 text-lg">View Docs</span>
+              <span className="pb-1.5 pt-2.5 text-lg">Support us</span>
               <Image
                 src={"/icons/arrow-up-right.svg"}
                 alt="Arrow Up Right icon"
