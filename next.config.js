@@ -33,9 +33,6 @@ const nextConfig = {
       },
     ];
   },
-  experimental: {
-    ppr: true,
-  },
   webpack: (config) => {
     const noop = resolve(__dirname, "src", "etc", "noop", "index.js");
 
