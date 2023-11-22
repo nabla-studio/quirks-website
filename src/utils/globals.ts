@@ -266,30 +266,26 @@ export const FRAMEWORKS = [
 ];
 
 export const MOBILE_SUPPORT_ITEMS = [
-  [
-    {
-      uri: "/mobile-support/rn.png",
-      name: "react native",
-      id: 1,
-    },
-    {
-      uri: "/mobile-support/swift.png",
-      name: "swift",
-      id: 2,
-    },
-  ],
-  [
-    {
-      uri: "/mobile-support/kotlin.png",
-      name: "kotlin",
-      id: 3,
-    },
-    {
-      uri: "/mobile-support/flutter.png",
-      name: "flutter",
-      id: 4,
-    },
-  ],
+  {
+    uri: "/mobile-support/rn.png",
+    name: "react native",
+    id: 1,
+  },
+  {
+    uri: "/mobile-support/swift.png",
+    name: "swift",
+    id: 2,
+  },
+  {
+    uri: "/mobile-support/kotlin.png",
+    name: "kotlin",
+    id: 3,
+  },
+  {
+    uri: "/mobile-support/flutter.png",
+    name: "flutter",
+    id: 4,
+  },
 ];
 
 export const WALLET_CARDS = [
