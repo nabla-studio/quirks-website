@@ -17,9 +17,30 @@ const axifoma = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.VERCEL_URL || "https://www.quirks.nabla.studio",
+  ),
   title: "Quirks",
   description:
-    "Quirks is a library to easily connect your dapp with existing wallets in the Cosmos blockchain ecosystem.",
+    "Quirks is a universal wallet adapter that easily connect your dapp with existing wallets in the Cosmos blockchain ecosystem.",
+  openGraph: {
+    locale: "en_US",
+    type: "website",
+    title: "Quirks",
+    description:
+      "Quirks is a universal wallet adapter that easily connect your dapp with existing wallets in the Cosmos blockchain ecosystem.",
+    url: process.env.VERCEL_URL || "https://www.quirks.nabla.studio",
+    siteName: "Quirks",
+  },
+  twitter: {
+    title: "Quirks",
+    description:
+      "Quirks is a universal wallet adapter that easily connect your dapp with existing wallets in the Cosmos blockchain ecosystem.",
+    card: "summary_large_image",
+  },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({
