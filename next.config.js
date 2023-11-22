@@ -1,6 +1,6 @@
 const { resolve } = require("path");
 
-const securityHeaders = [
+/* const securityHeaders = [
   {
     key: "Strict-Transport-Security",
     value: "max-age=63072000; includeSubDomains; preload",
@@ -21,18 +21,18 @@ const securityHeaders = [
     key: "Referrer-Policy",
     value: "origin-when-cross-origin",
   },
-];
+]; */
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async headers() {
+  /* async headers() {
     return [
       {
         source: "/(.*)",
         headers: [...securityHeaders],
       },
     ];
-  },
+  }, */
   webpack: (config) => {
     const noop = resolve(__dirname, "src", "etc", "noop", "index.js");
 
