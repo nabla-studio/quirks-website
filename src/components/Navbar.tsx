@@ -28,13 +28,13 @@ export function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href="#community" className="text-lg leading-10">
-              community
+            <Link href="#docs" className="text-lg leading-10">
+              docs
             </Link>
           </li>
           <li>
-            <Link href="#docs" className="text-lg leading-10">
-              docs
+            <Link href="#community" className="text-lg leading-10">
+              community
             </Link>
           </li>
           <li>
