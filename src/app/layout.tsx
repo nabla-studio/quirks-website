@@ -16,8 +16,8 @@ const axifoma = localFont({
   ],
 });
 
-const baseUrl = process.env.VERCEL_URL
-  ? new URL(`https://${process.env.VERCEL_URL}`)
+const baseUrl = process.env.SITE_URL
+  ? new URL(`https://${process.env.SITE_URL}`)
   : new URL("https://www.quirks.nabla.studio");
 
 export const metadata: Metadata = {
@@ -55,7 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <Script
-        src={`https://${process.env.VERCEL_URL}`}
+        src={`https://${process.env.SITE_URL}`}
         strategy="afterInteractive"
         nonce={nonce ?? undefined}
       />
