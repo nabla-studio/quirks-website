@@ -28,7 +28,7 @@ export function middleware(request: NextRequest) {
     script-src 'self' ${
       isDev
         ? `'unsafe-eval' 'unsafe-inline' 'nonce-${nonce}'`
-        : `'nonce-${nonce}' 'strict-dynamic'`
+        : `'nonce-${nonce}' 'unsafe-inline' 'strict-dynamic' ${process.env.VERCEL_URL}`
     };
     style-src 'self' ${isDev ? "'unsafe-inline'" : `'nonce-${nonce}'`};
     img-src 'self' blob: data: ${process.env.VERCEL_URL};
