@@ -28,10 +28,10 @@ export function middleware(request: NextRequest) {
     script-src 'self' ${
       isDev
         ? `'unsafe-eval' 'unsafe-inline' 'nonce-${nonce}'`
-        : `'nonce-${nonce}' 'unsafe-inline' 'strict-dynamic' ${process.env.SITE_URL}`
+        : `'nonce-${nonce}' 'unsafe-inline' 'strict-dynamic' ${process.env.VERCEL_URL}`
     };
     style-src 'self' ${isDev ? "'unsafe-inline'" : `'nonce-${nonce}'`};
-    img-src 'self' blob: data: ${process.env.SITE_URL};
+    img-src 'self' blob: data: ${process.env.VERCEL_URL};
     font-src 'self';
     connect-src 'self' vitals.vercel-insights.com;
     object-src 'none';

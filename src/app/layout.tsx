@@ -16,10 +16,12 @@ const axifoma = localFont({
   ],
 });
 
+const baseUrl = process.env.VERCEL_URL
+  ? new URL(`https://${process.env.VERCEL_URL}`)
+  : new URL("https://www.quirks.nabla.studio");
+
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.SITE_URL || "https://www.quirks.nabla.studio",
-  ),
+  metadataBase: baseUrl,
   title: "Quirks",
   description:
     "Quirks is a universal wallet adapter that easily connect your dapp with existing wallets in the Cosmos blockchain ecosystem.",
@@ -29,7 +31,7 @@ export const metadata: Metadata = {
     title: "Quirks",
     description:
       "Quirks is a universal wallet adapter that easily connect your dapp with existing wallets in the Cosmos blockchain ecosystem.",
-    url: process.env.SITE_URL || "https://www.quirks.nabla.studio",
+    url: baseUrl,
     siteName: "Quirks",
   },
   twitter: {
@@ -53,7 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <Script
-        src={process.env.SITE_URL}
+        src={process.env.VERCEL_URL}
         strategy="afterInteractive"
         nonce={nonce ?? undefined}
       />
