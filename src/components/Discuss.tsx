@@ -24,12 +24,12 @@ function Discuss() {
       <ul className="mt-5 flex flex-col gap-4 lg:mt-0 lg:flex-row">
         <li>
           <Link
-            href="https://github.com/sponsors/nabla-studio"
+            href="https://discord.gg/rnEkXYPmhX"
             className="inline-flex min-h-13.75 w-full items-center justify-center gap-x-3 rounded-std bg-primary pl-7 pr-6 lg:mt-12"
             rel="external"
             target="_blank"
           >
-            <p className="pb-1.5 pt-2.5 text-lg">Support us</p>
+            <p className="pb-1.5 pt-2.5 text-lg">Chat with us</p>
             <Image
               src={"/icons/arrow-up-right.svg"}
               alt="Arrow Up Right icon"
@@ -41,12 +41,12 @@ function Discuss() {
         </li>
         <li>
           <Link
-            href="https://discord.gg/rnEkXYPmhX"
+            href="https://calendly.com/nabla"
             className="inline-flex min-h-13.75 w-full items-center justify-center gap-x-3 rounded-std bg-secondary pl-7 pr-6 lg:mt-12"
             rel="external"
             target="_blank"
           >
-            <p className="pb-1.5 pt-2.5 text-lg">Discord</p>
+            <p className="pb-1.5 pt-2.5 text-lg">Set a call</p>
             <Image
               src={"/icons/arrow-up-right.svg"}
               alt="Arrow Up Right icon"
