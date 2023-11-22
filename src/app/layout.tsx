@@ -34,6 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     title: "Quirks",
+    site: "@nabla_hq",
     description:
       "Quirks is a universal wallet adapter that easily connect your dapp with existing wallets in the Cosmos blockchain ecosystem.",
     card: "summary_large_image",
