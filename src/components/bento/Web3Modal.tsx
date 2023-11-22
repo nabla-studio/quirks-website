@@ -11,13 +11,13 @@ function Web3Modal() {
             <p className="text-sm">ALPHA</p>
           </span>
         </div>
-        <div className="relative ml-9 flex items-center gap-2.5 max-lg:mt-9 lg:mb-4">
+        <div className="relative mb-7 ml-9 flex items-center gap-2.5 max-lg:mt-9 lg:mb-4">
           <Image
             src={"/icons/wallet-connect-logo.svg"}
             alt="Wallet Connect Logo"
             width={31}
             height={31}
-            className="h-16 w-16"
+            className="lg:h-16 lg:w-16"
           />
           <small className="text-xs lg:text-base">Wallet Connect Support</small>
         </div>

@@ -1,246 +1,246 @@
 export const SHOWCASE_ICONS = [
   [
     {
-      uri: "/showcase/celestia.webp",
+      uri: "/showcase/celestia.svg",
       name: "celestia",
       websiteURL: "https://celestia.org/",
     },
     {
-      uri: "/showcase/osmosis.webp",
+      uri: "/showcase/osmosis.svg",
       name: "osmosis",
       websiteURL: "https://osmosis.zone/",
     },
     {
-      uri: "/showcase/mars.webp",
+      uri: "/showcase/mars.svg",
       name: "mars",
       websiteURL: "https://mars.osmosis.zone/redbank",
     },
     {
-      uri: "/showcase/atom.webp",
+      uri: "/showcase/atom.svg",
       name: "atom",
       websiteURL: "https://cosmos.network/",
     },
     {
-      uri: "/showcase/celestia.webp",
+      uri: "/showcase/celestia.svg",
       name: "celestia",
       websiteURL: "https://celestia.org/",
     },
     {
-      uri: "/showcase/osmosis.webp",
+      uri: "/showcase/osmosis.svg",
       name: "osmosis",
       websiteURL: "https://osmosis.zone/",
     },
     {
-      uri: "/showcase/mars.webp",
+      uri: "/showcase/mars.svg",
       name: "mars",
       websiteURL: "https://mars.osmosis.zone/redbank",
     },
     {
-      uri: "/showcase/atom.webp",
+      uri: "/showcase/atom.svg",
       name: "atom",
       websiteURL: "https://cosmos.network/",
     },
     {
-      uri: "/showcase/celestia.webp",
+      uri: "/showcase/celestia.svg",
       name: "celestia",
       websiteURL: "https://celestia.org/",
     },
     {
-      uri: "/showcase/osmosis.webp",
+      uri: "/showcase/osmosis.svg",
       name: "osmosis",
       websiteURL: "https://osmosis.zone/",
     },
     {
-      uri: "/showcase/mars.webp",
+      uri: "/showcase/mars.svg",
       name: "mars",
       websiteURL: "https://mars.osmosis.zone/redbank",
     },
     {
-      uri: "/showcase/atom.webp",
+      uri: "/showcase/atom.svg",
       name: "atom",
       websiteURL: "https://cosmos.network/",
     },
     {
-      uri: "/showcase/celestia.webp",
+      uri: "/showcase/celestia.svg",
       name: "celestia",
       websiteURL: "https://celestia.org/",
     },
     {
-      uri: "/showcase/osmosis.webp",
+      uri: "/showcase/osmosis.svg",
       name: "osmosis",
       websiteURL: "https://osmosis.zone/",
     },
     {
-      uri: "/showcase/mars.webp",
+      uri: "/showcase/mars.svg",
       name: "mars",
       websiteURL: "https://mars.osmosis.zone/redbank",
     },
     {
-      uri: "/showcase/atom.webp",
+      uri: "/showcase/atom.svg",
       name: "atom",
       websiteURL: "https://cosmos.network/",
     },
   ],
   [
     {
-      uri: "/showcase/desmos.webp",
+      uri: "/showcase/desmos.svg",
       name: "desmos",
       websiteURL: "https://desmos.network/",
     },
     {
-      uri: "/showcase/evmos.webp",
+      uri: "/showcase/evmos.svg",
       name: "evmos",
       websiteURL: "https://evmos.org/",
     },
     {
-      uri: "/showcase/dydx.webp",
+      uri: "/showcase/dydx.svg",
       name: "dydx",
       websiteURL: "https://dydx.exchange/",
     },
     {
-      uri: "/showcase/cre.webp",
+      uri: "/showcase/cre.svg",
       name: "cre",
       websiteURL: "https://crescent.network/",
     },
     {
-      uri: "/showcase/desmos.webp",
+      uri: "/showcase/desmos.svg",
       name: "desmos",
       websiteURL: "https://desmos.network/",
     },
     {
-      uri: "/showcase/evmos.webp",
+      uri: "/showcase/evmos.svg",
       name: "evmos",
       websiteURL: "https://evmos.org/",
     },
     {
-      uri: "/showcase/dydx.webp",
+      uri: "/showcase/dydx.svg",
       name: "dydx",
       websiteURL: "https://dydx.exchange/",
     },
     {
-      uri: "/showcase/cre.webp",
+      uri: "/showcase/cre.svg",
       name: "cre",
       websiteURL: "https://crescent.network/",
     },
     {
-      uri: "/showcase/desmos.webp",
+      uri: "/showcase/desmos.svg",
       name: "desmos",
       websiteURL: "https://desmos.network/",
     },
     {
-      uri: "/showcase/evmos.webp",
+      uri: "/showcase/evmos.svg",
       name: "evmos",
       websiteURL: "https://evmos.org/",
     },
     {
-      uri: "/showcase/dydx.webp",
+      uri: "/showcase/dydx.svg",
       name: "dydx",
       websiteURL: "https://dydx.exchange/",
     },
     {
-      uri: "/showcase/cre.webp",
+      uri: "/showcase/cre.svg",
       name: "cre",
       websiteURL: "https://crescent.network/",
     },
     {
-      uri: "/showcase/desmos.webp",
+      uri: "/showcase/desmos.svg",
       name: "desmos",
       websiteURL: "https://desmos.network/",
     },
     {
-      uri: "/showcase/evmos.webp",
+      uri: "/showcase/evmos.svg",
       name: "evmos",
       websiteURL: "https://evmos.org/",
     },
     {
-      uri: "/showcase/dydx.webp",
+      uri: "/showcase/dydx.svg",
       name: "dydx",
       websiteURL: "https://dydx.exchange/",
     },
     {
-      uri: "/showcase/cre.webp",
+      uri: "/showcase/cre.svg",
       name: "cre",
       websiteURL: "https://crescent.network/",
     },
   ],
   [
     {
-      uri: "/showcase/akt.webp",
+      uri: "/showcase/akt.svg",
       name: "akt",
       websiteURL: "https://akash.network/",
     },
     {
-      uri: "/showcase/kuji.webp",
+      uri: "/showcase/kuji.svg",
       name: "kuji",
       websiteURL: "https://kujira.network/",
     },
     {
-      uri: "/showcase/neutron.webp",
+      uri: "/showcase/neutron.svg",
       name: "neutron",
       websiteURL: "https://neutron.org/",
     },
     {
-      uri: "/showcase/juno.webp",
+      uri: "/showcase/juno.svg",
       name: "juno",
       websiteURL: "https://junonetwork.io/",
     },
     {
-      uri: "/showcase/akt.webp",
+      uri: "/showcase/akt.svg",
       name: "akt",
       websiteURL: "https://akash.network/",
     },
     {
-      uri: "/showcase/kuji.webp",
+      uri: "/showcase/kuji.svg",
       name: "kuji",
       websiteURL: "https://kujira.network/",
     },
     {
-      uri: "/showcase/neutron.webp",
+      uri: "/showcase/neutron.svg",
       name: "neutron",
       websiteURL: "https://neutron.org/",
     },
     {
-      uri: "/showcase/juno.webp",
+      uri: "/showcase/juno.svg",
       name: "juno",
       websiteURL: "https://junonetwork.io/",
     },
     {
-      uri: "/showcase/akt.webp",
+      uri: "/showcase/akt.svg",
       name: "akt",
       websiteURL: "https://akash.network/",
     },
     {
-      uri: "/showcase/kuji.webp",
+      uri: "/showcase/kuji.svg",
       name: "kuji",
       websiteURL: "https://kujira.network/",
     },
     {
-      uri: "/showcase/neutron.webp",
+      uri: "/showcase/neutron.svg",
       name: "neutron",
       websiteURL: "https://neutron.org/",
     },
     {
-      uri: "/showcase/juno.webp",
+      uri: "/showcase/juno.svg",
       name: "juno",
       websiteURL: "https://junonetwork.io/",
     },
     {
-      uri: "/showcase/akt.webp",
+      uri: "/showcase/akt.svg",
       name: "akt",
       websiteURL: "https://akash.network/",
     },
     {
-      uri: "/showcase/kuji.webp",
+      uri: "/showcase/kuji.svg",
       name: "kuji",
       websiteURL: "https://kujira.network/",
     },
     {
-      uri: "/showcase/neutron.webp",
+      uri: "/showcase/neutron.svg",
       name: "neutron",
       websiteURL: "https://neutron.org/",
     },
     {
-      uri: "/showcase/juno.webp",
+      uri: "/showcase/juno.svg",
       name: "juno",
       websiteURL: "https://junonetwork.io/",
     },
@@ -249,16 +249,19 @@ export const SHOWCASE_ICONS = [
 
 export const FRAMEWORKS = [
   {
-    uri: "/frameworks/react.webp",
+    uri: "/frameworks/react.svg",
     name: "react",
+    color: "#2B9FCA",
   },
   {
-    uri: "/frameworks/vue.webp",
+    uri: "/frameworks/vue.svg",
     name: "vue",
+    color: "#347A59",
   },
   {
-    uri: "/frameworks/js.webp",
+    uri: "/frameworks/js.svg",
     name: "js",
+    color: "#FDE70A",
   },
 ];
 
@@ -291,24 +294,24 @@ export const MOBILE_SUPPORT_ITEMS = [
 
 export const WALLET_CARDS = [
   {
-    uri: "/wallet/xdefi.webp",
+    uri: "/wallet/xdefi-logo.svg",
     name: "xdefi",
     className:
-      "absolute -top-12 w-[264px] h-[418px] lg:w-[293px] lg:h-[464px] -left-4 lg:-left-2",
+      "absolute bg-[#161616] -top-12 w-[264px] h-[418px] lg:w-[293px] lg:h-[464px] -left-4 lg:-left-2",
     websiteURL: "https://www.xdefi.io/",
   },
   {
-    uri: "/wallet/leap.webp",
+    uri: "/wallet/leap-logo.svg",
     name: "leap",
     className:
-      "absolute top-8 w-[280px] h-[418px] lg:w-[311px] lg:h-[464px] -left-6 lg:-left-4",
+      "absolute bg-[#1A1A1A] top-8 w-[280px] h-[418px] lg:w-[311px] lg:h-[464px] -left-6 lg:-left-4",
     websiteURL: "https://www.leapwallet.io/",
   },
   {
-    uri: "/wallet/keplr.webp",
+    uri: "/wallet/keplr-logo.svg",
     name: "keplr",
     className:
-      "absolute top-28 w-[297px] h-[418px] lg:w-[329px] lg:h-[464px] -left-8 lg:-left-6",
+      "absolute bg-mobile-support-inactive top-28 w-[297px] h-[418px] lg:w-[329px] lg:h-[464px] -left-8 lg:-left-6",
     websiteURL: "https://www.keplr.app/",
   },
 ];

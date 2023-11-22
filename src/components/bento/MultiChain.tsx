@@ -17,13 +17,18 @@ function MultiChain() {
             } lg:row-width-xl max-lg:row-width relative flex items-center gap-5 transition-transform`}
           >
             {row.map(({ name, uri, websiteURL }, i) => (
-              <Link href={websiteURL} target="_blank" key={`${name} ${i} icon`}>
+              <Link
+                href={websiteURL}
+                target="_blank"
+                key={`${name} ${i} icon`}
+                className="h-18.5 w-18.5 rounded-full border-8 border-mobile-support-inactive lg:h-chain-icon lg:w-chain-icon"
+              >
                 <Image
                   src={uri}
                   alt={name}
                   width={74}
                   height={74}
-                  className="lg:h-chain-icon lg:min-w-chain-icon"
+                  className="h-auto w-full"
                 />
               </Link>
             ))}
