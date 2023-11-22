@@ -35,8 +35,6 @@ function Footer() {
       <div className="mt-18.5 flex items-start justify-between">
         <p className="text-xs opacity-30 lg:text-lg">
           © 2023 nabla benefit company
-          <br />
-          vat number: 12648270960
         </p>
         <ul className="flex items-center gap-13">
           <li>
