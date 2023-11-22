@@ -18,7 +18,7 @@ const axifoma = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.VERCEL_URL || "https://www.quirks.nabla.studio",
+    process.env.SITE_URL || "https://www.quirks.nabla.studio",
   ),
   title: "Quirks",
   description:
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Quirks",
     description:
       "Quirks is a universal wallet adapter that easily connect your dapp with existing wallets in the Cosmos blockchain ecosystem.",
-    url: process.env.VERCEL_URL || "https://www.quirks.nabla.studio",
+    url: process.env.SITE_URL || "https://www.quirks.nabla.studio",
     siteName: "Quirks",
   },
   twitter: {
@@ -53,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <Script
-        src={`https://${process.env.VERCEL_URL}`}
+        src={`https://${process.env.SITE_URL}`}
         strategy="afterInteractive"
         nonce={nonce ?? undefined}
       />
