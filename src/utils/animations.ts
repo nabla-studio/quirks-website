@@ -10,17 +10,14 @@ export const fadeIn: Variants = {
 };
 
 export const mobileSupportPopContainer: Variants = {
-  hidden: {
-    scale: 0,
-  },
+  hidden: {},
   visible: {
-    scale: 1,
     transition: {
       type: "spring",
       duration: 2,
       delayChildren: 0.18,
       staggerChildren: 0.18,
-      stiffness: 75,
+      stiffness: 100,
     },
   },
 };
@@ -32,5 +29,10 @@ export const mobileSupportPopItem = (id: number): Variants => ({
   },
   visible: {
     scale: 1,
+    transition: {
+      type: "spring",
+      duration: 2,
+      stiffness: 100,
+    },
   },
 });
