@@ -4,7 +4,7 @@ import SectionFadeIn from "@/components/animations/SectionFadeIn";
 function Docs() {
   return (
     <SectionFadeIn className="relative mt-44 flex flex-col lg:mt-24">
-      <h5 className="text-lg leading-10 text-primary">DOCS</h5>
+      <h6 className="text-lg leading-10 text-primary">DOCS</h6>
       <h2 className="mt-10 text-3.5xl leading-12">
         Explore the code:
         <br />
