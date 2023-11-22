@@ -55,7 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <Script
-        src={process.env.VERCEL_URL}
+        src={`https://${process.env.VERCEL_URL}`}
         strategy="afterInteractive"
         nonce={nonce ?? undefined}
       />
