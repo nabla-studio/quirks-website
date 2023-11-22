@@ -11,6 +11,18 @@ export function ModalBanners() {
         className="h-auto lg:w-[271px]"
         width={190}
         height={224}
+        initial={{
+          y: 80,
+        }}
+        whileInView={{
+          y: 0,
+          transition: {
+            type: "spring",
+            duration: 2,
+            stiffness: 100,
+          },
+        }}
+        viewport={{ once: true }}
       />
       <m.img
         src={"/hero-banners/2.png"}
@@ -18,6 +30,19 @@ export function ModalBanners() {
         className="h-auto lg:w-[271px]"
         width={190}
         height={278}
+        initial={{
+          y: 80,
+        }}
+        whileInView={{
+          y: 0,
+          transition: {
+            type: "spring",
+            duration: 2,
+            delay: 0.5,
+            stiffness: 100,
+          },
+        }}
+        viewport={{ once: true }}
       />
     </m.div>
   );
