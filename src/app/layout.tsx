@@ -53,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <Script
-        src={`https://${process.env.SITE_URL}`}
+        src={process.env.SITE_URL}
         strategy="afterInteractive"
         nonce={nonce ?? undefined}
       />
