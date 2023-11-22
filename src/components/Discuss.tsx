@@ -1,3 +1,5 @@
+import AnimatedBubbles from "@/components/animations/AnimatedBubbles";
+import AnimatedImage from "@/components/animations/AnimatedImage";
 import SectionFadeIn from "@/components/animations/SectionFadeIn";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,13 +16,7 @@ function Discuss() {
         Engage with us on our
         <br className="hidden lg:inline" /> channels.
       </h2>
-      <Image
-        src={"/chat-bubbles.png"}
-        alt="Chat Bubbles"
-        width={227}
-        height={227}
-        className="mt-8 -rotate-[8deg] max-lg:self-center lg:absolute lg:-top-36 lg:right-0 lg:h-[551px] lg:w-[551px]"
-      />
+      <AnimatedBubbles />
       <ul className="mt-5 flex flex-col gap-4 lg:mt-0 lg:flex-row">
         <li>
           <Link
