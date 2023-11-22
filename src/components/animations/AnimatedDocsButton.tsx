@@ -39,12 +39,14 @@ const AnimatedDocsButton = () => {
 
   const inView = useInView(docsButton, { once: true });
   const controls = useAnimationControls();
+  const controlsCursorGroup = useAnimationControls();
 
   useEffect(() => {
     if (inView) {
       controls.start("visible");
+      controlsCursorGroup.start("visible");
     }
-  }, [controls, inView]);
+  }, [controls, controlsCursorGroup, inView]);
 
   const slide: Variants = useMemo(() => {
     const boundingRect = docsButton.current?.getBoundingClientRect();
@@ -60,6 +62,22 @@ const AnimatedDocsButton = () => {
         position: "absolute",
         left,
         top,
+        transition: {
+          delay: 0.5,
+          duration: 250,
+          type: "spring",
+          damping: 20,
+          bounce: 0,
+          stiffness: 100,
+          restDelta: 0.001,
+        },
+      },
+      hide: {
+        opacity: 0,
+        transition: {
+          duration: 0.5,
+          delay: 0,
+        },
       },
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -67,7 +85,8 @@ const AnimatedDocsButton = () => {
 
   const onAnimationComplete = useCallback(() => {
     setAnimationCompleted(true);
-  }, []);
+    controlsCursorGroup.start("hide");
+  }, [controlsCursorGroup]);
 
   return (
     <div
@@ -77,15 +96,15 @@ const AnimatedDocsButton = () => {
     >
       <Link
         href="https://github.com/nabla-studio/quirks"
-        className="inline-flex min-h-13.75 max-w-[185px] items-center gap-x-3 rounded-std bg-primary pl-7 pr-6"
+        className="inline-flex min-h-13.75 items-center gap-x-3 rounded-std bg-primary pl-7 pr-6"
         rel="external"
         target="_blank"
         ref={(ref) => (docsButton.current = ref)}
       >
-        <span className="pb-1.5 pt-2.5 text-lg">View Docs</span>
+        <span className="pb-1.5 pt-2.5 text-lg">View on Github</span>
         <Image
-          src={"/icons/arrow-up-right.svg"}
-          alt="Arrow Up Right icon"
+          src={"/icons/github.svg"}
+          alt="Github"
           width={24}
           height={24}
           className="py-4"
@@ -94,20 +113,11 @@ const AnimatedDocsButton = () => {
       <m.div
         className={`pointer-events-none absolute bottom-20 right-0 lg:bottom-14 ${
           animationCompleted
-            ? "!left-0 !top-0 translate-x-[91px] translate-y-[28px]"
+            ? "!left-0 !top-0 translate-x-[113px] translate-y-[28px]"
             : ""
         }`}
-        animate={controls}
+        animate={controlsCursorGroup}
         variants={slide}
-        transition={{
-          delay: 0.5,
-          duration: 250,
-          type: "spring",
-          damping: 20,
-          bounce: 0,
-          stiffness: 100,
-          restDelta: 0.001,
-        }}
         onAnimationComplete={onAnimationComplete}
         initial="hidle"
       >
