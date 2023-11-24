@@ -2,7 +2,7 @@ import SectionFadeIn from "@/components/animations/SectionFadeIn";
 
 function Features() {
   return (
-    <SectionFadeIn className="mt-24 flex flex-col gap-5" id="features">
+    <SectionFadeIn className="mt-24 flex flex-col gap-5 lg:mt-32" id="features">
       <h5 className="text-lg leading-10 text-primary">FEATURES</h5>
       <h1 className="text-3.5xl leading-12">
         Write once, use everywhere: Your Universal Wallet Adapter.

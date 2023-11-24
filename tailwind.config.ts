@@ -37,11 +37,14 @@ const config: Config = {
       colors: {
         primary: "#0029FF",
         secondary: "#121212",
+        dark: "#1B1B1B",
+        "dark-2": "#0E0E0E",
         "connect-wallet-b": "#0d199a",
         "mobile-support-inactive": "#262626",
         "discuss-card": "#1c1c1c",
       },
       borderRadius: {
+        "2.5xl": "20px",
         std: "50px",
         10: "40px",
       },
@@ -71,8 +74,10 @@ const config: Config = {
       },
       minWidth: {
         "chain-icon": "82px",
+        "chain-menu": "500px",
       },
       maxWidth: {
+        address: "800px",
         "wide-element": "1336px",
         "regular-element": "1030px",
       },

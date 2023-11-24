@@ -1,17 +1,138 @@
+"use client";
+
+import AddressButton from "@/components/AddressButton";
+import ConnectButton from "@/components/ConnectButton";
+import DisconnectButton from "@/components/DisconnectButton";
+import { useConnect } from "@quirks/react";
+import { getAddress, sign, broadcast } from "@quirks/store";
+import { AnimatePresence, m } from "framer-motion";
+import { useState } from "react";
+
+const send = async () => {
+  const cosmos = (await import("osmojs")).cosmos;
+  const { send } = cosmos.bank.v1beta1.MessageComposer.withTypeUrl;
+
+  const address = getAddress("osmosis");
+
+  const msg = send({
+    amount: [
+      {
+        denom: "uosmo",
+        amount: "1",
+      },
+    ],
+    toAddress: address,
+    fromAddress: address,
+  });
+
+  console.log(msg);
+
+  const txRaw = await sign("osmosis", [msg]);
+
+  const res = await broadcast("osmosis", txRaw);
+
+  console.log(res);
+};
+
 function ConnectHero() {
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const { connected } = useConnect();
+
+  const sendTx = async () => {
+    try {
+      setLoading(true);
+      setSuccess(false);
+
+      await send();
+
+      setSuccess(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <section className="relative flex min-h-[551px] w-full flex-col items-center justify-center self-center rounded-std bg-gradient-to-b from-primary to-connect-wallet-b">
-      <button
-        type="button"
-        role="button"
-        className="inline-flex min-h-[75px] items-center rounded-std bg-secondary px-10 pb-3.5 pt-5 text-center lg:min-h-[110px] lg:rounded-[200px] lg:px-18.5 lg:pb-8 lg:pt-10"
-      >
-        <span className="text-1.1xl lg:text-3.5xl">Connect Wallet</span>
-      </button>
-      <small className="absolute bottom-7 px-16 text-center text-xs leading-4 opacity-30 lg:text-lg">
-        Lorem upsum dolor sit amet consectetuer adipiscit elit.
+    <>
+      <section className="relative flex min-h-[551px] w-full flex-col items-center self-center overflow-hidden rounded-std bg-gradient-to-b from-primary to-connect-wallet-b">
+        <ConnectButton />
+        <DisconnectButton />
+        <AddressButton />
+
+        <AnimatePresence>
+          {connected ? (
+            <m.p
+              className="absolute bottom-36 left-1/2 -translate-x-1/2 text-center text-2xl font-semibold leading-9"
+              initial={{
+                opacity: 0,
+              }}
+              animate={{
+                opacity: 0.3,
+              }}
+              exit={{
+                opacity: 0,
+              }}
+            >
+              Test the component sending yourself
+              <br />
+              fractions of a token.
+            </m.p>
+          ) : (
+            false
+          )}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {connected ? (
+            <m.button
+              type="button"
+              role="button"
+              className="absolute bottom-0 left-1/2 flex min-h-[75px] items-center justify-center rounded-[200px] bg-secondary px-18.5 text-center"
+              initial={{
+                y: "100%",
+                x: "-50%",
+                opacity: 0,
+              }}
+              animate={{
+                y: -34,
+                opacity: 1,
+                transition: {
+                  type: "spring",
+                  duration: 1,
+                  stiffness: 100,
+                  damping: 14,
+                },
+              }}
+              exit={{
+                y: "100%",
+                opacity: 0,
+                transition: {
+                  type: "spring",
+                  duration: 1,
+                  stiffness: 100,
+                  damping: 15,
+                },
+              }}
+              onClick={sendTx}
+              disabled={loading}
+            >
+              <span className="text-2xl font-semibold">
+                {!loading
+                  ? !success
+                    ? "Test It"
+                    : "Tx Success, Try Again"
+                  : "Loading..."}
+              </span>
+            </m.button>
+          ) : (
+            false
+          )}
+        </AnimatePresence>
+      </section>
+      <small className="mt-6 px-16 text-center text-xs leading-4 opacity-30 lg:text-lg">
+        Try it yourself, connect and go!
       </small>
-    </section>
+    </>
   );
 }
 
