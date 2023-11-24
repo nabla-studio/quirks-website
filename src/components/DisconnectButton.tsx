@@ -13,7 +13,7 @@ function DisconnectButton() {
     <AnimatePresence>
       {connected && (
         <m.button
-          className="bg-dark/30 absolute left-1/2 top-0 flex gap-4 rounded-full px-8 py-4 text-base font-semibold"
+          className="bg-dark/30 absolute left-1/2 top-0 flex items-center justify-center gap-4 rounded-full px-8 py-4 text-base font-semibold"
           onClick={disconnect}
           initial={{
             y: "-100%",
@@ -41,15 +41,18 @@ function DisconnectButton() {
             },
           }}
         >
-          <Image
-            src={wallet?.logoLight ?? ""}
-            alt={wallet?.options.prettyName ?? ""}
-            width={24}
-            height={24}
-            unoptimized
-            className="object-contain"
-            priority
-          />
+          {wallet && (
+            <Image
+              src={wallet?.logoLight ?? ""}
+              alt={wallet?.options.prettyName ?? ""}
+              width={24}
+              height={24}
+              unoptimized
+              className="object-contain"
+              priority
+              loading="eager"
+            />
+          )}
           <span>disconnect</span>
         </m.button>
       )}

@@ -62,7 +62,7 @@ function ConnectHero() {
         <AnimatePresence>
           {connected ? (
             <m.p
-              className="absolute bottom-36 left-1/2 -translate-x-1/2 text-center text-2xl font-semibold leading-9"
+              className="absolute bottom-36 left-1/2 w-full -translate-x-1/2 text-center text-xs font-semibold lg:w-auto lg:text-2xl lg:leading-9"
               initial={{
                 opacity: 0,
               }}
@@ -87,7 +87,7 @@ function ConnectHero() {
             <m.button
               type="button"
               role="button"
-              className="absolute bottom-0 left-1/2 flex min-h-[75px] items-center justify-center rounded-[200px] bg-secondary px-18.5 text-center"
+              className="absolute bottom-0 left-1/2 flex min-h-[75px] w-full max-w-[calc(100%-40px)] items-center justify-center rounded-[200px] bg-secondary px-5 text-center lg:w-auto lg:max-w-none  lg:px-18.5"
               initial={{
                 y: "100%",
                 x: "-50%",
@@ -116,7 +116,7 @@ function ConnectHero() {
               onClick={sendTx}
               disabled={loading}
             >
-              <span className="text-2xl font-semibold">
+              <span className="text-lg font-semibold lg:text-2xl">
                 {!loading
                   ? !success
                     ? "Test It"

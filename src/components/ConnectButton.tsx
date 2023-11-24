@@ -14,15 +14,69 @@ interface ChainButtonProps {
 
 function ChainButton({ wallet, onConnect }: ChainButtonProps) {
   const { connect } = useConnect();
-  const LinkOrButton = wallet.injected ? "button" : Link;
 
   const onClick = async (name: string) => {
     await connect(name);
     onConnect();
   };
 
+  const wrapperClass =
+    "hover:bg-dark-2 rounded-2.5xl group flex w-full items-center bg-transparent px-8 py-6 transition-all duration-300";
+
+  const content = (
+    <>
+      <Image
+        src={wallet.logoLight ?? ""}
+        alt={wallet.options.prettyName}
+        width={24}
+        height={24}
+        unoptimized
+        priority
+        loading="eager"
+        className="object-contain lg:h-10 lg:w-10"
+      />
+
+      <span className="ml-5 mr-auto text-lg font-semibold leading-10 lg:ml-11">
+        {wallet.options.prettyName}
+      </span>
+
+      {wallet.injected ? (
+        <Image
+          src={"/icons/arrow-right.svg"}
+          alt="Connect"
+          width={20}
+          height={20}
+          className="opacity-30 group-hover:opacity-100 lg:h-6 lg:w-6"
+        />
+      ) : (
+        <Image
+          src={"/icons/arrow-up-right.svg"}
+          alt="External Link"
+          width={20}
+          height={20}
+          className="opacity-30 group-hover:opacity-100 lg:h-6 lg:w-6"
+        />
+      )}
+    </>
+  );
+
+  if (wallet.injected) {
+    return (
+      <button
+        onClick={() => {
+          if (wallet.injected) {
+            onClick(wallet.options.name);
+          }
+        }}
+        className={wrapperClass}
+      >
+        {content}
+      </button>
+    );
+  }
+
   return (
-    <LinkOrButton
+    <Link
       href={
         wallet.injected
           ? ""
@@ -31,46 +85,10 @@ function ChainButton({ wallet, onConnect }: ChainButtonProps) {
             : "#"
       }
       target="_blank"
-      className="hover:bg-dark-2 rounded-2.5xl group flex w-full items-center bg-transparent px-8 py-6 transition-all duration-300"
-      onClick={() => {
-        if (wallet.injected) {
-          onClick(wallet.options.name);
-        }
-      }}
+      className={wrapperClass}
     >
-      <Image
-        src={wallet.logoLight ?? ""}
-        alt={wallet.options.prettyName}
-        width={40}
-        height={40}
-        unoptimized
-        priority
-        loading="eager"
-        className="object-contain"
-      />
-
-      <span className="ml-11 mr-auto text-lg font-semibold leading-10">
-        {wallet.options.prettyName}
-      </span>
-
-      {wallet.injected ? (
-        <Image
-          src={"/icons/arrow-right.svg"}
-          alt="Connect"
-          width={24}
-          height={24}
-          className="opacity-30 group-hover:opacity-100"
-        />
-      ) : (
-        <Image
-          src={"/icons/arrow-up-right.svg"}
-          alt="External Link"
-          width={24}
-          height={24}
-          className="opacity-30 group-hover:opacity-100"
-        />
-      )}
-    </LinkOrButton>
+      {content}
+    </Link>
   );
 }
 
@@ -125,10 +143,10 @@ function ConnectButton() {
                 damping: 15,
               },
             }}
-            className="bg-dark min-w-chain-menu absolute bottom-0 left-1/2 h-[calc(100%-80px)] rounded-t-std pt-14"
+            className="bg-dark lg:min-w-chain-menu absolute bottom-0 left-1/2 h-[calc(100%-80px)] w-full rounded-t-3xl pt-8 lg:w-auto lg:rounded-t-std lg:pt-14"
           >
-            <header className="mb-10 px-14">
-              <h6 className="relative text-center text-bento-h font-semibold leading-10">
+            <header className="mb-10 px-6 lg:px-14">
+              <h6 className="relative text-center text-xl font-semibold leading-10 lg:text-bento-h">
                 Choose Wallet
                 <button
                   className="absolute right-0 top-1/2 -translate-y-1/2"
@@ -138,8 +156,9 @@ function ConnectButton() {
                   <Image
                     src={"/icons/close.svg"}
                     alt="Close"
-                    width={24}
-                    height={24}
+                    width={20}
+                    height={20}
+                    className="lg:h-6 lg:w-6"
                   />
                 </button>
               </h6>
