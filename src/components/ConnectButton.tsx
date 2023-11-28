@@ -126,7 +126,7 @@ function ConnectButton() {
               x: "-50%",
             }}
             animate={{
-              y: 80,
+              y: 60,
               transition: {
                 type: "spring",
                 duration: 1,
@@ -143,7 +143,7 @@ function ConnectButton() {
                 damping: 15,
               },
             }}
-            className="bg-dark lg:min-w-chain-menu absolute bottom-0 left-1/2 h-[calc(100%-80px)] w-full rounded-t-3xl pt-8 lg:w-auto lg:rounded-t-std lg:pt-14"
+            className="absolute bottom-0 left-1/2 h-[calc(100%-80px)] w-full rounded-t-3xl bg-dark pt-8 lg:w-auto lg:min-w-chain-menu lg:rounded-t-std lg:pt-14"
           >
             <header className="mb-10 px-6 lg:px-14">
               <h6 className="relative text-center text-xl font-semibold leading-10 lg:text-bento-h">

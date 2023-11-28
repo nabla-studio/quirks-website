@@ -6,6 +6,7 @@ import DisconnectButton from "@/components/DisconnectButton";
 import { useConnect } from "@quirks/react";
 import { getAddress, sign, broadcast } from "@quirks/store";
 import { AnimatePresence, m } from "framer-motion";
+import Image from "next/image";
 import { useState } from "react";
 
 const send = async () => {
@@ -25,30 +26,35 @@ const send = async () => {
     fromAddress: address,
   });
 
-  console.log(msg);
-
   const txRaw = await sign("osmosis", [msg]);
 
   const res = await broadcast("osmosis", txRaw);
-
-  console.log(res);
 };
 
 function ConnectHero() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
   const { connected } = useConnect();
 
   const sendTx = async () => {
     try {
       setLoading(true);
       setSuccess(false);
+      setError(false);
 
       await send();
 
       setSuccess(true);
+    } catch {
+      setError(true);
     } finally {
       setLoading(false);
+
+      setTimeout(() => {
+        setError(false);
+        setSuccess(false);
+      }, 3000);
     }
   };
 
@@ -87,7 +93,11 @@ function ConnectHero() {
             <m.button
               type="button"
               role="button"
-              className="absolute bottom-0 left-1/2 flex min-h-[75px] w-full max-w-[calc(100%-40px)] items-center justify-center rounded-[200px] bg-secondary px-5 text-center lg:w-auto lg:max-w-none  lg:px-18.5"
+              className={`${
+                loading || success || error ? "active w-[272px]" : ""
+              } ${loading ? "loading" : ""} ${success ? "success" : ""} ${
+                error ? "error" : ""
+              } group absolute bottom-0 left-1/2 flex min-h-[78px] w-56 items-center justify-center overflow-hidden rounded-[200px] bg-secondary px-6 transition-all duration-300 ease-in-out lg:px-9`}
               initial={{
                 y: "100%",
                 x: "-50%",
@@ -114,15 +124,38 @@ function ConnectHero() {
                 },
               }}
               onClick={sendTx}
-              disabled={loading}
+              disabled={loading || success || error}
             >
-              <span className="text-lg font-semibold lg:text-2xl">
-                {!loading
-                  ? !success
-                    ? "Test It"
-                    : "Tx Success, Try Again"
-                  : "Loading..."}
-              </span>
+              <div className="relative flex h-full w-full">
+                <span className="relative left-1/2 -translate-x-1/2 text-lg font-semibold !leading-10 transition-all duration-300 ease-in-out group-[.active]:left-0 group-[.active]:-translate-x-0 group-[.active]:text-base lg:text-2xl group-[.active]:lg:text-1.1xl">
+                  {loading ? "Waiting" : !success && !error ? "Test It" : ""}
+                  {success ? "Success" : ""}
+                  {error ? "Failed" : ""}
+                </span>
+
+                <Image
+                  src="/icons/loading.svg"
+                  alt="Loading"
+                  width={20}
+                  height={20}
+                  className="absolute right-0 top-2 opacity-0 transition-all duration-300 ease-in-out group-[.loading]:animate-spin group-[.loading]:opacity-100 lg:h-6 lg:w-6"
+                />
+
+                <Image
+                  src="/icons/success.svg"
+                  alt="Success"
+                  width={20}
+                  height={20}
+                  className="absolute right-0 top-2 opacity-0 transition-all duration-300 ease-in-out group-[.success]:opacity-100 lg:h-6 lg:w-6"
+                />
+                <Image
+                  src="/icons/failed.svg"
+                  alt="Fail"
+                  width={20}
+                  height={20}
+                  className="absolute right-0 top-2 opacity-0 transition-all duration-300 ease-in-out group-[.error]:opacity-100 lg:h-6 lg:w-6"
+                />
+              </div>
             </m.button>
           ) : (
             false
