@@ -10,7 +10,7 @@ import Image from "next/image";
 
 function MobileSupportIcons() {
   return (
-    <div className="absolute bottom-0 right-0 flex flex-col gap-4 max-lg:mx-auto max-lg:max-w-sm max-lg:xsm:left-0 lg:-bottom-13 lg:right-20">
+    <div className="absolute bottom-0 right-0 flex flex-col gap-4 max-lg:mx-auto max-lg:max-w-sm max-lg:sm:left-0 lg:-bottom-13 lg:right-20">
       <m.div
         className={`grid grid-cols-2 gap-4.5`}
         variants={mobileSupportPopContainer}

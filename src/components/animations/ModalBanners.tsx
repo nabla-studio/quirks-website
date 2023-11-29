@@ -13,7 +13,7 @@ export function ModalBanners() {
         width={190}
         height={224}
         initial={{
-          y: 80,
+          y: 40,
         }}
         whileInView={{
           y: 0,
@@ -32,7 +32,7 @@ export function ModalBanners() {
         width={190}
         height={278}
         initial={{
-          y: 80,
+          y: 20,
         }}
         whileInView={{
           y: 0,
