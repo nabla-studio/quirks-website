@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/docs/:path*",
-      "destination": "https://docs.osmosis.zone/:path*"
+      "destination": "https://quirks-docs-docusaurus.vercel.app/:path*"
     }
   ]
 }
