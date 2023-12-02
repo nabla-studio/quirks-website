@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/docs/:path(^(?!.*(?:www\\.|http[s]?://|ftp://)\\S*\\.\\S*$).*$)",
+      "destination": "https://quirks-docs.vercel.app/:path*"
+    }
+  ]
+}
