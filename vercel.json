@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/docs/:path*",
+      "destination": "https://quirks-docs.vercel.app/:path*"
+    }
+  ]
+}
