@@ -40,6 +40,16 @@ export function Navbar() {
           </li>
           <li>
             <Link
+              href="https://github.com/nabla-studio/quirks"
+              rel="external"
+              target="_blank"
+              className="text-lg leading-10"
+            >
+              github
+            </Link>
+          </li>
+          <li>
+            <Link
               href="https://github.com/sponsors/nabla-studio"
               className="ml-5 inline-flex min-h-13.75 items-center  gap-x-3 rounded-std bg-primary pl-7 pr-6"
               rel="external"
