@@ -7,7 +7,7 @@ function Features() {
       <h1 className="text-3.5xl leading-12">
         Write once, use everywhere: Your Universal Wallet Adapter.
         <br />
-        Quirks aim to optimize performance and minimize bundle size.
+        Quirks aims to optimize performance and minimize bundle size.
         <br />A library for developers to focus entirely on dApp creation.
       </h1>
     </SectionFadeIn>
