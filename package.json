@@ -20,7 +20,7 @@
     "framer-motion": "^11.0.3",
     "fumadocs-core": "^8.1.1",
     "fumadocs-mdx": "^8.0.2",
-    "fumadocs-twoslash": "^1.0.0",
+    "fumadocs-twoslash": "^1.0.1",
     "fumadocs-ui": "^8.1.1",
     "lucide-react": "^0.321.0",
     "next": "latest",
