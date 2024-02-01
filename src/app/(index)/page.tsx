@@ -1,6 +1,5 @@
 import ConnectHero from "@/components/ConnectHero";
 import Discuss from "@/components/Discuss";
-import Docs from "@/components/Docs";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
@@ -15,7 +14,7 @@ export default function Home() {
         <div className="flex max-w-regular-element flex-col self-center">
           <Features />
           <BentoShowcase />
-          <Docs />
+          {/* <Docs /> */}
           <Discuss />
           <Footer />
         </div>

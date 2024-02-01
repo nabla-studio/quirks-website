@@ -29,7 +29,7 @@ export function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href="#docs" className="text-lg leading-10">
+            <Link href="/docs" className="text-lg leading-10">
               docs
             </Link>
           </li>
