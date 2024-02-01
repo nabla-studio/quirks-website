@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
-import "./globals.css";
+import { RootProvider } from "fumadocs-ui/provider";
 
 const axifoma = localFont({
   src: [
@@ -52,8 +52,10 @@ export default function RootLayout({
       {/* prettier-ignore */}
       <html lang="en" className="scroll-smooth dark" style={{ colorScheme: "dark" }}>
         <body className={axifoma.className}>
-            {children}
-            <Analytics />
+            <RootProvider>
+                {children}
+                <Analytics />
+            </RootProvider>
         </body>
       </html>
     </>
