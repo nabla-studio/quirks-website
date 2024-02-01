@@ -22,6 +22,7 @@
     "fumadocs-mdx": "^8.0.2",
     "fumadocs-twoslash": "^1.0.0",
     "fumadocs-ui": "^8.1.1",
+    "lucide-react": "^0.321.0",
     "next": "latest",
     "osmojs": "^16.5.1",
     "pino-pretty": "^10.2.3",

@@ -3,13 +3,67 @@ title: Packages Structure
 sidebar_position: 2
 ---
 
+import { File, Files } from "fumadocs-ui/components/files";
+
 The library currently consists of 7 different packages:
 
-- **@quirks/core**, defines all logic and data structures of quirks, such as classes for wallets.
-- **@quirks/store**, implement core logic using zustand to have a responsive and global state manager.
-- **@quirks/wallets**, contains the implementation of providers for both web and mobile wallets.
-- **@quirks/react**, exposes the store using react hooks and providing utilities.
-- **@quirks/vue**, exposes the vue using react hooks and providing utilities.
-- **@quirks/nuxt**, implements vue hooks with autocomplete and ssr management for nuxt.
-- **@nabla-studio/chain-registry**, contains all the information of the chains and their assets as defined within the cosmos chain registry, unlike other packages we do not export all the information into one object but the elements are split so as to enable three-shake and avoid importing data not needed by the app but only what is required.
-- **@nabla-studio/wallet-registry**, contains all the information of the wallets as defined within the cosmos wallet registry, unlike other packages we do not export all the information into one object but the elements are split so as to enable three-shake and avoid importing data not needed by the app but only what is required.
+<Files>
+  <File title="@quirks/" defaultOpen>
+    <File title="core">
+      <Callout>
+        defines all logic and data structures of quirks, such as classes for
+        wallets.
+      </Callout>
+    </File>
+    <File title="store">
+      <Callout>
+        implement core logic using zustand to have a responsive and global state
+        manager.
+      </Callout>
+    </File>
+    <File title="wallets">
+      <Callout>
+        contains the implementation of providers for both web and mobile
+        wallets.
+      </Callout>
+    </File>
+    <File title="react">
+      <Callout>
+        exposes the store using react hooks and providing utilities.
+      </Callout>
+    </File>
+    <File title="react-native">
+      <Callout>exposes config and utilities for react native.</Callout>
+    </File>
+    <File title="vue">
+      <Callout>
+        exposes the vue using react hooks and providing utilities.
+      </Callout>
+    </File>
+    <File title="nuxt">
+      <Callout>
+        implements vue hooks with autocomplete and ssr management for nuxt.
+      </Callout>
+    </File>
+  </File>
+  <File title="@nabla-studio/" defaultOpen>
+    <File title="chain-registry">
+      <Callout>
+        contains all the information of the chains and their assets as defined
+        within the cosmos chain registry, unlike other packages we do not export
+        all the information into one object but the elements are split so as to
+        enable three-shake and avoid importing data not needed by the app but
+        only what is required.
+      </Callout>
+    </File>
+    <File title="wallet-registry">
+      <Callout>
+        contains all the information of the wallets as defined within the cosmos
+        wallet registry, unlike other packages we do not export all the
+        information into one object but the elements are split so as to enable
+        three-shake and avoid importing data not needed by the app but only what
+        is required.
+      </Callout>
+    </File>
+  </File>
+</Files>

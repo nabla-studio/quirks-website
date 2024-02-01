@@ -36,6 +36,7 @@ const withBundleAnalyzer = createBundleAnalyzer({
 const withMDX = createMDX({
   rootContentPath: "./src/content",
   mdxOptions: {
+    lastModifiedTime: "git",
     rehypeCodeOptions: {
       transformers: [
         ...rehypeCodeDefaultOptions.transformers,
