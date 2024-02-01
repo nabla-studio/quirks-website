@@ -109,55 +109,6 @@ const config: Config = {
   }}
 />
 
-- **`persistOptions: PersistOptions<AppState>`**
-  - Optional
-  - Default to **`defaultPersistOptions`**, by default we use localstorage from Web API, we also have a storage for SSR (**`ssrPersistOptions`**) all exported from **`@quirks/store`** package.
-  - This option is very helpful if you wanna use quirks on react native for example, so you can provide a differente storage for example [react-native-mmkv](https://github.com/mrousavy/react-native-mmkv).
-  - This config is based on [zustand middleware](https://docs.pmnd.rs/zustand/integrations/persisting-store-data#options)
-- **`walletConnectOptions: { providerOpts: UniversalProviderOpts; namespaces?: { cosmos: Omit<Namespace,'chains'> };
-}`**
-  - Optional
-  - Required if you use wallet connect
-  - Structured as follow:
-    - **`providerOpts: UniversalProviderOpts`**
-      - **Required**
-      - It is based on the universal providers configuration of wallet connect, allows us to define the metadata of our app and customize some behaviors.
-      - Structured as follow:
-        - **`projectId: string`**
-          - **Required**
-          - Your dApp project id, you can generate it from wallet [connect dashboard](https://cloud.walletconnect.com/sign-in).
-        - **`metadata?: Metadata`**
-          - Optional
-          - Although optional it is recommended to populate the metadata since in wallets this information is used to show the connection to the user
-          - Your dApp metadata, for example dApp name, icon, description url and redirect for deeplink.
-        - **`logger?: string`**
-          - Optional
-          - Can be:
-            - **`info`**, if you wanna log wallet connect behaviour inside your console.
-        - **`client?: SignClient`**
-          - Optional
-          - If not provided, it'll be initialized inside our worflow.
-          - It's an instance of `SignClient` from `@walletconnect/sign-client`.
-        - **`relayUrl?: string`**
-          - Optional
-          - Default to **`wss://relay.walletconnect.com`**.
-          - Useful if you wanna provide a custom Relay Server URL.
-        - **`storage?: IKeyValueStorage`**
-          - Optional
-          - Default to **`localstorage`**.
-          - This option is very helpful if you wanna use quirks on react native for example, so you can provide a differente storage for example [react-native-mmkv](https://github.com/mrousavy/react-native-mmkv).
-        - **`name?: string`**
-          - Optional
-          - Customize sign client name.
-        - **`disableProviderPing?: boolean`**
-          - Optional
-          - Default to **`false`**.
-    - **`namespaces?: { cosmos: Omit<Namespace, 'chains'> }`**
-      - Optional
-      - Default to cosmos chains setup.
-      - It enable custom namespace configuration, if provided for cosmos it'll merge object data with default cosmos setup, it's useful if you wanna provide extra events, methods ecc.
-      - For more details about namespace check the [official docs](https://specs.walletconnect.com/2.0/specs/clients/sign/namespaces).
-
 #### SignOptions
 
 <TypeTable
