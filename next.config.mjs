@@ -1,40 +1,14 @@
-const { resolve } = require("path");
-
-/* const securityHeaders = [
-  {
-    key: "Strict-Transport-Security",
-    value: "max-age=63072000; includeSubDomains; preload",
-  },
-  {
-    key: "X-Frame-Options",
-    value: "SAMEORIGIN",
-  },
-  {
-    key: "Permissions-Policy",
-    value: "browsing-topics=(self)",
-  },
-  {
-    key: "X-Content-Type-Options",
-    value: "nosniff",
-  },
-  {
-    key: "Referrer-Policy",
-    value: "origin-when-cross-origin",
-  },
-]; */
+import { resolve } from "path";
+import createMDX from "fumadocs-mdx/config";
+import { rehypeCodeDefaultOptions } from "fumadocs-core/mdx-plugins";
+import { transformerTwoslash } from "fumadocs-twoslash";
+import createBundleAnalyzer from "@next/bundle-analyzer";
+import { cwd } from "process";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: [...securityHeaders],
-      },
-    ];
-  }, */
   webpack: (config) => {
-    const noop = resolve(__dirname, "src", "etc", "noop", "index.js");
+    const noop = resolve(cwd(), "src", "etc", "noop", "index.js");
 
     config.resolve = {
       ...config.resolve, // This spreads existing resolve configuration (if any)
@@ -55,8 +29,20 @@ const nextConfig = {
   },
 };
 
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
+const withBundleAnalyzer = createBundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
 });
 
-module.exports = withBundleAnalyzer(nextConfig);
+const withMDX = createMDX({
+  rootContentPath: "./src/content",
+  mdxOptions: {
+    rehypeCodeOptions: {
+      transformers: [
+        ...rehypeCodeDefaultOptions.transformers,
+        transformerTwoslash(),
+      ],
+    },
+  },
+});
+
+export default withMDX(withBundleAnalyzer(nextConfig));

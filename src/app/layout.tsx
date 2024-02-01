@@ -1,9 +1,6 @@
-import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
-import { Provider } from "./providers";
-import { Navbar } from "@/components/Navbar";
 import { Analytics } from "@vercel/analytics/react";
+import type { Metadata } from "next";
 
 const axifoma = localFont({
   src: [
@@ -51,11 +48,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${axifoma.className} flex flex-col bg-secondary`}>
-        <Provider>
-          <Navbar />
-          {children}
-        </Provider>
+      <body className={`${axifoma.className}`}>
+        {children}
         <Analytics />
       </body>
     </html>

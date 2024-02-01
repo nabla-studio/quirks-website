@@ -6,6 +6,9 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/utils/*.{js,ts,jsx,tsx,mdx}",
+    "./src/content/**/*.{md,mdx}",
+    "./src/mdx-components.{ts,tsx}",
+    "./node_modules/fumadocs-ui/dist/**/*.js",
   ],
   theme: {
     extend: {
