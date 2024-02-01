@@ -47,11 +47,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${axifoma.className}`}>
-        {children}
-        <Analytics />
-      </body>
-    </html>
+    <>
+      {/* prettier-ignore */}
+      <html lang="en" className="scroll-smooth dark" style={{ colorScheme: "dark" }}>
+        <body className={axifoma.className}>
+            {children}
+            <Analytics />
+        </body>
+      </html>
+    </>
   );
 }
