@@ -17,7 +17,7 @@
     "@quirks/wallets": "^0.12.0",
     "@types/mdx": "^2.0.11",
     "@vercel/analytics": "^1.1.1",
-    "framer-motion": "^10.16.5",
+    "framer-motion": "^11.0.3",
     "fumadocs-core": "^8.1.1",
     "fumadocs-mdx": "^8.0.2",
     "fumadocs-twoslash": "^1.0.0",

@@ -1,5 +1,7 @@
 import AnimatedDocsButton from "@/components/animations/AnimatedDocsButton";
 import SectionFadeIn from "@/components/animations/SectionFadeIn";
+import Image from "next/image";
+import Link from "next/link";
 
 function Docs() {
   return (
@@ -10,7 +12,21 @@ function Docs() {
         <br />
         Access the project repository to test and install Quirks.
       </h2>
-      <AnimatedDocsButton />
+      <div className="relative mt-36 lg:mt-12">
+        <Link
+          href="/docs"
+          className="inline-flex min-h-13.75 items-center gap-x-3 rounded-std bg-primary pl-7 pr-6"
+        >
+          <span className="pb-1.5 pt-2.5 text-lg">Getting started</span>
+          <Image
+            src={"/icons/arrow-up-right.svg"}
+            alt="Github"
+            width={24}
+            height={24}
+            className="rotate-45 py-4"
+          />
+        </Link>
+      </div>
     </SectionFadeIn>
   );
 }
