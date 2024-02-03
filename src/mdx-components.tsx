@@ -5,6 +5,7 @@ import { File, Files } from "fumadocs-ui/components/files";
 import { Callout } from "fumadocs-ui/components/callout";
 import { TypeTable } from "fumadocs-ui/components/type-table";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";
 
 const mdxComponents: MDXComponents = {
   Popup,
@@ -16,6 +17,8 @@ const mdxComponents: MDXComponents = {
   TypeTable,
   Tab,
   Tabs,
+  Step,
+  Steps,
 };
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {

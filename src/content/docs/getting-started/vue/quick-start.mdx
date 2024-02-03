@@ -1,17 +1,29 @@
 ---
 title: Quick Start
-sidebar_position: 2
 ---
+
+## Installation
+
+```package-install
+@nabla-studio/chain-registry @quirks/vue @quirks/store @quirks/wallets
+```
+
+## Setup
 
 Import and configure quirks plugin inside your `main.ts`.
 
-```ts
+```ts twoslash
+// @filename: app.ts
+const App = () => {};
+export default App;
+// ---cut---
+// @filename: main.ts
 import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
 import { quirksPlugin } from "@quirks/vue";
 import { Config, ssrPersistOptions } from "@quirks/store";
 import { keplrExtension, leapExtension } from "@quirks/wallets";
 import { createApp } from "vue";
-import App from "./app/App.vue";
+import App from "./app";
 
 const app = createApp(App);
 
@@ -26,9 +38,9 @@ app.use(quirksPlugin, config).mount("#root");
 
 ## How to connect a wallet
 
-```vue
+```vue twoslash
 <script setup lang="ts">
-import { useConnect } from '@quirks/vue';
+import { useConnect } from "@quirks/vue";
 
 const { connect, disconnect, connected } = useConnect();
 </script>
@@ -41,7 +53,7 @@ const { connect, disconnect, connected } = useConnect();
 
 ## How to allow user to choose a wallet
 
-```vue
+```vue twoslash
 <script setup lang="ts">
 import { useConnect, useConfig } from "@quirks/vue";
 
@@ -53,9 +65,7 @@ const { wallets } = useConfig();
   <button @click="disconnect" v-if="connected">DISCONNECT</button>
   <div v-else>
     <div v-for="wallet in wallets" :key="wallet.options.wallet_name">
-      <button
-        @click="connect(wallet.options.wallet_name)"
-      >
+      <button @click="connect(wallet.options.wallet_name)">
         <img
           :src="wallet.logoLight"
           :alt="wallet.options.pretty_name"
@@ -68,8 +78,8 @@ const { wallets } = useConfig();
       <a
         :href="
           wallet.options.platforms && wallet.options.platforms.length > 0
-          ? wallet.options.platforms[0].install_link
-          : '#'
+            ? wallet.options.platforms[0].install_link
+            : '#'
         "
         target="_blank"
         v-if="!wallet.injected"
