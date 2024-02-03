@@ -1,0 +1,10 @@
+{
+  "pages": [
+    "installation",
+    "quick-start",
+    "ssr",
+    "react-native",
+    "hooks",
+    "..."
+  ]
+}

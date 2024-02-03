@@ -64,11 +64,14 @@ module.exports = function (api) {
 
 To facilitate the integration of react native, the `generateConfig` utility can be used to create a setup that automatically implements all the basic configurations for RN; this setup is optional and can be customized if necessary.
 
-```tsx title="App.tsx"
+```tsx twoslash title="App.tsx"
 import { generateConfig } from "@quirks/react-native";
 import { keplrMobile, leapMobile } from "@quirks/wallets";
 import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
 import { QuirksConfig } from "@quirks/react";
+// ---cut-start---
+import * as React from "react";
+// ---cut-end---
 
 const config = generateConfig({
   wallets: [keplrMobile, leapMobile],
@@ -86,14 +89,13 @@ const config = generateConfig({
       },
     },
   },
-})
+});
 
+/**
+ * Your app entry point
+ */
 function App() {
-  return (
-    <QuirksConfig config={config}>
-        {...}
-    </QuirksConfig>
-  );
+  return <QuirksConfig config={config}></QuirksConfig>;
 }
 
 export default App;

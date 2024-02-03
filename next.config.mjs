@@ -3,6 +3,7 @@ import createMDX from "fumadocs-mdx/config";
 import { rehypeCodeDefaultOptions } from "fumadocs-core/mdx-plugins";
 import { transformerTwoslash } from "fumadocs-twoslash";
 import createBundleAnalyzer from "@next/bundle-analyzer";
+import { remarkInstall } from "fumadocs-core/mdx-plugins";
 import { cwd } from "process";
 
 /** @type {import('next').NextConfig} */
@@ -43,6 +44,31 @@ const withMDX = createMDX({
         transformerTwoslash(),
       ],
     },
+    remarkPlugins: [
+      [
+        () =>
+          remarkInstall({
+            packageManagers: [
+              (name) => ({
+                packageManager: "npm",
+                command: `npm i ${name}`,
+              }),
+              (name) => ({
+                packageManager: "yarn",
+                command: `yarn add ${name}`,
+              }),
+              (name) => ({
+                packageManager: "pnpm",
+                command: `pnpm add ${name}`,
+              }),
+              (name) => ({
+                packageManager: "bun",
+                command: `bun add ${name}`,
+              }),
+            ],
+          }),
+      ],
+    ],
   },
 });
 

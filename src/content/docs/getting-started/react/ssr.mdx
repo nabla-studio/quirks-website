@@ -9,7 +9,7 @@ If you wanna use Next.js, you need to use an extra provider to avoid any hydrati
 
 1. Create a `providers.tsx`:
 
-```tsx title="/app/providers.tsx"
+```tsx twoslash title="/app/providers.tsx"
 "use client";
 
 import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
@@ -17,6 +17,9 @@ import { QuirksConfig, QuirksNextProvider } from "@quirks/react";
 import { Config } from "@quirks/store";
 import { keplrExtension, leapExtension } from "@quirks/wallets";
 import { PropsWithChildren } from "react";
+// ---cut-start---
+import * as React from "react";
+// ---cut-end---
 
 const config: Config = {
   wallets: [keplrExtension, leapExtension],
@@ -27,9 +30,7 @@ const config: Config = {
 export const Provider = ({ children }: PropsWithChildren<unknown>) => {
   return (
     <QuirksNextProvider>
-      <QuirksConfig config={config}>
-        {children}
-      </QuirksConfig>
+      <QuirksConfig config={config}>{children}</QuirksConfig>
     </QuirksNextProvider>
   );
 };
@@ -37,9 +38,39 @@ export const Provider = ({ children }: PropsWithChildren<unknown>) => {
 
 2. Import it inside your `layout.tsx`:
 
-```tsx title="/app/layout.tsx"
+```tsx twoslash title="/app/layout.tsx"
+// @filename: provider.tsx
+"use client";
+
+import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
+import { QuirksConfig, QuirksNextProvider } from "@quirks/react";
+import { Config } from "@quirks/store";
+import { keplrExtension, leapExtension } from "@quirks/wallets";
+import { PropsWithChildren } from "react";
+// ---cut-start---
+import * as React from "react";
+// ---cut-end---
+
+const config: Config = {
+  wallets: [keplrExtension, leapExtension],
+  chains: [osmosis],
+  assetsLists: [osmosisAssetList],
+};
+
+export const Provider = ({ children }: PropsWithChildren<unknown>) => {
+  return (
+    <QuirksNextProvider>
+      <QuirksConfig config={config}>{children}</QuirksConfig>
+    </QuirksNextProvider>
+  );
+};
+// ---cut---
+// @filename: layout.tsx
 import { ReactNode } from "react";
 import { Provider } from "./provider";
+// ---cut-start---
+import * as React from "react";
+// ---cut-end---
 
 export default function RootLayout({
   children,
@@ -62,13 +93,16 @@ export default function RootLayout({
 
 1. Add the providers inside your `_app.tsx`:
 
-```tsx title="/pages/_app.tsx"
+```tsx twoslash title="/pages/_app.tsx"
 import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
 import { QuirksConfig, QuirksNextProvider } from "@quirks/react";
 import { Config } from "@quirks/store";
 import { keplrExtension, leapExtension } from "@quirks/wallets";
 import type { PropsWithChildren } from "react";
 import type { AppProps } from "next/app";
+// ---cut-start---
+import * as React from "react";
+// ---cut-end---
 
 const config: Config = {
   wallets: [keplrExtension, leapExtension],
@@ -77,11 +111,13 @@ const config: Config = {
 };
 
 function App({ Component, pageProps }: AppProps) {
-    return <QuirksNextProvider>
+  return (
+    <QuirksNextProvider>
       <QuirksConfig config={config}>
         <Component {...pageProps} />
-      </QuirksConfig>;
+      </QuirksConfig>
     </QuirksNextProvider>
+  );
 }
 ```
 

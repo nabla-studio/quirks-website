@@ -3,14 +3,25 @@ title: Quick Start
 sidebar_position: 2
 ---
 
+## Installation
+
+```package-install
+@nabla-studio/chain-registry @quirks/react @quirks/store
+```
+
+## Setup
+
 Import and configure `QuirksConfig` context provider inside your app.tsx or root file.
 
-```tsx
+```tsx twoslash
 import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
 import { QuirksConfig } from "@quirks/react";
 import { Config } from "@quirks/store";
 import { keplrExtension, leapExtension } from "@quirks/wallets";
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
+// ---cut-start---
+import * as React from "react";
+// ---cut-end---
 
 const config: Config = {
   wallets: [keplrExtension, leapExtension],
@@ -23,10 +34,13 @@ export const App = ({ children }: PropsWithChildren<unknown>) => {
 };
 ```
 
-## How to connect a wallet
+## Connect a wallet
 
-```tsx
+```tsx twoslash
 import { useConnect } from "@quirks/react";
+// ---cut-start---
+import * as React from "react";
+// ---cut-end---
 
 export const ConnectionButton = () => {
   const { connect, disconnect, connected } = useConnect();
@@ -39,10 +53,13 @@ export const ConnectionButton = () => {
 };
 ```
 
-## How to allow user to choose a wallet
+## Allow user to choose a wallet
 
-```tsx
+```tsx twoslash
 import { useConfig, useConnect } from "@quirks/react";
+// ---cut-start---
+import * as React from "react";
+// ---cut-end---
 
 export const WalletsConnector = () => {
   const { wallets } = useConfig();
@@ -72,7 +89,7 @@ export const WalletsConnector = () => {
           href={
             wallet.options.platforms && wallet.options.platforms.length > 0
               ? wallet.options.platforms[0].install_link
-              : '#'
+              : "#"
           }
           target="_blank"
         >
@@ -84,7 +101,7 @@ export const WalletsConnector = () => {
 };
 ```
 
-### Available Hooks
+## Available Hooks
 
 - **[useConnect](./hooks/use-connect)**
 - **[useChain](./hooks/use-chain)**
