@@ -1,0 +1,120 @@
+---
+title: Hooks
+---
+
+quirks provides several useful hooks for integrating the library and its functionality within a react codebase.
+
+## useConnect
+
+Returns the methods and information needed to operate the wallets, to be able to make the connection to them and also to have information on the status of the connection.
+
+```ts twoslash
+import { useConnect } from "@quirks/react";
+
+const {
+  connect,
+  disconnect,
+  status,
+  setupStatus,
+  connected,
+  connecting,
+  disconnected,
+  rejected,
+  wallet,
+  walletName
+} = useConnect();
+```
+
+## useChain
+
+If the wallet is connected and given the name of a previously configured chain, it returns the information for that chain.
+
+<Callout title="Note">
+  The list of supported chains depends on the wallet you are using; not all
+  wallets allow you to add custom chains. So sometimes it is not possible to get
+  information for some chains.
+</Callout>
+
+```ts twoslash
+import { useChain } from "@quirks/react";
+
+/**
+ * The name of the chain for which you want to obtain
+ * information corresponds to the one you have configured in the Config object.
+ */
+const chainName = "osmosis";
+
+const {
+  chain,
+  address,
+  accountName,
+  getOfflineSigner,
+  getOfflineSignerOnlyAmino,
+  getOfflineSignerAuto,
+  signAmino,
+  signDirect,
+} = useChain(chainName);
+```
+
+## useChains
+
+If the wallet is connected, it returns information about all connected chains, from which it is possible to find all connected accounts or get specific information about a chain.
+
+<Callout title="Note">
+  The list of supported chains depends on the wallet you are using; not all
+  wallets allow you to add custom chains. So sometimes it is not possible to get
+  information for some chains.
+</Callout>
+
+```ts twoslash
+import { useChains } from "@quirks/react";
+
+const {
+  accounts,
+  accountName,
+  getAddresses,
+  getAddress,
+  getChain
+} = useChains();
+```
+
+## useConfig
+
+Returns information about the configuration of quirks, previously defined in the [Config object](/docs/config).
+
+```ts twoslash
+import { useConfig } from "@quirks/react";
+
+const {
+  wallets,
+  chains,
+  assetsLists
+} = useConfig();
+```
+
+## useWalletConnect
+
+Returns information about the connection with wallet connect, including also the uri for pairing when connecting to a wallet that supports it.
+
+```ts twoslash
+import { useWalletConnect } from "@quirks/react";
+
+const {
+  pairingURI,
+  namespaces,
+  providerOpts
+} = useWalletConnect();
+```
+
+## useWalletEvents
+
+It is a utility to allow subscription to quirks events, in order to perform custom actions.
+
+```ts twoslash
+import { useWalletEvents } from "@quirks/react";
+
+useWalletEvents("accountsChanged", () => {
+//               ^|
+// your custom code
+});
+```
