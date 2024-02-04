@@ -17,23 +17,55 @@ As described before, it is possible to globally access the state of quirks, rega
 
 In this use case we wanna sign a send message, we'll use `osmojs` library to compose the message, but you can use whichever library is most convenient for you.
 
-1. Install `osmojs`
+<Steps>
+  <Step>
+    Install `osmojs`
 
-```bash
-$ npm i osmojs
-# or
-$ pnpm add osmojs
-# or
-$ yarn add osmojs
-# or
-$ bun add osmojs
+    ```package-install
+    osmojs
+    ```
+  </Step>
+  <Step>
+    Connect a wallet using methods described under `Getting Started section, based on your framework ([react](/docs/getting-started/react/quick-start) or [vue](/docs/getting-started/vue/quick-start)).
+  </Step>
+  <Step>
+    Create an `send` function, just for example purposes we will do a send on the same connected address and Osmosis chain.
+
+    ```ts twoslash title="send.ts"
+import { sign, getAddress, broadcast } from "@quirks/store";
+
+export const send = async () => {
+      const cosmos = (await import("osmojs")).cosmos;
+      const { send } = cosmos.bank.v1beta1.MessageComposer.withTypeUrl;
+
+      const address = getAddress("osmosis");
+
+      const msg = send({
+        amount: [
+          {
+            denom: "uosmo",
+            amount: "1",
+          },
+        ],
+        toAddress: address,
+        fromAddress: address,
+      });
+
+      const txRaw = await sign("osmosis", [msg]);
+
+      const res = await broadcast("osmosis", txRaw);
+
+      return res;
+};
 ```
 
-2. Connect a wallet using methods described under `Getting Started` section, based on your framework.
+As you might have noticed, osmojs is imported using dynamic imports, this is to optimize bundle size.
+  </Step>
+  <Step>
+    Invoke the function from anywhere in the app you want to use it, for example in React you can do something like that.
 
-3. Create an `send` function, just for example purposes we will do a send on the same connected address and Osmosis chain:
-
-```ts twoslash title="/services/send.ts"
+```tsx twoslash
+// @filename: send.ts
 import { sign, getAddress, broadcast } from "@quirks/store";
 
 export const send = async () => {
@@ -59,18 +91,20 @@ export const send = async () => {
 
   return res;
 };
-```
-
-As you might have noticed, osmojs is imported using dynamic imports, this is to optimize bundle size, for further clarifications go [here](./performance).
-
-4. Invoke the function from anywhere in the app you want to use it, for example:
-
-```tsx
-import { send } from "services/send";
+// ---cut---
+// @filename: send-button.tsx
+import { send } from "./send";
+// ---cut-start---
+import * as React from "react";
+// ---cut-end---
 
 export const SendComponent = () => {
-  return <button onClick={send}>Send</button>;
+    return <button onClick={send}>Send</button>;
 };
 ```
+  </Step>
+</Steps>
 
+<Callout>
 To track the states of transactions and in general of your dapp, it is recommended to use [tanstack query](https://tanstack.com/query/latest), I'll provide some come examples in the future.
+</Callout>
