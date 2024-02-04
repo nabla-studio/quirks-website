@@ -13,7 +13,7 @@ interface ChainButtonProps {
 }
 
 function ChainButton({ wallet, onConnect }: ChainButtonProps) {
-  const { connect } = useConnect();
+  const { connect, connecting } = useConnect();
 
   const onClick = async (name: string) => {
     await connect(name);
@@ -68,6 +68,7 @@ function ChainButton({ wallet, onConnect }: ChainButtonProps) {
             onClick(wallet.options.wallet_name);
           }
         }}
+        disabled={connecting}
         className={wrapperClass}
       >
         {content}
