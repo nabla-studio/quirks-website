@@ -4,7 +4,7 @@ title: Quick Start
 
 ## Installation
 
-Install the packages:
+Install the packages
 
 ```package-install
 @nabla-studio/chain-registry @quirks/react @quirks/store @quirks/wallets
@@ -57,13 +57,13 @@ export const ConnectionButton = () => {
   }
 
   // Create button for specific wallet connection (e.g. for the keplr one)
-  return <button onClick={() => connect("keplrextension")} />;
+  return <button onClick={() => connect("keplrextension")}>Connect</button>;
 };
 ```
 
 ## Allow user to choose a wallet
 
-Provide the user with a multiple choice of wallets.
+Provide the user with a multiple choice of wallets
 
 ```tsx twoslash
 import { useConfig, useConnect } from "@quirks/react";
