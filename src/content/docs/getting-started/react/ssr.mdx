@@ -2,11 +2,13 @@
 title: Server Side Rendering (Next.js)
 ---
 
-If you wanna use Next.js, you need to use an extra provider to avoid any hydration errors.
+If you want to use Next.js to provide server-side rendering capabilities, 
+you'll need to use an additional provider. This allows you to avoid any 
+hydration errors.
 
 ## Usage with App Dir
 
-1. Create a `providers.tsx`:
+1. Create a `providers.tsx` file:
 
 ```tsx twoslash title="/app/providers.tsx"
 "use client";
@@ -86,7 +88,8 @@ export default function RootLayout({
 }
 ```
 
-3. You can start using it as described inside [quick start](./quick-start)
+3. You did it 🎉! Now you can start using it as described inside 
+[quick start](./quick-start).
 
 ## Usage with Pages Dir
 
@@ -97,7 +100,6 @@ import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
 import { QuirksConfig, QuirksNextProvider } from "@quirks/react";
 import { Config } from "@quirks/store";
 import { keplrExtension, leapExtension } from "@quirks/wallets";
-import type { PropsWithChildren } from "react";
 import type { AppProps } from "next/app";
 // ---cut-start---
 import * as React from "react";
@@ -120,4 +122,5 @@ function App({ Component, pageProps }: AppProps) {
 }
 ```
 
-2. You can start using it as described inside [quick start](./quick-start)
+2. You did it 🎉! Now you can start using it as described inside 
+[quick start](./quick-start).
