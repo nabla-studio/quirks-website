@@ -2,47 +2,33 @@
 title: React Native
 ---
 
-If you want to use quirks on react native, in addition to basic installation that you can follow [here](./installation.md), you need to follow additional steps.
+If you want to use Quirks on React Native, after completing the basic
+installation process [here](./installation.md), you will need to do the 
+following to get started.
 
 ## Installation
 
-```bash
-$ npm i @quirks/react-native
-# or
-$ pnpm add @quirks/react-native
-# or
-$ yarn add @quirks/react-native
-# or
-$ bun add @quirks/react-native
+```package-install
+@quirks/react-native
 ```
 
-Also you need some additional packages to help with storage and polyfills:
+You will also need some additional packages to help with storage and polyfills:
 
-```bash
-$ npm i @craftzdog/react-native-buffer react-native-get-random-values react-native-quick-crypto @react-native-community/netinfo @react-native-async-storage/async-storage
-# or
-$ pnpm add @craftzdog/react-native-buffer react-native-get-random-values react-native-quick-crypto @react-native-community/netinfo @react-native-async-storage/async-storage
-# or
-$ yarn add @craftzdog/react-native-buffer react-native-get-random-values react-native-quick-crypto @react-native-community/netinfo @react-native-async-storage/async-storage
-# or
-$ bun add @craftzdog/react-native-buffer react-native-get-random-values react-native-quick-crypto @react-native-community/netinfo @react-native-async-storage/async-storage
+```package-install
+@craftzdog/react-native-buffer react-native-get-random-values react-native-quick-crypto @react-native-community/netinfo @react-native-async-storage/async-storage
 ```
 
-If you use our default config you also need:
+If you are using our default configuration, you will also need:
 
-```bash
-$ npm i react-native-mmkv
-# or
-$ pnpm add react-native-mmkv
-# or
-$ yarn add react-native-mmkv
-# or
-$ bun add react-native-mmkv
+```package-install
+react-native-mmkv
 ```
 
 ## Setup
 
-Add quirks setup import inside your `index.ts` or `App.tsx`, it need to be included in a boot file to make sure that dependencies are imported.
+Add the Quirks setup import to your `index.ts` or `App.tsx`. 
+It must be included in a boot file to ensure that dependencies are 
+correctly imported.
 
 ```ts title="index.ts"
 import "@quirks/react-native/setup";
@@ -61,7 +47,9 @@ module.exports = function (api) {
 
 ## Generate config
 
-To facilitate the integration of react native, the `generateConfig` utility can be used to create a setup that automatically implements all the basic configurations for RN; this setup is optional and can be customized if necessary.
+To facilitate integration with react native, the `generateConfig` utility can 
+be used to create a setup that automatically implements all the basic 
+configurations for RN; this setup is optional and can be customised if needed.
 
 ```tsx twoslash title="App.tsx"
 import { generateConfig } from "@quirks/react-native";
@@ -102,7 +90,11 @@ export default App;
 
 ## Android Fix
 
-Currently there is an error in the react-native-mmkv library (recently fixed but still no new build generated), to fix it at the moment you need to import the following configuration inside the `build.gradle`.
+There is currently a bug in the **react-native-quick-crypto** library
+([recently fixed](https://github.com/margelo/react-native-quick-crypto/commit/8d4bbcdee28220508a770e050201737ca903e6d9#diff-197b190e4a3512994d2cebed8aff5479ff88e136b8cc7a4b148ec9c3945bd65aR103), 
+but no new build yet). 
+To fix this, you currently need to import the following configuration into 
+your `build.gradle`.
 
 ```bash title="android/app/build.gradle"
 android {
@@ -118,4 +110,4 @@ android {
 
 ## Starter
 
-A starter is available for easy integration at this [link](https://github.com/nabla-studio/quirks-mobile-dapp-starter).
+A starter is available for easy integration at [this link](https://github.com/nabla-studio/quirks-mobile-dapp-starter).
