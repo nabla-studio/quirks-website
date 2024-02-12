@@ -9,6 +9,14 @@ const axifoma = localFont({
       path: "../../public/fonts/axiforma/Axiforma SemiBold.woff",
       weight: "600",
     },
+    {
+      path: "../../public/fonts/axiforma/Axiforma Medium.woff",
+      weight: "500",
+    },
+    {
+      path: "../../public/fonts/axiforma/Axiforma Regular.woff",
+      weight: "400",
+    },
   ],
 });
 

@@ -14,8 +14,8 @@ const Logo = (props: SVGProps<SVGSVGElement>) => (
     {...props}
   >
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M33.1455 23.3921L27.7121 3.11432L39.3349 0L44.7683 20.2778C49.0683 36.3255 39.5448 52.8206 23.4971 57.1206L3.2193 62.554L0.10498 50.9312L20.3828 45.4978C30.0114 42.9178 35.7255 33.0208 33.1455 23.3921ZM35.2141 71.2591L20.3697 86.1035L11.8612 77.595L26.7056 62.7507C38.4534 51.0029 57.5002 51.0029 69.248 62.7507L84.0924 77.595L75.5839 86.1035L60.7395 71.2591C53.6909 64.2105 42.2627 64.2105 35.2141 71.2591ZM68.2881 3.11432L62.8547 23.3921C60.2747 33.0208 65.9888 42.9178 75.6174 45.4978L95.8952 50.9312L92.7809 62.554L72.5031 57.1206C56.4554 52.8206 46.9319 36.3255 51.2319 20.2778L56.6653 0L68.2881 3.11432Z"
       fill="currentColor"
     />
@@ -36,14 +36,14 @@ const Logo = (props: SVGProps<SVGSVGElement>) => (
       fill="currentColor"
     />
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M210 64V35H203V64H210Z"
       fill="currentColor"
     />
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M228.345 42.1385L241 42.1385L241 35L228.345 35C222.08 35 217 40.1935 217 46.6L217 64L223.982 64L223.982 46.6C223.982 44.136 225.935 42.1385 228.345 42.1385Z"
       fill="currentColor"
     />

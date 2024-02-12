@@ -7,7 +7,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="flex flex-col bg-secondary">
+    <main className="flex flex-col bg-secondary font-semibold">
       <Provider>{children}</Provider>
     </main>
   );
