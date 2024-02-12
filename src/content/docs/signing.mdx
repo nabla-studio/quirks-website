@@ -2,11 +2,16 @@
 title: Signing
 ---
 
-As described before, it is possible to globally access the state of quirks, regardless of the framework used. To facilitate the construction of functions that deal with signing a transaction, we have built a set of utilities within `@quirks/store`:
+As described earlier, one of the features of Quirks is its ability to let you
+access its state globally, regardless of the framework you are using.
+
+In addition, to improve the development experience, we have been working on 
+some features that deal with signing a transaction. For this reason we provide
+you with a number of utilities within `@quirks/store`.
 
 ### getAddress
 
-Return the current account address by chainName.
+Returns the current account address by `chainName`
 
 ```ts twoslash
 import { getAddress } from "@quirks/store";
@@ -17,7 +22,7 @@ const address = getAddress(chainName);
 
 ### getChain
 
-Return chain info by chainName.
+Returns chain info by `chainName`
 
 ```ts twoslash
 import { getChain } from "@quirks/store";
@@ -28,7 +33,8 @@ const chain = getChain(chainName);
 
 ### getOfflineSigner
 
-Return a valid signer class by chainId and signerType (auto, amino or direct)
+Returns a valid signer class by `chainId` and `signerType` (`auto`, `amino` 
+or `direct`).
 
 ```ts twoslash
 import { getOfflineSigner } from "@quirks/store";
@@ -40,7 +46,7 @@ const signer = getOfflineSigner(chainId, "auto");
 
 ### getSigningStargateClient
 
-Return an instance of CosmJS Signing Stargate Client.
+Returns an instance of CosmJS Signing Stargate Client
 
 ```ts twoslash
 import { getSigningStargateClient } from "@quirks/store";
@@ -52,7 +58,7 @@ const signer = getSigningStargateClient(chainName, "auto");
 
 ### getSigningCosmWasmClient
 
-Return an instance of CosmJS Signing CosmWasm Stargate Client.
+Returns an instance of CosmJS Signing CosmWasm Stargate Client
 
 ```ts twoslash
 import { getSigningCosmWasmClient } from "@quirks/store";
@@ -64,7 +70,8 @@ const signer = getSigningCosmWasmClient(chainName, "auto");
 
 ### sign
 
-Signs a transaction using CosmJS Stargate Client on a given chainName. Allows specifying messages, fee, signer type, and memo.
+Signs a transaction using CosmJS Stargate Client on a given `chainName`. 
+Allows specifying **messages**, **fees**, **signer type**, and **memo**.
 
 ```ts twoslash
 import { sign } from "@quirks/store";
@@ -75,7 +82,9 @@ const txRaw = sign(chainName, [], "auto", "auto", undefined);
 
 ### signCW
 
-Signs a CosmWasm transaction using CosmJS Stargate Client on a given chainName. Allows specifying messages, fee, signer type, and memo.
+Signs a CosmWasm transaction using CosmJS Stargate Client on a given 
+`chainName`. Allows specifying **messages**, **fee**, **signer type**, and 
+**memo**.
 
 ```ts twoslash
 import { signCW } from "@quirks/store";
@@ -86,7 +95,9 @@ const txRaw = signCW(chainName, [], "auto", "auto", undefined);
 
 ### signArbitrary
 
-Signs an arbitrary message using the wallet on a given chainId. Allows specifying the signer and message data. (Useful for use case such as auth token generation).
+Signs an arbitrary message using the wallet on a given `chainId`. Allows 
+specifying the **signer** and **message data**. (Useful for use cases such 
+as auth token generation).
 
 ```ts twoslash
 import { signArbitrary, getAddress } from "@quirks/store";
@@ -99,7 +110,8 @@ const signature = signArbitrary(chainId, address, "string to sign");
 
 ### broadcast
 
-Broadcasts a TxRaw transaction on a given chainName. Optional parameters allow specifying timeout and poll interval.
+Broadcasts a `TxRaw` transaction on a given `chainName`. Optional parameters
+allow specifying **timeout** and **poll interval**.
 
 ```ts twoslash
 import { sign, broadcast } from "@quirks/store";
@@ -111,7 +123,10 @@ const txResponse = await broadcast(chainName, txRaw, 60_000, 3_000);
 
 ### broadcastSync
 
-Broadcasts a TxRaw transaction synchronously on a given chainName. It doesn't wait for a response, using polling, but returns the hash of the transaction. (Usefull for use case where you wanna trace the tx using a different method, for example websocket or a state machine).
+Broadcasts a `TxRaw` transaction synchronously on a given `chainName`.  
+It returns the hash of the transaction (no waiting through polling).
+It's useful for use cases where you want to trace the tx using some other 
+method, such as websocket or state machines.
 
 ```ts twoslash
 import { sign, broadcastSync } from "@quirks/store";
@@ -121,9 +136,11 @@ const txRaw = await sign(chainName, [], "auto", "auto", undefined);
 const txResponse = await broadcastSync(chainName, txRaw);
 ```
 
-## How to sign a send message
+## Sign a send message
 
-In this example we wanna sign a send message, we'll use `osmojs` library to compose the message, but you can use whichever library is most convenient for you.
+In this example we want to sign a send message. We'll use the `osmojs` library
+to compose the message, but you can use whatever library is most convenient 
+for you.
 
 <Steps>
   <Step>
@@ -134,10 +151,13 @@ In this example we wanna sign a send message, we'll use `osmojs` library to comp
     ```
   </Step>
   <Step>
-    Connect a wallet using methods described under `Getting Started section, based on your framework ([react](/docs/getting-started/react/quick-start) or [vue](/docs/getting-started/vue/quick-start)).
+    Connect a wallet using the methods described in the "Getting Started" 
+    section, based on your framework 
+    ([react](/docs/getting-started/react/quick-start) or [vue](/docs/getting-started/vue/quick-start)).
   </Step>
   <Step>
-    Create an `send` function, just for example purposes we will do a send on the same connected address and Osmosis chain.
+    Create a `send` function. For example purposes only, we will make a 
+    "self-send" to the same connected address on the Osmosis chain.
 
     ```ts twoslash title="send.ts"
 import { sign, getAddress, broadcast } from "@quirks/store";
@@ -167,12 +187,15 @@ export const send = async () => {
 };
 ```
 
-As you might have noticed, osmojs is imported using dynamic imports, this is to optimize bundle size.
+As you may have noticed, `osmojs` is imported using dynamic imports, 
+to optimise the **bundle size**.
+
   </Step>
   <Step>
-    Invoke the function from anywhere in the app you want to use it, for example in React you can do something like that.
+    Call the function from anywhere you want to use it. 
+    For example, in React, you could do something like this.
 
-```tsx twoslash
+```tsx twoslash title="send-button.ts"
 // @filename: send.ts
 import { sign, getAddress, broadcast } from "@quirks/store";
 
@@ -199,8 +222,8 @@ export const send = async () => {
 
   return res;
 };
-// ---cut---
 // @filename: send-button.tsx
+// ---cut---
 import { send } from "./send";
 // ---cut-start---
 import * as React from "react";
@@ -214,5 +237,7 @@ export const SendComponent = () => {
 </Steps>
 
 <Callout>
-To track the states of transactions and in general of your dapp, it is recommended to use [tanstack query](https://tanstack.com/query/latest), I'll provide some come examples in the future.
+To track the state of transactions and your dapp in general, we recommend using
+[tanstack query](https://tanstack.com/query/latest). 
+New code examples will be provided in the future.
 </Callout>
