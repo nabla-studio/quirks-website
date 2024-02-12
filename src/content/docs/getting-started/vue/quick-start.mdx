@@ -4,20 +4,24 @@ title: Quick Start
 
 ## Installation
 
+Install the packages
+
 ```package-install
 @nabla-studio/chain-registry @quirks/vue @quirks/store @quirks/wallets
 ```
 
 ## Setup
 
-Import and configure quirks plugin inside your `main.ts`.
+Import and configure `quirksPlugin` inside your `main.ts`.
 
-```ts twoslash
+```ts twoslash title="main.ts"
 // @filename: app.ts
 const App = () => {};
 export default App;
 // ---cut---
+// ---cut-start---
 // @filename: main.ts
+// ---cut-end---
 import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
 import { quirksPlugin } from "@quirks/vue";
 import { Config, ssrPersistOptions } from "@quirks/store";
@@ -27,16 +31,19 @@ import App from "./app";
 
 const app = createApp(App);
 
+// Setup the configuration
 const config: Config = {
-  wallets: [keplrExtension, leapExtension],
-  chains: [osmosis],
-  assetsLists: [osmosisAssetList],
+  wallets: [keplrExtension, leapExtension], // use a list of wallet, like keplr and leap, from wallets
+  chains: [osmosis], // use a list of chains, like osmosis, from chain-registry
+  assetsLists: [osmosisAssetList], // use a list of assetlist, like the osmosis one, from chain-registry
 };
 
 app.use(quirksPlugin, config).mount("#root");
 ```
 
-## How to connect a wallet
+## Connect a wallet
+
+Provide the button for connecting/disconnecting a wallet
 
 ```vue twoslash
 <script setup lang="ts">
@@ -46,12 +53,14 @@ const { connect, disconnect, connected } = useConnect();
 </script>
 
 <template>
-  <button @click="disconnect" v-if="connected">DISCONNECT</button>
-  <button @click="connect('keplrextension')" v-else>CONNECT</button>
+  <button @click="disconnect" v-if="connected">Disconnect</button>
+  <button @click="connect('keplrextension')" v-else>Connect</button>
 </template>
 ```
 
-## How to allow user to choose a wallet
+## Allow user to choose a wallet
+
+Provide the user with a multiple choice of wallets
 
 ```vue twoslash
 <script setup lang="ts">
@@ -62,7 +71,7 @@ const { wallets } = useConfig();
 </script>
 
 <template>
-  <button @click="disconnect" v-if="connected">DISCONNECT</button>
+  <button @click="disconnect" v-if="connected">Disconnect</button>
   <div v-else>
     <div v-for="wallet in wallets" :key="wallet.options.wallet_name">
       <button @click="connect(wallet.options.wallet_name)">
@@ -93,9 +102,12 @@ const { wallets } = useConfig();
 
 ### Available Hooks
 
-- **[useConnect](./hooks/use-connect)**
-- **[useChain](./hooks/use-chain)**
-- **[useChains](./hooks/use-chains)**
-- **[useConfig](./hooks/use-config)**
-- **[useWalletConnect](./hooks/use-wallet-connect)**
-- **[useWalletEvents](./hooks/use-wallet-events)**
+The following hooks are provided. You can learn more about them in the 
+[hooks](./hooks) page.
+
+- **[useConnect](./hooks#useconnect)**
+- **[useChain](./hooks#usechain)**
+- **[useChains](./hooks#usechains)**
+- **[useConfig](./hooks#useconfig)**
+- **[useWalletConnect](./hooks#usewalletconnect)**
+- **[useWalletEvents](./hooks#usewalletevents)**
