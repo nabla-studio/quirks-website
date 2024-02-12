@@ -8,7 +8,9 @@ hydration errors.
 
 ## Usage with App Dir
 
-1. Create a `providers.tsx` file:
+<Steps>
+  <Step>
+  Create a `providers.tsx` file:
 
 ```tsx twoslash title="/app/providers.tsx"
 "use client";
@@ -36,8 +38,9 @@ export const Provider = ({ children }: PropsWithChildren<unknown>) => {
   );
 };
 ```
-
-2. Import it inside your `layout.tsx`:
+</Step>
+<Step>
+Import it inside your `layout.tsx`:
 
 ```tsx twoslash title="/app/layout.tsx"
 // @filename: provider.tsx
@@ -87,13 +90,17 @@ export default function RootLayout({
   );
 }
 ```
-
-3. You did it 🎉! Now you can start using it as described inside 
+</Step>
+<Step>
+You did it 🎉! Now you can start using it as described inside 
 [quick start](./quick-start).
+</Step>
+</Steps>
 
 ## Usage with Pages Dir
-
-1. Add the providers inside your `_app.tsx`:
+<Steps>
+<Step>
+Add the providers inside your `_app.tsx`:
 
 ```tsx twoslash title="/pages/_app.tsx"
 import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
@@ -121,6 +128,9 @@ function App({ Component, pageProps }: AppProps) {
   );
 }
 ```
-
-2. You did it 🎉! Now you can start using it as described inside 
+</Step>
+<Step>
+You did it 🎉! Now you can start using it as described inside 
 [quick start](./quick-start).
+</Step>
+</Steps>
