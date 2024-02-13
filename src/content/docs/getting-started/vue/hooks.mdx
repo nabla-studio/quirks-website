@@ -1,0 +1,128 @@
+---
+title: Hooks
+---
+
+Quirks provides several useful hooks for integrating the library and its 
+functionality within your vue codebase.
+
+## useConnect
+
+Returns the methods and information needed to use the wallets, to connect 
+to them, and to get information about the status of the connection.
+
+```ts twoslash
+import { useConnect } from "@quirks/vue";
+
+const {
+  connect,
+  disconnect,
+  status,
+  setupStatus,
+  connected,
+  connecting,
+  disconnected,
+  rejected,
+  wallet,
+  walletName
+} = useConnect();
+```
+
+## useChain
+
+If you use the name of a previously configured chain as parameter, it will 
+return information about that chain. If the wallet is connected, it will also 
+return the address for that wallet/chain pair.
+
+<Callout title="Note">
+The list of supported chains depends on the wallet you are using; not all 
+wallets allow you to add custom chains. Therefore, it may not be possible to 
+get information for some chains.
+</Callout>
+
+```ts twoslash
+import { useChain } from "@quirks/vue";
+
+/**
+ * The name of the chain for which you want to obtain
+ * information corresponds to the one you have configured in the Config object.
+ */
+const chainName = "osmosis";
+
+const {
+  chain,
+  address,
+  accountName,
+  getOfflineSigner,
+  getOfflineSignerOnlyAmino,
+  getOfflineSignerAuto,
+  signAmino,
+  signDirect,
+} = useChain(chainName);
+```
+
+## useChains
+
+Returns information about all connected chains. If the wallet is connected, 
+it will also return the address for that wallet/chain pairs.
+
+<Callout title="Note">
+The list of supported chains depends on the wallet you are using; not all 
+wallets allow you to add custom chains. Therefore, it may not be possible to 
+get information for some chains.
+</Callout>
+
+```ts twoslash
+import { useChains } from "@quirks/vue";
+
+const {
+  accounts,
+  accountName,
+  getAddresses,
+  getAddress,
+  getChain
+} = useChains();
+```
+
+## useConfig
+
+Returns information about the configuration of Quirks previously defined in the
+[Config object](/docs/config).
+
+```ts twoslash
+import { useConfig } from "@quirks/vue";
+
+const {
+  wallets,
+  chains,
+  assetsLists
+} = useConfig();
+```
+
+## useWalletConnect
+
+Returns information about Wallet Connect connection, including the
+**pairing URI** if connecting to a wallet that supports it.
+
+```ts twoslash
+import { useWalletConnect } from "@quirks/vue";
+
+const {
+  pairingURI,
+  namespaces,
+  providerOpts
+} = useWalletConnect();
+```
+
+## useWalletEvents
+
+It is a utility that allows you to subscribe to Quirks events to perform 
+custom actions.
+
+```ts twoslash
+import { useWalletEvents } from "@quirks/vue";
+
+const { flush } = useWalletEvents("accountsChanged", () => {
+//                                 ^|
+// your custom code
+});
+```

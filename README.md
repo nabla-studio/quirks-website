@@ -1,8 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Quirks
 
-## Getting Started
+Quirks is a universal wallet adapter that easily connect your dapp with existing wallets in the Cosmos blockchain ecosystem.
 
-First, run the development server:
+This is the official repo on the quirks site which also contains the official documentation.
+
+## 🔧 Installation
+
+First, install all the dependencies:
+
+```bash
+npm i
+# or
+yarn
+# or
+pnpm i
+# or
+bun i
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -16,21 +32,26 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 👥 Authors
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+👤 **Davide Segullo** (Code)
 
-## Learn More
+- Github: [@DavideSegullo](https://github.com/DavideSegullo)
+- Twitter: [@davide_segullo](https://twitter.com/davide_segullo)
 
-To learn more about Next.js, take a look at the following resources:
+## 🎉 Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+We ❤️ contributions! If you'd like to contribute, please read our contributing
+guidelines.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 📜 License
 
-## Deploy on Vercel
+This project is licensed under the Apache-2.0 License. See the LICENSE file for
+more information.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🙋 Support
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you have any questions or comments about this project, please feel free to
+contact us on discord.
+
+Copyright © 2024 [nabla](https://github.com/nabla-studio).

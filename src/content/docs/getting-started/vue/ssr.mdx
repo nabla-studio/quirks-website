@@ -1,0 +1,50 @@
+---
+title: Server Side Rendering (Nuxt.js)
+---
+
+To use nuxt, we've created a package that defines a nuxt module so that all the
+hooks and utilities are imported automatically.
+
+<Steps>
+  <Step>
+    Install quirks nuxt package
+
+```package-install
+@quirks/nuxt
+```
+
+  </Step>
+  <Step>
+Add Quirks module inside `nuxt.config.ts`
+
+```ts title="nuxt.config.ts"
+export default defineNuxtConfig({
+  modules: ["@quirks/nuxt"],
+});
+```
+
+  </Step>
+  <Step>
+Add `quirks.ts` inside `plugins` folder
+
+```ts title="/plugins/quirks.ts"
+import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
+import type { Config } from "@quirks/store";
+import { keplrExtension, leapExtension } from "@quirks/wallets";
+
+const config: Config = {
+  wallets: [keplrExtension, leapExtension],
+  chains: [osmosis],
+  assetsLists: [osmosisAssetList],
+};
+
+export default defineNuxtPlugin((nuxtApp) => {
+  nuxtApp.vueApp.use(quirksPlugin, config);
+});
+```
+
+  </Step>
+  <Step>
+  You can start using it as described inside [quick start](./quick-start#connect-a-wallet)
+  </Step>
+</Steps>

@@ -13,7 +13,7 @@ interface ChainButtonProps {
 }
 
 function ChainButton({ wallet, onConnect }: ChainButtonProps) {
-  const { connect } = useConnect();
+  const { connect, connecting } = useConnect();
 
   const onClick = async (name: string) => {
     await connect(name);
@@ -27,7 +27,7 @@ function ChainButton({ wallet, onConnect }: ChainButtonProps) {
     <>
       <Image
         src={wallet.logoLight ?? ""}
-        alt={wallet.options.prettyName}
+        alt={wallet.options.pretty_name}
         width={24}
         height={24}
         unoptimized
@@ -37,7 +37,7 @@ function ChainButton({ wallet, onConnect }: ChainButtonProps) {
       />
 
       <span className="ml-5 mr-auto text-lg font-semibold leading-10 lg:ml-11">
-        {wallet.options.prettyName}
+        {wallet.options.pretty_name}
       </span>
 
       {wallet.injected ? (
@@ -65,9 +65,10 @@ function ChainButton({ wallet, onConnect }: ChainButtonProps) {
       <button
         onClick={() => {
           if (wallet.injected) {
-            onClick(wallet.options.name);
+            onClick(wallet.options.wallet_name);
           }
         }}
+        disabled={connecting}
         className={wrapperClass}
       >
         {content}
@@ -80,8 +81,10 @@ function ChainButton({ wallet, onConnect }: ChainButtonProps) {
       href={
         wallet.injected
           ? ""
-          : wallet.options.downloads && wallet.options.downloads.length > 0
-            ? wallet.options.downloads[0].link
+          : wallet.options.platforms &&
+              wallet.options.platforms.length > 0 &&
+              wallet.options.platforms[0].install_link
+            ? wallet.options.platforms[0].install_link
             : "#"
       }
       target="_blank"
@@ -165,7 +168,7 @@ function ConnectButton() {
             </header>
             <ul className="px-6.5">
               {wallets.map((wallet) => (
-                <li key={wallet.options.name}>
+                <li key={wallet.options.wallet_name}>
                   <ChainButton
                     wallet={wallet}
                     onConnect={() => setOpen(false)}

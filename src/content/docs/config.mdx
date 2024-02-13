@@ -1,0 +1,196 @@
+---
+title: Configurations
+---
+
+As seen before, to initialise Quirks it is necessary to pass an object with a 
+valid configuration. Currently the library supports several configuration 
+parameters to customise different layers (e.g. choose the storage type, the 
+wallets to use, etc.).
+
+Below is an in-depth look at all the elements that make up the
+[`Config`](https://github.com/nabla-studio/quirks/blob/main/packages/store/src/types/options.ts#L26) type.
+
+### Usage
+
+```ts twoslash
+import { type Config, ssrPersistOptions } from "@quirks/store";
+import {
+  keplrExtension,
+  leapExtension,
+  xdefiExtension,
+  cosmostationExtension,
+  universalWalletConnect,
+} from "@quirks/wallets";
+import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
+
+const config: Config = {
+  wallets: [
+    keplrExtension,
+    leapExtension,
+    cosmostationExtension,
+    xdefiExtension,
+    universalWalletConnect,
+  ],
+  chains: [osmosis],
+  assetsLists: [osmosisAssetList],
+  persistOptions: ssrPersistOptions,
+  walletConnectOptions: {
+    providerOpts: {
+      logger: "info",
+      projectId: "<YOUR-PROJECT-ID>",
+      metadata: {
+        name: "React App",
+        description: "React App for WalletConnect",
+        url: "https://walletconnect.com/",
+        icons: ["https://avatars.githubusercontent.com/u/37784886"],
+      },
+    },
+  },
+};
+```
+
+### Types
+
+<TypeTable
+  type={{
+    wallets: {
+      description:
+        "Array of wallets that you intend to use, imported from @quirks/wallets.",
+      type: "Wallet[]",
+      default: "[]",
+    },
+    chains: {
+      description:
+        "Array of chains that you intend to use, imported from @nabla-studio/chain-registry.",
+      type: "Chain[]",
+      default: "[]",
+    },
+    assetsLists: {
+      description:
+        "Array of asset lists associeted with chains data that you intend to use, imported from @nabla-studio/chain-registry.",
+      type: "AssetLists[]",
+      default: "[]",
+    },
+    autoConnect: {
+      description:
+        "If a session was previously initialised with Quirks and is present in the store, then the store is restored; this may result in a modal popup of the last connected wallet (as in the case of Keplr).",
+      type: "boolean",
+      default: "true",
+    },
+    autoSuggestions: {
+      description:
+        "Automatically suggesting chains using the provided ones; it is useful if you want to add a chain that is not natively supported by a wallet.",
+      type: "boolean",
+      default: "true",
+    },
+    signOptions: {
+      description:
+        "Object containing preferences to be sent to the associated wallet for signing operations.",
+      type: "SignOptions",
+      typeDescriptionLink: "#signoptions",
+    },
+    signerOptions: {
+      description:
+        "Allow signing and broadcasting configuration according to your needs.",
+      type: "SignerOptions",
+      typeDescriptionLink: "#signeroptions",
+    },
+    persistOptions: {
+      description:
+        "Configuration for persistent data (by default we use localstorage from the web API). There are also specific settings for SSR (`ssrPersistOptions`) and React Native.",
+      type: "PersistOptions<AppState>",
+      typeDescriptionLink:
+        "https://docs.pmnd.rs/zustand/integrations/persisting-store-data#options",
+      default: "defaultPersistOptions",
+    },
+    walletConnectOptions: {
+      description:
+        "Required if you are using Wallet Connect; it is used to define the parameters you request from Wallet Connect, such as the Project ID.",
+      type: "WalletConnectOptions",
+      typeDescriptionLink: "#walletconnectoptions",
+    },
+  }}
+/>
+
+#### SignOptions
+
+<TypeTable
+  type={{
+    preferNoSetFee: {
+      description:
+        "If true, and supported by the wallet, it will prioritise the fee suggested by the front-end, rather than overriding the tx-fee setting of the signing page.",
+      type: "boolean",
+      default: "false",
+    },
+    preferNoSetMemo: {
+      description:
+        "If true, and supported by the wallet, it will not override the memo and set the fixed memo as the front-end set memo.",
+      type: "boolean",
+      default: "true",
+    },
+    disableBalanceCheck: {
+      description:
+        "If true, and supported by the wallet, it will prevents account balance check.",
+      type: "boolean",
+      default: "true",
+    },
+  }}
+/>
+
+#### SignerOptions
+
+<TypeTable
+  type={{
+    stargate: {
+      description:
+        "Allows a set of custom parameters to be sent when the signed tx is broadcasted.",
+      type: "(chain: Chain) => Promise<StargateClientOptions | undefined>",
+      typeDescriptionLink:
+        "https://github.com/cosmos/cosmjs/blob/b922729093a9158b9e6152e5ca23b2426e0bbc51/packages/stargate/src/stargateclient.ts#L194",
+    },
+    signingStargate: {
+      description:
+        "Allows a set of custom parameters to be sent when the tx is signed, useful for defining custom amino and registry types. Used for the 'sign' utility.",
+      type: "(chain: Chain) => Promise<SigningStargateClientOptions | undefined>",
+      typeDescriptionLink:
+        "https://github.com/cosmos/cosmjs/blob/b922729093a9158b9e6152e5ca23b2426e0bbc51/packages/stargate/src/signingstargateclient.ts#L84",
+    },
+    signingCosmwasm: {
+      description:
+        "Allows a set of custom parameters to be sent when the tx is signed, useful for defining custom amino and registry types. Used for the 'signCW' utility.",
+      type: "(chain: Chain) => Promise<SigningStargateClientOptions | undefined>",
+      typeDescriptionLink:
+        "https://github.com/cosmos/cosmjs/blob/b922729093a9158b9e6152e5ca23b2426e0bbc51/packages/stargate/src/signingstargateclient.ts#L84",
+    },
+  }}
+/>
+
+#### WalletConnectOptions
+
+<TypeTable
+  type={{
+    providerOpts: {
+      description:
+        "It is based on Wallet Connect's universal provider configuration and allows us to define our app's metadata and customise some behaviours.",
+      type: "UniversalProviderOpts",
+      typeDescriptionLink:
+        "https://docs.walletconnect.com/advanced/providers/universal#usage",
+    },
+    namespaces: {
+      description:
+        "It allows for custom namespace configuration, if provided for cosmos it will merge object data with the default cosmos setup; it's useful if you want to provide extra events, methods ecc.",
+      type: "{ cosmos: Omit<Namespace, 'chains'> }",
+      typeDescriptionLink:
+        "https://specs.walletconnect.com/2.0/specs/clients/sign/namespaces",
+      default: `
+        {
+          cosmos: {
+            methods: ['cosmos_getAccounts', 'cosmos_signDirect', 'cosmos_signAmino'],
+            chains: [],
+            events: ['chainChanged', 'accountsChanged'],
+          },
+        }
+      `,
+    },
+  }}
+/>

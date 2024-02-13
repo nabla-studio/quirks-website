@@ -14,7 +14,7 @@ import {
   leapExtension,
 } from "@quirks/wallets";
 import { LazyMotion, domAnimation } from "framer-motion";
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 
 const config: Config = {
   wallets: [keplrExtension, leapExtension, cosmostationExtension],

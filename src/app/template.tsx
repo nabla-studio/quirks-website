@@ -1,15 +1,21 @@
-import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
-import { Provider } from "./providers";
-import { Navbar } from "@/components/Navbar";
 import { Analytics } from "@vercel/analytics/react";
+import type { Metadata } from "next";
+import { RootProvider } from "fumadocs-ui/provider";
 
 const axifoma = localFont({
   src: [
     {
       path: "../../public/fonts/axiforma/Axiforma SemiBold.woff",
       weight: "600",
+    },
+    {
+      path: "../../public/fonts/axiforma/Axiforma Medium.woff",
+      weight: "500",
+    },
+    {
+      path: "../../public/fonts/axiforma/Axiforma Regular.woff",
+      weight: "400",
     },
   ],
 });
@@ -50,14 +56,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${axifoma.className} flex flex-col bg-secondary`}>
-        <Provider>
-          <Navbar />
-          {children}
-        </Provider>
-        <Analytics />
-      </body>
-    </html>
+    <>
+      {/* prettier-ignore */}
+      <html lang="en" className="scroll-smooth dark" style={{ colorScheme: "dark" }}>
+        <body className={axifoma.className}>
+            <RootProvider>
+                {children}
+                <Analytics />
+            </RootProvider>
+        </body>
+      </html>
+    </>
   );
 }

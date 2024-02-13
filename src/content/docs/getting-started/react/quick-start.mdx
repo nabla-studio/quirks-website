@@ -1,0 +1,125 @@
+---
+title: Quick Start
+---
+
+## Installation
+
+Install the packages
+
+```package-install
+@nabla-studio/chain-registry @quirks/react @quirks/store @quirks/wallets
+```
+
+## Setup
+
+Import and configure `QuirksConfig` context provider inside your `app.tsx` or 
+root file.
+
+```tsx twoslash
+import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
+import { QuirksConfig } from "@quirks/react";
+import { Config } from "@quirks/store";
+import { keplrExtension, leapExtension } from "@quirks/wallets";
+import type { PropsWithChildren } from "react";
+// ---cut-start---
+import * as React from "react";
+// ---cut-end---
+
+// Setup the configuration
+const config: Config = {
+  wallets: [keplrExtension, leapExtension], // use a list of wallet, like keplr and leap, from wallets
+  chains: [osmosis], // use a list of chains, like osmosis, from chain-registry
+  assetsLists: [osmosisAssetList], // use a list of assetlist, like the osmosis one, from chain-registry
+};
+
+export const App = ({ children }: PropsWithChildren<unknown>) => {
+  // Use the component
+  return <QuirksConfig config={config}>{children}</QuirksConfig>;
+};
+```
+
+## Connect a wallet
+
+Provide the button for connecting/disconnecting a wallet
+
+```tsx twoslash
+import { useConnect } from "@quirks/react";
+// ---cut-start---
+import * as React from "react";
+// ---cut-end---
+
+export const ConnectionButton = () => {
+  const { connect, disconnect, connected } = useConnect();
+  
+  // If user is connected, provide a disconnect button
+  if (connected) {
+    return <button onClick={disconnect}>Disconnect</button>;
+  }
+
+  // Create button for specific wallet connection (e.g. for the keplr one)
+  return <button onClick={() => connect("keplrextension")}>Connect</button>;
+};
+```
+
+## Allow user to choose a wallet
+
+Provide the user with a multiple choice of wallets
+
+```tsx twoslash
+import { useConfig, useConnect } from "@quirks/react";
+// ---cut-start---
+import * as React from "react";
+// ---cut-end---
+
+export const WalletsConnector = () => {
+  // Get the list of wallets
+  const { wallets } = useConfig();
+  const { connect, disconnect, connected } = useConnect();
+
+  if (connected) {
+    return <button onClick={disconnect}>Disconnect</button>;
+  }
+
+  return wallets.map((wallet) => (
+    <div key={wallet.options.wallet_name}>
+      <button
+        onClick={() => {
+          connect(wallet.options.wallet_name);
+        }}
+      >
+        <img
+          src={wallet.logoLight}
+          alt={wallet.options.pretty_name}
+          height="48px"
+          width="48px"
+        />
+      </button>
+
+      {!wallet.injected ? (
+        <a
+          href={
+            wallet.options.platforms && wallet.options.platforms.length > 0
+              ? wallet.options.platforms[0].install_link
+              : "#"
+          }
+          target="_blank"
+        >
+          Install
+        </a>
+      ) : null}
+    </div>
+  ));
+};
+```
+
+## Available Hooks
+
+The following hooks are provided. You can learn more about them in the 
+[hooks](./hooks) page.
+
+- **[useConnect](./hooks#useconnect)**
+- **[useChain](./hooks#usechain)**
+- **[useChains](./hooks#usechains)**
+- **[useConfig](./hooks#useconfig)**
+- **[useWalletConnect](./hooks#usewalletconnect)**
+- **[useWalletEvents](./hooks#usewalletevents)**
