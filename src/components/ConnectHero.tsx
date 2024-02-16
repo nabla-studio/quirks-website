@@ -79,7 +79,7 @@ function ConnectHero() {
                 opacity: 0,
               }}
             >
-              Test the component sending yourself
+              Test the component by sending yourself
               <br />
               fractions of a token.
             </m.p>
