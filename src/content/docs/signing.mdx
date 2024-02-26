@@ -70,27 +70,37 @@ const signer = getSigningCosmWasmClient(chainName, "auto");
 
 ### sign
 
-Signs a transaction using CosmJS Stargate Client on a given `chainName`. 
-Allows specifying **messages**, **fees**, **signer type**, and **memo**.
+Signs a transaction using CosmJS Stargate Client on a given `chainName`.
+
+Allows specifying **messages**, **fees**, **signer type**, **memo**, **explicitSignerData** and **timeoutHeight**.
 
 ```ts twoslash
 import { sign } from "@quirks/store";
 
 const chainName = "osmosis";
-const txRaw = sign(chainName, [], "auto", "auto", undefined);
+const txRaw = sign(chainName, [], "auto", "auto", "memo", {
+  accountNumber: 0,
+  sequence: 0,
+  chainId: "",
+}, BigInt(0));
 ```
 
 ### signCW
 
 Signs a CosmWasm transaction using CosmJS Stargate Client on a given 
-`chainName`. Allows specifying **messages**, **fee**, **signer type**, and 
-**memo**.
+`chainName`.
+
+Allows specifying **messages**, **fees**, **signer type**, **memo**, **explicitSignerData** and **timeoutHeight**.
 
 ```ts twoslash
 import { signCW } from "@quirks/store";
 
 const chainName = "osmosis";
-const txRaw = signCW(chainName, [], "auto", "auto", undefined);
+const txRaw = signCW(chainName, [], "auto", "auto", "memo", {
+  accountNumber: 0,
+  sequence: 0,
+  chainId: "",
+}, BigInt(0));
 ```
 
 ### signArbitrary
