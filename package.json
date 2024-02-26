@@ -15,7 +15,7 @@
     "@quirks/react": "^0.13.1",
     "@quirks/react-native": "^0.2.13",
     "@quirks/store": "^0.21.0",
-    "@quirks/vue": "^0.11.2",
+    "@quirks/vue": "^0.11.3",
     "@quirks/wallets": "^0.15.0",
     "@types/mdx": "^2.0.11",
     "@vercel/analytics": "^1.1.1",
