@@ -1,0 +1,24 @@
+---
+title: Cosmiframe
+---
+
+Since the release of [@quirks/wallets@0.17.0](https://github.com/nabla-studio/quirks/releases/tag/wallets%400.17.0),
+support for [cosmiframe](https://github.com/DA0-DA0/cosmiframe) has been added, which allows a parent dapp to include daughter dapps within it, as it started on [DAODAO](https://daodao.zone/).
+
+## DAODAO iframe Example
+
+Integration is very simple, just import the provider for DAODAO into the configuration, as follows:
+
+```ts twoslash
+import { daodaoCosmiframe } from "@quirks/wallets";
+import { type Config, ssrPersistOptions } from "@quirks/store";
+import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
+
+const config: Config = {
+  wallets: [
+    daodaoCosmiframe,
+  ],
+  chains: [osmosis],
+  assetsLists: [osmosisAssetList],
+};
+```
