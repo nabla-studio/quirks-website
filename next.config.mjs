@@ -3,7 +3,7 @@ import createMDX from "fumadocs-mdx/config";
 import { rehypeCodeDefaultOptions } from "fumadocs-core/mdx-plugins";
 import { transformerTwoslash } from "fumadocs-twoslash";
 import createBundleAnalyzer from "@next/bundle-analyzer";
-import { remarkInstall } from "fumadocs-core/mdx-plugins";
+import { remarkInstall } from "fumadocs-docgen";
 import { cwd } from "process";
 
 /** @type {import('next').NextConfig} */
@@ -36,6 +36,7 @@ const withBundleAnalyzer = createBundleAnalyzer({
 
 const withMDX = createMDX({
   rootContentPath: "./src/content",
+  buildSearchIndex: true,
   mdxOptions: {
     lastModifiedTime: "git",
     rehypeCodeOptions: {
@@ -44,31 +45,7 @@ const withMDX = createMDX({
         transformerTwoslash(),
       ],
     },
-    remarkPlugins: [
-      [
-        () =>
-          remarkInstall({
-            packageManagers: [
-              (name) => ({
-                packageManager: "npm",
-                command: `npm i ${name}`,
-              }),
-              (name) => ({
-                packageManager: "yarn",
-                command: `yarn add ${name}`,
-              }),
-              (name) => ({
-                packageManager: "pnpm",
-                command: `pnpm add ${name}`,
-              }),
-              (name) => ({
-                packageManager: "bun",
-                command: `bun add ${name}`,
-              }),
-            ],
-          }),
-      ],
-    ],
+    remarkPlugins: [[remarkInstall]],
   },
 });
 
