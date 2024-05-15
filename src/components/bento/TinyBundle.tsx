@@ -5,12 +5,12 @@ import { m } from "framer-motion";
 import Link from "next/link";
 
 function TinyBundle() {
-  const { ref: kbRef, rounded: kbValue } = useCounterAnimation(0, 2, {
+  const { ref: kbRef, rounded: kbValue } = useCounterAnimation(0, 3, {
     duration: 1.5,
   });
   const { ref: bundleSizeRef, rounded: budleSize } = useCounterAnimation(
     0,
-    86,
+    93,
     { duration: 2.5 },
   );
 
