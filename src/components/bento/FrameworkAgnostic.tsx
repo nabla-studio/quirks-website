@@ -14,7 +14,9 @@ function FrameworkAgnostic() {
     <div className="bento-card-base flex flex-col gap-8 px-11 py-9 lg:col-span-3 lg:col-start-3 lg:gap-18.5 lg:px-10 lg:py-10">
       <h3 className="text-lg lg:text-bento-h">Framework Agnostic</h3>
       <div
-        ref={(ref) => (group.current = ref)}
+        ref={(ref) => {
+          group.current = ref;
+        }}
         className="grid w-full grid-cols-3 justify-items-center gap-3 self-center lg:gap-6.5"
       >
         {FRAMEWORKS.map(({ name, uri, color }, index) => (

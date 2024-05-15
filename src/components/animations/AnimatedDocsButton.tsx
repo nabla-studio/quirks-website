@@ -97,7 +97,9 @@ const AnimatedDocsButton = () => {
       <Link
         href="/docs"
         className="inline-flex min-h-13.75 items-center gap-x-3 rounded-std bg-primary pl-7 pr-6"
-        ref={(ref) => (docsButton.current = ref)}
+        ref={(ref) => {
+          docsButton.current = ref;
+        }}
       >
         <span className="pb-1.5 pt-2.5 text-lg">Getting started</span>
         <Image
