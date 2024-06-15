@@ -87,10 +87,11 @@ export default function RootDocsLayout({ children }: { children: ReactNode }) {
   return (
     <DocsLayout
       tree={pageTree}
+      githubUrl="https://github.com/nabla-studio/quirks"
       nav={{
         title: <Logo className="mt-1 h-auto w-[148px]" fill="currentColor" />,
-        githubUrl: "https://github.com/nabla-studio/quirks",
         transparentMode: "top",
+        enableSearch: true,
       }}
     >
       {children}
