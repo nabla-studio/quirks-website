@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: quirks.nabla.studio
+
+# Sitemaps
+Sitemap: quirks.nabla.studio/sitemap.xml
