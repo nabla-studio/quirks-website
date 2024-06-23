@@ -6,8 +6,7 @@ import {
   osmosis,
   osmosisAssetList,
 } from "@nabla-studio/chain-registry";
-import { QuirksConfig, QuirksNextProvider } from "@quirks/react";
-import { type Config } from "@quirks/store";
+import { QuirksConfig } from "@quirks/react";
 import {
   cosmostationExtension,
   keplrExtension,
@@ -15,19 +14,18 @@ import {
 } from "@quirks/wallets";
 import { LazyMotion, domAnimation } from "framer-motion";
 import type { PropsWithChildren } from "react";
+import { generateConfig } from "@quirks/next";
 
-const config: Config = {
+const config = generateConfig({
   wallets: [keplrExtension, leapExtension, cosmostationExtension],
   chains: [osmosis, cosmoshub],
   assetsLists: [osmosisAssetList, cosmoshubAssetList],
-};
+});
 
 export const Provider = ({ children }: PropsWithChildren<unknown>) => {
   return (
     <LazyMotion features={domAnimation}>
-      <QuirksNextProvider>
-        <QuirksConfig config={config}>{children}</QuirksConfig>
-      </QuirksNextProvider>
+      <QuirksConfig config={config}>{children}</QuirksConfig>
     </LazyMotion>
   );
 };
