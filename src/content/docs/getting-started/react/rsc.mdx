@@ -1,0 +1,93 @@
+---
+title: Next.js - React Server Component
+---
+
+Thanks to the use of [cookies](/docs/getting-started/react/ssr-with-cookies), it is possible to support the use of [RSCs](https://vercel.com/blog/understanding-react-server-components), and several utilities are available to facilitate their integration using the App router.
+
+## getConnect
+
+Returns information about the current wallet and about the status of the connection.
+
+```ts twoslash
+import { getConnect } from "@quirks/next";
+
+const {
+  status,
+  setupStatus,
+  connected,
+  connecting,
+  disconnected,
+  connectionError,
+  rejected,
+  walletName
+} = getConnect();
+```
+
+## getChain
+
+If you use the name of a previously configured chain as parameter, it will 
+return information about that chain. If the wallet is connected, it will also 
+return the address for that wallet/chain pair.
+
+<Callout title="Note">
+The list of supported chains depends on the wallet you are using; not all 
+wallets allow you to add custom chains. Therefore, it may not be possible to 
+get information for some chains.
+</Callout>
+
+```ts twoslash
+import { getChain } from "@quirks/next";
+
+/**
+ * The name of the chain for which you want to obtain information
+ * corresponds to the one you have used in the Config object.
+ */
+const chainName = "osmosis";
+
+const {
+  address,
+  accountName,
+} = getChain(chainName);
+```
+
+## getChains
+
+Returns information about all connected chains. If the wallet is connected, 
+it will also return the address for that wallet/chain pairs.
+
+```ts twoslash
+import { getChains } from "@quirks/next";
+
+const {
+  accounts,
+  accountName,
+  getAddresses,
+  getAddress
+} = getChains();
+```
+
+## Example
+
+```tsx twoslash title="/app/server-component-example.tsx"
+import { getConnect, getChain } from "@quirks/next";
+// ---cut-start---
+import * as React from "react";
+// ---cut-end---
+
+export const ServerComponentExample = () => {
+  const { connected } = getConnect();
+  const { address } = getChain('osmosis');
+
+  if (!connected) {
+    return <div>Disconnected</div>;
+  }
+
+  return (
+    <div>
+      Server Component
+      <div>Chain Name: Osmosis</div>
+      <div>Address: {address}</div>
+    </div>
+  );
+};
+```
