@@ -11,12 +11,13 @@ Install the packages
 ```
 
 <Callout type="warn">
-If you are using version v1 of yarn you must manually install the peer dependencies, as this version of yarn does not automatically resolve them.
+  If you are using version v1 of yarn you must manually install the peer
+  dependencies, as this version of yarn does not automatically resolve them.
 </Callout>
 
 ## Setup
 
-Import and configure `QuirksConfig` context provider inside your `app.tsx` or 
+Import and configure `QuirksConfig` context provider inside your `app.tsx` or
 root file.
 
 ```tsx twoslash
@@ -44,7 +45,7 @@ export const App = ({ children }: PropsWithChildren<unknown>) => {
 
 ## Connect a wallet
 
-Provide the button for connecting/disconnecting a wallet
+Provide the button for connecting/disconnecting a wallet.
 
 ```tsx twoslash
 import { useConnect } from "@quirks/react";
@@ -54,7 +55,7 @@ import * as React from "react";
 
 export const ConnectionButton = () => {
   const { connect, disconnect, connected } = useConnect();
-  
+
   // If user is connected, provide a disconnect button
   if (connected) {
     return <button onClick={disconnect}>Disconnect</button>;
@@ -67,7 +68,7 @@ export const ConnectionButton = () => {
 
 ## Allow user to choose a wallet
 
-Provide the user with a multiple choice of wallets
+Provide the user with a multiple choice of wallets.
 
 ```tsx twoslash
 import { useConfig, useConnect } from "@quirks/react";
@@ -118,7 +119,7 @@ export const WalletsConnector = () => {
 
 ## Available Hooks
 
-The following hooks are provided. You can learn more about them in the 
+The following hooks are provided. You can learn more about them in the
 [hooks](./hooks) page.
 
 - **[useConnect](./hooks#useconnect)**
