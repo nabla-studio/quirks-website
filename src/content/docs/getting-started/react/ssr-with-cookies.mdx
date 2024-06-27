@@ -2,18 +2,15 @@
 title: Server Side Rendering (Next.js) - Using Cookies
 ---
 
-If you want to use Next.js usually you need a specific provider to avoid hydration errors,
-that's why a good solution to this problem is to use cookies instead to save session data
-that may also be of interest to the server.
-
-Furthermore, this opens up the possibilities of using react component servers with quirks.
+A good alternative to the usage of `QuirksNextProvider` is to use cookies to store session data, which can also be useful for the server.
+Additionally, this method allows for the use of React Server Components with quirks.
 
 <Callout type="warn" title="Notice">
-This functionality requires a version of @quirks/store >= 0.25.0
+  This functionality requires @quirks/store version 0.25.0 or higher
 </Callout>
 
 <Callout title="Note">
-I use this approach for the homepage of this site!
+  I use this approach for the homepage of this site!
 </Callout>
 
 ## Installation
@@ -24,7 +21,7 @@ Install the package
 @quirks/next
 ```
 
-## Usage with App Dir
+## Usage with App Router
 
 <Steps>
   <Step>
@@ -50,11 +47,10 @@ const config = generateConfig({
 });
 
 export const Provider = ({ children }: PropsWithChildren<unknown>) => {
-  return (
-    <QuirksConfig config={config}>{children}</QuirksConfig>
-  );
+  return <QuirksConfig config={config}>{children}</QuirksConfig>;
 };
 ```
+
 </Step>
 <Step>
 Import it inside your `layout.tsx`:
@@ -80,9 +76,7 @@ const config = generateConfig({
 });
 
 export const Provider = ({ children }: PropsWithChildren<unknown>) => {
-  return (
-    <QuirksConfig config={config}>{children}</QuirksConfig>
-  );
+  return <QuirksConfig config={config}>{children}</QuirksConfig>;
 };
 // ---cut---
 // @filename: layout.tsx
@@ -106,6 +100,7 @@ export default function RootLayout({
   );
 }
 ```
+
 </Step>
 <Step>
 You did it 🎉! Now you can start using it as described inside 
@@ -113,7 +108,8 @@ You did it 🎉! Now you can start using it as described inside
 </Step>
 </Steps>
 
-## Usage with Pages Dir
+## Usage with Pages Router
+
 <Steps>
 <Step>
 Add the providers inside your `_app.tsx`:
@@ -138,11 +134,12 @@ const config = generateConfig({
 function App({ Component, pageProps }: AppProps) {
   return (
     <QuirksConfig config={config}>
-        <Component {...pageProps} />
+      <Component {...pageProps} />
     </QuirksConfig>
   );
 }
 ```
+
 </Step>
 <Step>
 You did it 🎉! Now you can start using it as described inside 
