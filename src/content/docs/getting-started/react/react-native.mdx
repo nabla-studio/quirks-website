@@ -91,11 +91,7 @@ export default App;
 
 ## Android Fix
 
-There is currently a bug in the **react-native-quick-crypto** library
-([recently fixed](https://github.com/margelo/react-native-quick-crypto/commit/8d4bbcdee28220508a770e050201737ca903e6d9#diff-197b190e4a3512994d2cebed8aff5479ff88e136b8cc7a4b148ec9c3945bd65aR103),
-but no new build yet).
-To fix this, you currently need to import the following configuration into
-your `build.gradle`.
+There is currently a bug in the **react-native-quick-crypto** library ([which has been recently fixed](https://github.com/margelo/react-native-quick-crypto/commit/8d4bbcdee28220508a770e050201737ca903e6d9#diff-197b190e4a3512994d2cebed8aff5479ff88e136b8cc7a4b148ec9c3945bd65aR103) but not yet released in a new build). To address this issue, you need to import the following configuration into your `build.gradle`.
 
 ```bash title="android/app/build.gradle"
 android {
