@@ -2,10 +2,10 @@
 title: Next.js - React Server Component
 ---
 
-Thanks to the use of [cookies](/docs/getting-started/react/ssr-with-cookies), it is possible to support the use of [RSCs](https://vercel.com/blog/understanding-react-server-components), and several utilities are available to facilitate their integration using the App router.
+By using [cookies](/docs/getting-started/react/ssr-with-cookies), supporting [RSCs](https://vercel.com/blog/understanding-react-server-components) becomes possible, and there are various utilities available to ease their integration with the App router.
 
 <Callout type="warn" title="Notice">
-This functionality requires a version of @quirks/store >= 0.25.0
+  This functionality requires a version of @quirks/store >= 0.25.0
 </Callout>
 
 ## getConnect
@@ -23,20 +23,20 @@ const {
   disconnected,
   connectionError,
   rejected,
-  walletName
+  walletName,
 } = getConnect();
 ```
 
 ## getChain
 
-If you use the name of a previously configured chain as parameter, it will 
-return information about that chain. If the wallet is connected, it will also 
+If you use the name of a previously configured chain as parameter, it will
+return information about that chain. If the wallet is connected, it will also
 return the address for that wallet/chain pair.
 
 <Callout title="Note">
-The list of supported chains depends on the wallet you are using; not all 
-wallets allow you to add custom chains. Therefore, it may not be possible to 
-get information for some chains.
+  The list of supported chains depends on the wallet you are using; not all
+  wallets allow you to add custom chains. Therefore, it may not be possible to
+  get information for some chains.
 </Callout>
 
 ```ts twoslash
@@ -48,26 +48,18 @@ import { getChain } from "@quirks/next";
  */
 const chainName = "osmosis";
 
-const {
-  address,
-  accountName,
-} = getChain(chainName);
+const { address, accountName } = getChain(chainName);
 ```
 
 ## getChains
 
-Returns information about all connected chains. If the wallet is connected, 
+Returns information about all connected chains. If the wallet is connected,
 it will also return the address for that wallet/chain pairs.
 
 ```ts twoslash
 import { getChains } from "@quirks/next";
 
-const {
-  accounts,
-  accountName,
-  getAddresses,
-  getAddress
-} = getChains();
+const { accounts, accountName, getAddresses, getAddress } = getChains();
 ```
 
 ## Example
@@ -80,7 +72,7 @@ import * as React from "react";
 
 export const ServerComponentExample = () => {
   const { connected } = getConnect();
-  const { address } = getChain('osmosis');
+  const { address } = getChain("osmosis");
 
   if (!connected) {
     return <div>Disconnected</div>;
