@@ -7,19 +7,20 @@ hooks and utilities are imported automatically.
 
 <Steps>
   <Step>
-    Install quirks nuxt package
+    Install quirks nuxt package:
 
 ```package-install
 @quirks/nuxt
 ```
 
 <Callout type="warn">
-If you are using version v1 of yarn you must manually install the peer dependencies, as this version of yarn does not automatically resolve them.
+  If you are using version v1 of yarn you must manually install the peer
+  dependencies, as this version of yarn does not automatically resolve them.
 </Callout>
 
   </Step>
   <Step>
-Add Quirks module inside `nuxt.config.ts`
+Add Quirks module inside `nuxt.config.ts`:
 
 ```ts title="nuxt.config.ts"
 export default defineNuxtConfig({
@@ -29,7 +30,7 @@ export default defineNuxtConfig({
 
   </Step>
   <Step>
-Add `quirks.ts` inside `plugins` folder
+Add `quirks.ts` inside `plugins` folder:
 
 ```ts title="/plugins/quirks.ts"
 import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
@@ -49,6 +50,6 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   </Step>
   <Step>
-  You can start using it as described inside [quick start](./quick-start#connect-a-wallet)
+  You can start using it as described inside [quick start](./quick-start#connect-a-wallet).
   </Step>
 </Steps>
