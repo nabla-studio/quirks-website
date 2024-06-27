@@ -1,4 +1,3 @@
-import AnimatedDocsButton from "@/components/animations/AnimatedDocsButton";
 import SectionFadeIn from "@/components/animations/SectionFadeIn";
 import Image from "next/image";
 import Link from "next/link";
