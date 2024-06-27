@@ -2,11 +2,11 @@
 title: Server Side Rendering (Next.js)
 ---
 
-If you want to use Next.js to provide server-side rendering capabilities, 
-you'll need to use an additional provider. This allows you to avoid any 
+If you want to use Next.js to provide server-side rendering capabilities,
+you'll need to use an additional provider. This allows you to avoid any
 hydration errors.
 
-## Usage with App Dir
+## Usage with App Router
 
 <Steps>
   <Step>
@@ -38,6 +38,7 @@ export const Provider = ({ children }: PropsWithChildren<unknown>) => {
   );
 };
 ```
+
 </Step>
 <Step>
 Import it inside your `layout.tsx`:
@@ -90,6 +91,7 @@ export default function RootLayout({
   );
 }
 ```
+
 </Step>
 <Step>
 You did it 🎉! Now you can start using it as described inside 
@@ -97,7 +99,8 @@ You did it 🎉! Now you can start using it as described inside
 </Step>
 </Steps>
 
-## Usage with Pages Dir
+## Usage with Pages Router
+
 <Steps>
 <Step>
 Add the providers inside your `_app.tsx`:
@@ -128,6 +131,7 @@ function App({ Component, pageProps }: AppProps) {
   );
 }
 ```
+
 </Step>
 <Step>
 You did it 🎉! Now you can start using it as described inside 
