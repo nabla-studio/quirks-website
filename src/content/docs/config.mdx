@@ -2,9 +2,9 @@
 title: Configurations
 ---
 
-As seen before, to initialise Quirks it is necessary to pass an object with a 
-valid configuration. Currently the library supports several configuration 
-parameters to customise different layers (e.g. choose the storage type, the 
+As seen before, to initialise Quirks it is necessary to pass an object with a
+valid configuration. Currently the library supports several configuration
+parameters to customise different layers (e.g. choose the storage type, the
 wallets to use, etc.).
 
 Below is an in-depth look at all the elements that make up the
@@ -105,7 +105,7 @@ const config: Config = {
     },
     walletConnectOptions: {
       description:
-        "Required if you are using Wallet Connect; it is used to define the parameters you request from Wallet Connect, such as the Project ID.",
+        "Required if you are using WalletConnect; it is used to define the parameters you request from WalletConnect, such as the Project ID.",
       type: "WalletConnectOptions",
       typeDescriptionLink: "#walletconnectoptions",
     },
@@ -171,7 +171,7 @@ const config: Config = {
   type={{
     providerOpts: {
       description:
-        "It is based on Wallet Connect's universal provider configuration and allows us to define our app's metadata and customise some behaviours.",
+        "It is based on WalletConnect's universal provider configuration and allows us to define our app's metadata and customise some behaviours.",
       type: "UniversalProviderOpts",
       typeDescriptionLink:
         "https://docs.walletconnect.com/advanced/providers/universal#usage",

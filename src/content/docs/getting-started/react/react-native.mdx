@@ -2,9 +2,7 @@
 title: React Native
 ---
 
-If you want to use Quirks on React Native, after completing the basic
-installation process [here](./installation.md), you will need to do the 
-following to get started.
+If you want to use Quirks on React Native, after completing the basic installation process defined [here](./installation.md), you will need to follow these steps to get started.
 
 ## Installation
 
@@ -25,13 +23,14 @@ react-native-mmkv
 ```
 
 <Callout type="warn">
-If you are using version v1 of yarn you must manually install the peer dependencies, as this version of yarn does not automatically resolve them.
+  If you are using version v1 of yarn you must manually install the peer
+  dependencies, as this version of yarn does not automatically resolve them.
 </Callout>
 
 ## Setup
 
-Add the Quirks setup import to your `index.ts` or `App.tsx`. 
-It must be included in a boot file to ensure that dependencies are 
+Add the Quirks setup import to your `index.ts` or `App.tsx`.
+It must be included in a boot file to ensure that dependencies are
 correctly imported.
 
 ```ts title="index.ts"
@@ -51,9 +50,7 @@ module.exports = function (api) {
 
 ## Generate config
 
-To facilitate integration with react native, the `generateConfig` utility can 
-be used to create a setup that automatically implements all the basic 
-configurations for RN; this setup is optional and can be customised if needed.
+The `generateConfig` utility simplifies integration with React Native by automatically creating a setup with all the basic configurations for RN. This setup is optional and can be customized if needed.
 
 ```tsx twoslash title="App.tsx"
 import { generateConfig } from "@quirks/react-native";
@@ -94,11 +91,7 @@ export default App;
 
 ## Android Fix
 
-There is currently a bug in the **react-native-quick-crypto** library
-([recently fixed](https://github.com/margelo/react-native-quick-crypto/commit/8d4bbcdee28220508a770e050201737ca903e6d9#diff-197b190e4a3512994d2cebed8aff5479ff88e136b8cc7a4b148ec9c3945bd65aR103), 
-but no new build yet). 
-To fix this, you currently need to import the following configuration into 
-your `build.gradle`.
+There is currently a bug in the **react-native-quick-crypto** library ([which has been recently fixed](https://github.com/margelo/react-native-quick-crypto/commit/8d4bbcdee28220508a770e050201737ca903e6d9#diff-197b190e4a3512994d2cebed8aff5479ff88e136b8cc7a4b148ec9c3945bd65aR103) but not yet released in a new build). To address this issue, you need to import the following configuration into your `build.gradle`.
 
 ```bash title="android/app/build.gradle"
 android {
@@ -114,4 +107,4 @@ android {
 
 ## Starter
 
-A starter is available for easy integration at [this link](https://github.com/nabla-studio/quirks-mobile-dapp-starter).
+A starter is available for easy integration [here](https://github.com/nabla-studio/quirks-mobile-dapp-starter).
