@@ -2,13 +2,12 @@
 title: Hooks
 ---
 
-Quirks provides several useful hooks for integrating the library and its 
-functionality within your react codebase.
+Quirks provides several useful hooks for integrating the library and its
+functionality within your React codebase.
 
 ## useConnect
 
-Returns the methods and information needed to use the wallets, to connect 
-to them, and to get information about the status of the connection.
+Provides the methods and information required to use the wallets, connect to them, and obtain status information about the connection.
 
 ```ts twoslash
 import { useConnect } from "@quirks/react";
@@ -24,20 +23,18 @@ const {
   connectionError,
   rejected,
   wallet,
-  walletName
+  walletName,
 } = useConnect();
 ```
 
 ## useChain
 
-If you use the name of a previously configured chain as parameter, it will 
-return information about that chain. If the wallet is connected, it will also 
-return the address for that wallet/chain pair.
+Provides information about the previously configured chain, along with the address for that wallet/chain pair if the wallet is connected.
 
 <Callout title="Note">
-The list of supported chains depends on the wallet you are using; not all 
-wallets allow you to add custom chains. Therefore, it may not be possible to 
-get information for some chains.
+  The list of supported chains depends on the wallet you are using; not all
+  wallets allow you to add custom chains. Therefore, it may not be possible to
+  get information for some chains.
 </Callout>
 
 ```ts twoslash
@@ -64,67 +61,52 @@ const {
 
 ## useChains
 
-Returns information about all connected chains. If the wallet is connected, 
-it will also return the address for that wallet/chain pairs.
+Provides information about all connected chains, along with the address for that wallet/chain pairs if the wallet is connected.
 
 <Callout title="Note">
-The list of supported chains depends on the wallet you are using; not all 
-wallets allow you to add custom chains. Therefore, it may not be possible to 
-get information for some chains.
+  The list of supported chains depends on the wallet you are using; not all
+  wallets allow you to add custom chains. Therefore, it may not be possible to
+  get information for some chains.
 </Callout>
 
 ```ts twoslash
 import { useChains } from "@quirks/react";
 
-const {
-  accounts,
-  accountName,
-  getAddresses,
-  getAddress,
-  getChain
-} = useChains();
+const { accounts, accountName, getAddresses, getAddress, getChain } =
+  useChains();
 ```
 
 ## useConfig
 
-Returns information about the configuration of Quirks previously defined in the
+Provides information about the configuration of Quirks previously defined in the
 [Config object](/docs/config).
 
 ```ts twoslash
 import { useConfig } from "@quirks/react";
 
-const {
-  wallets,
-  chains,
-  assetsLists
-} = useConfig();
+const { wallets, chains, assetsLists } = useConfig();
 ```
 
 ## useWalletConnect
 
-Returns information about Wallet Connect connection, including the
+Provides information about WalletConnect connection, including the
 **pairing URI** if connecting to a wallet that supports it.
 
 ```ts twoslash
 import { useWalletConnect } from "@quirks/react";
 
-const {
-  pairingURI,
-  namespaces,
-  providerOpts
-} = useWalletConnect();
+const { pairingURI, namespaces, providerOpts } = useWalletConnect();
 ```
 
 ## useWalletEvents
 
-It is a utility that allows you to subscribe to Quirks events to perform 
-custom actions.
+A utility that allows you to subscribe to Quirks events to perform custom actions.
 
 ```ts twoslash
 import { useWalletEvents } from "@quirks/react";
 
 useWalletEvents("accountsChanged", () => {
-//               ^|
-// your custom code
+  //               ^|
+  // your custom code
 });
 ```
