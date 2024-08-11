@@ -21,7 +21,10 @@ Import and configure `QuirksConfig` context provider inside your `app.tsx` or
 root file.
 
 ```tsx twoslash
-import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
+import {
+  chain as osmosis,
+  assets as osmosisAssetList,
+} from 'chain-registry/mainnet/osmosis';
 import { QuirksConfig } from "@quirks/react";
 import { Config } from "@quirks/store";
 import { keplrExtension, leapExtension } from "@quirks/wallets";

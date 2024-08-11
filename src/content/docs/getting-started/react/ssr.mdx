@@ -15,7 +15,10 @@ hydration errors.
 ```tsx twoslash title="/app/providers.tsx"
 "use client";
 
-import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
+import {
+  chain as osmosis,
+  assets as osmosisAssetList,
+} from 'chain-registry/mainnet/osmosis';
 import { QuirksConfig, QuirksNextProvider } from "@quirks/react";
 import { Config } from "@quirks/store";
 import { keplrExtension, leapExtension } from "@quirks/wallets";
@@ -47,7 +50,10 @@ Import it inside your `layout.tsx`:
 // @filename: provider.tsx
 "use client";
 
-import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
+import {
+  chain as osmosis,
+  assets as osmosisAssetList,
+} from 'chain-registry/mainnet/osmosis';
 import { QuirksConfig, QuirksNextProvider } from "@quirks/react";
 import { Config } from "@quirks/store";
 import { keplrExtension, leapExtension } from "@quirks/wallets";
@@ -106,7 +112,10 @@ You did it 🎉! Now you can start using it as described inside
 Add the providers inside your `_app.tsx`:
 
 ```tsx twoslash title="/pages/_app.tsx"
-import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
+import {
+  chain as osmosis,
+  assets as osmosisAssetList,
+} from 'chain-registry/mainnet/osmosis';
 import { QuirksConfig, QuirksNextProvider } from "@quirks/react";
 import { Config } from "@quirks/store";
 import { keplrExtension, leapExtension } from "@quirks/wallets";

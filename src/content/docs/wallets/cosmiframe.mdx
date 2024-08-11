@@ -12,7 +12,10 @@ Integration is very simple, just import the provider for DAODAO into the configu
 ```ts twoslash
 import { daodaoCosmiframe } from "@quirks/wallets";
 import { type Config, ssrPersistOptions } from "@quirks/store";
-import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
+import {
+  chain as osmosis,
+  assets as osmosisAssetList,
+} from 'chain-registry/mainnet/osmosis';
 
 const config: Config = {
   wallets: [

@@ -55,7 +55,10 @@ The `generateConfig` utility simplifies integration with React Native by automat
 ```tsx twoslash title="App.tsx"
 import { generateConfig } from "@quirks/react-native";
 import { keplrMobile, leapMobile } from "@quirks/wallets";
-import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
+import {
+  chain as osmosis,
+  assets as osmosisAssetList,
+} from 'chain-registry/mainnet/osmosis';
 import { QuirksConfig } from "@quirks/react";
 // ---cut-start---
 import * as React from "react";

@@ -27,7 +27,10 @@ export default App;
 // ---cut-start---
 // @filename: main.ts
 // ---cut-end---
-import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
+import {
+  chain as osmosis,
+  assets as osmosisAssetList,
+} from 'chain-registry/mainnet/osmosis';
 import { quirksPlugin } from "@quirks/vue";
 import { Config } from "@quirks/store";
 import { keplrExtension, leapExtension } from "@quirks/wallets";

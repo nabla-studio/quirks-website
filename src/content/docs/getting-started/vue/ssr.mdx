@@ -33,7 +33,10 @@ export default defineNuxtConfig({
 Add `quirks.ts` inside `plugins` folder:
 
 ```ts title="/plugins/quirks.ts"
-import { osmosis, osmosisAssetList } from "@nabla-studio/chain-registry";
+import {
+  chain as osmosis,
+  assets as osmosisAssetList,
+} from 'chain-registry/mainnet/osmosis';
 import type { Config } from "@quirks/store";
 import { keplrExtension, leapExtension } from "@quirks/wallets";
 
