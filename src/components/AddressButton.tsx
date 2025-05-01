@@ -1,7 +1,7 @@
 "use client";
 
 import { useChain, useConnect } from "@quirks/react";
-import { m } from "framer-motion";
+import { m } from "motion/react";
 import Image from "next/image";
 
 function AddressButton() {

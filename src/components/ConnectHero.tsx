@@ -5,7 +5,7 @@ import ConnectButton from "@/components/ConnectButton";
 import DisconnectButton from "@/components/DisconnectButton";
 import { useConnect } from "@quirks/react";
 import { getAddress, sign, broadcast } from "@quirks/store";
-import { AnimatePresence, m } from "framer-motion";
+import { AnimatePresence, m } from "motion/react";
 import Image from "next/image";
 import { useState } from "react";
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { PropsWithChildren } from "react";
-import { m } from "framer-motion";
+import { m } from "motion/react";
 import { useFadeIn } from "@/utils/useFadeIn";
 import { fadeIn } from "@/utils/animations";
 

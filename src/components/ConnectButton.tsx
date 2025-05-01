@@ -3,7 +3,7 @@
 import { useConfig, useConnect } from "@quirks/react";
 import Image from "next/image";
 import { useState } from "react";
-import { AnimatePresence, m } from "framer-motion";
+import { AnimatePresence, m } from "motion/react";
 import Link from "next/link";
 import type { Wallet } from "@quirks/core";
 
@@ -16,6 +16,7 @@ function ChainButton({ wallet, onConnect }: ChainButtonProps) {
   const { connect, connecting } = useConnect();
 
   const onClick = async (name: string) => {
+    console.log("Connecting to", name);
     await connect(name);
     onConnect();
   };

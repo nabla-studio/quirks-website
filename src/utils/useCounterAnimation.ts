@@ -4,7 +4,7 @@ import {
   useInView,
   animate,
   ValueAnimationTransition,
-} from "framer-motion";
+} from "motion/react";
 import { useRef, useEffect } from "react";
 
 export const useCounterAnimation = (

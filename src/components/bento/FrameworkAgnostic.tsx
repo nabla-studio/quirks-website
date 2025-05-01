@@ -1,7 +1,7 @@
 "use client";
 
 import { FRAMEWORKS } from "@/utils/globals";
-import { m, useInView } from "framer-motion";
+import { m, useInView } from "motion/react";
 import Image from "next/image";
 import { useRef } from "react";
 

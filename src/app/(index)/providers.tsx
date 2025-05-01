@@ -14,9 +14,9 @@ import {
   keplrExtension,
   leapExtension,
 } from "@quirks/wallets";
-import { LazyMotion, domAnimation } from "framer-motion";
+import { LazyMotion, domAnimation } from "motion/react";
 import type { PropsWithChildren } from "react";
-import { generateConfig } from "@quirks/next";
+import { generateConfig, initialStateWithCookie } from "@quirks/ssr";
 
 const config = generateConfig({
   wallets: [keplrExtension, leapExtension, cosmostationExtension],
@@ -24,10 +24,18 @@ const config = generateConfig({
   assetsLists: [osmosisAssetList, cosmoshubAssetList],
 });
 
-export const Provider = ({ children }: PropsWithChildren<unknown>) => {
+export const Provider = ({
+  children,
+  quirksInitialState,
+}: PropsWithChildren<{ quirksInitialState?: string }>) => {
+  const quirksConfigWithCookie = initialStateWithCookie(
+    config,
+    quirksInitialState,
+  );
+
   return (
     <LazyMotion features={domAnimation}>
-      <QuirksConfig config={config}>{children}</QuirksConfig>
+      <QuirksConfig config={quirksConfigWithCookie}>{children}</QuirksConfig>
     </LazyMotion>
   );
 };

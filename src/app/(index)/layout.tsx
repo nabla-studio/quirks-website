@@ -1,6 +1,7 @@
 import { Provider } from "./providers";
 import "./globals.css";
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 
 const baseUrl = process.env.SITE_URL
   ? new URL(`https://${process.env.SITE_URL}`)
@@ -32,14 +33,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const results = await cookies();
+  const quirksInitialState = results.get("quirks")?.value;
+
   return (
     <main className="flex flex-col bg-secondary font-semibold">
-      <Provider>{children}</Provider>
+      <Provider quirksInitialState={quirksInitialState}>{children}</Provider>
     </main>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useConnect, useQuirks } from "@quirks/react";
-import { AnimatePresence, m } from "framer-motion";
+import { AnimatePresence, m } from "motion/react";
 import Image from "next/image";
 
 function DisconnectButton() {

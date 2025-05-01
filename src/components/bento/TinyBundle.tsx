@@ -1,7 +1,7 @@
 "use client";
 
 import { useCounterAnimation } from "@/utils/useCounterAnimation";
-import { m } from "framer-motion";
+import { m } from "motion/react";
 import Link from "next/link";
 
 function TinyBundle() {

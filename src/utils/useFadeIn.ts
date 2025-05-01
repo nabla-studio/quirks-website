@@ -1,4 +1,4 @@
-import { useInView, useAnimationControls } from "framer-motion";
+import { useInView, useAnimationControls } from "motion/react";
 import { useRef, useEffect } from "react";
 
 export const useFadeIn = () => {
