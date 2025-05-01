@@ -24,8 +24,6 @@ const processor = remark()
 export async function GET() {
   // all scanned content
   const files = await fg([path.join(process.cwd(), '/src/content/docs/**/*.mdx')]);
-
-  console.log(files.length, path.join(process.cwd(), '/src/content/docs/**/*.mdx'))
  
   const scan = files.map(async (file) => {
     const fileContent = await fs.readFile(file);
