@@ -16,7 +16,6 @@ function ChainButton({ wallet, onConnect }: ChainButtonProps) {
   const { connect, connecting } = useConnect();
 
   const onClick = async (name: string) => {
-    console.log("Connecting to", name);
     await connect(name);
     onConnect();
   };

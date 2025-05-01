@@ -1,7 +1,7 @@
 import { docs } from "@/.source";
 import { loader } from "fumadocs-core/source";
 
-export const { getPage, generateParams, getPages, pageTree } = loader({
+export const source = loader({
   baseUrl: "/docs",
   rootDir: "docs",
   source: docs.toFumadocsSource(),

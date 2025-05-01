@@ -1,10 +1,10 @@
 import { defineConfig, defineDocs } from "fumadocs-mdx/config";
 import { transformerTwoslash } from "fumadocs-twoslash";
 import { rehypeCodeDefaultOptions } from "fumadocs-core/mdx-plugins";
-import { remarkInstall } from "fumadocs-docgen";
+import { remarkInstall } from 'fumadocs-docgen';
 
 export const docs = defineDocs({
-  dir: "./src/content",
+  dir: "./src/content/docs",
 });
 
 export default defineConfig({
@@ -19,6 +19,6 @@ export default defineConfig({
         transformerTwoslash(),
       ],
     },
-    remarkPlugins: [[remarkInstall]],
+    remarkPlugins: [remarkInstall],
   },
 });

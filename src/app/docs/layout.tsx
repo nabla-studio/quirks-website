@@ -3,7 +3,7 @@ import { type ReactNode } from "react";
 import "./docs.css";
 import { Metadata } from "next";
 import { baseOptions } from "@/app/docs/layout.config";
-import { pageTree } from "@/app/source";
+import {source} from "@/app/source";
 
 const baseUrl = process.env.SITE_URL
   ? new URL(`https://${process.env.SITE_URL}`)
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 export default function RootDocsLayout({ children }: { children: ReactNode }) {
   return (
     <div className="flex h-screen flex-col">
-      <DocsLayout tree={pageTree} {...baseOptions}>
+      <DocsLayout tree={source.pageTree} {...baseOptions}>
         {children}
       </DocsLayout>
     </div>
