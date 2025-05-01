@@ -25,14 +25,14 @@ function FrameworkAgnostic() {
               style={{
                 borderColor: color,
               }}
-              className={`flex h-[77px] w-[77px] items-center justify-center rounded-full border-2 brightness-[20] filter transition-all duration-200 group-hover:brightness-100 lg:h-[167px] lg:w-[167px]`}
+              className={`flex h-[77px] w-[77px] items-center justify-center rounded-full border-2 brightness-1000 transition-all duration-200 group-hover:brightness-100 lg:h-[167px] lg:w-[167px]`}
             >
               <Image
                 src={uri}
                 alt={`${name} icon`}
                 width={37}
                 height={31}
-                className="brightness-[20] filter transition-all duration-200 group-hover:brightness-100 lg:h-16 lg:w-18.5"
+                className="brightness-1000 transition-all duration-200 group-hover:brightness-100 lg:h-16 lg:w-18.5"
               />
             </div>
             <m.div
@@ -42,7 +42,7 @@ function FrameworkAgnostic() {
                 "--index": index,
               }}
               className={`absolute inset-0 rounded-full transition-all delay-[calc(500ms*var(--index))] duration-[2000ms] ${
-                inView ? "bg-[0_77px] lg:bg-[0_167px]" : ""
+                inView ? "bg-position-[0_77px] lg:bg-position-[0_167px]" : ""
               }`}
             />
           </div>

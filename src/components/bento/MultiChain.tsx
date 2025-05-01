@@ -21,7 +21,7 @@ function MultiChain() {
                 href={websiteURL}
                 target="_blank"
                 key={`${name} ${i} icon`}
-                className="h-18.5 w-18.5 rounded-full border-8 border-mobile-support-inactive lg:h-chain-icon lg:w-chain-icon"
+                className="h-18.5 min-w-18.5 rounded-full border-8 border-mobile-support-inactive lg:h-20.5 lg:min-w-20.5"
               >
                 <Image
                   src={uri}

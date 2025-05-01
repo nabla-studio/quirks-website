@@ -60,7 +60,7 @@ function ConnectHero() {
 
   return (
     <>
-      <section className="relative flex min-h-[551px] w-full flex-col items-center self-center overflow-hidden rounded-std bg-gradient-to-b from-primary to-connect-wallet-b">
+      <section className="relative flex min-h-[551px] w-full flex-col items-center self-center overflow-hidden rounded-std bg-linear-to-b from-primary to-connect-wallet-b">
         <ConnectButton />
         <DisconnectButton />
         <AddressButton />
@@ -127,7 +127,7 @@ function ConnectHero() {
               disabled={loading || success || error}
             >
               <div className="relative flex h-full w-full">
-                <span className="relative left-1/2 -translate-x-1/2 text-lg font-semibold !leading-10 transition-all duration-300 ease-in-out group-[.active]:left-0 group-[.active]:-translate-x-0 group-[.active]:text-base lg:text-2xl group-[.active]:lg:text-1.1xl">
+                <span className="relative left-1/2 -translate-x-1/2 text-lg font-semibold leading-10! transition-all duration-300 ease-in-out group-[.active]:left-0 group-[.active]:-translate-x-0 group-[.active]:text-base lg:text-2xl group-[.active]:lg:text-1.1xl">
                   {loading ? "Waiting" : !success && !error ? "Test It" : ""}
                   {success ? "Success" : ""}
                   {error ? "Failed" : ""}

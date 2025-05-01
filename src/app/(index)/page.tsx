@@ -10,9 +10,9 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="flex w-full max-w-wide-element flex-col self-center overflow-hidden px-5 text-white">
+      <main className="flex w-full max-w-334 flex-col self-center overflow-hidden px-5 text-white">
         <ConnectHero />
-        <div className="flex max-w-regular-element flex-col self-center">
+        <div className="flex max-w-257.5 flex-col self-center">
           <Features />
           <BentoShowcase />
           <Docs />
