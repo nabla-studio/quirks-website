@@ -1,46 +1,46 @@
-import { getPage, getPages } from "@/app/source";
-import type { Metadata } from "next";
-import { DocsPage, DocsBody } from "fumadocs-ui/page";
-import { RollButton } from "fumadocs-ui/components/roll-button";
+import {
+  DocsBody,
+  DocsDescription,
+  DocsPage,
+  DocsTitle,
+} from "fumadocs-ui/page";
 import { notFound } from "next/navigation";
+import { getMDXComponents } from "@/mdx-components";
+import { generateParams, getPage } from "@/app/source";
 
-export default async function Page({
-  params,
-}: {
-  params: { slug?: string[] };
+export default async function Page(props: {
+  params: Promise<{ slug?: string[] }>;
 }) {
+  const params = await props.params;
   const page = getPage(params.slug);
+  if (!page) notFound();
 
-  if (page == null) {
-    notFound();
-  }
-
-  const MDX = page.data.exports.default;
+  const MDX = page.data.body;
 
   return (
-    <DocsPage toc={page.data.exports.toc}>
-      <RollButton />
+    <DocsPage toc={page.data.toc} full={page.data.full}>
+      <DocsTitle>{page.data.title}</DocsTitle>
+      <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
-        <h1>{page.data.title}</h1>
-        <MDX />
+        <MDX components={getMDXComponents()} />
       </DocsBody>
     </DocsPage>
   );
 }
 
 export async function generateStaticParams() {
-  return getPages().map((page) => ({
-    slug: page.slugs,
-  }));
+  return generateParams();
 }
 
-export function generateMetadata({ params }: { params: { slug?: string[] } }) {
+export async function generateMetadata(props: {
+  params: Promise<{ slug?: string[] }>;
+}) {
+  const params = await props.params;
   const page = getPage(params.slug);
-
-  if (page == null) notFound();
+  if (!page) notFound();
 
   return {
     title: page.data.title,
     description: page.data.description,
-  } satisfies Metadata;
+  };
 }
