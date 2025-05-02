@@ -12,7 +12,7 @@ function FrameworkAgnostic() {
 
   return (
     <div className="bento-card-base flex flex-col gap-8 px-11 py-9 lg:col-span-3 lg:col-start-3 lg:gap-18.5 lg:px-10 lg:py-10">
-      <h3 className="text-lg lg:text-bento-h">Framework Agnostic</h3>
+      <h3 className="text-lg lg:text-bento-h lg:leading-7">Framework Agnostic</h3>
       <div
         ref={(ref) => {
           group.current = ref;

@@ -10,7 +10,7 @@ function Discuss() {
       className="relative mt-44 flex flex-col rounded-std bg-discuss-card px-10 pb-8 pt-10 lg:min-h-[370px] lg:justify-between"
       id="community"
     >
-      <h2 className="text-bento-h leading-9 lg:text-3.5xl lg:leading-12">
+      <h2 className="text-bento-h leading-7 lg:text-3.5xl lg:leading-12">
         Questions or Assistance?
         <br />
         Engage with us on our

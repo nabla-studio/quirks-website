@@ -162,7 +162,7 @@ function ConnectHero() {
           )}
         </AnimatePresence>
       </section>
-      <small className="mt-6 px-16 text-center text-xs leading-4 opacity-30 lg:text-lg">
+      <small className="mt-6 px-16 text-center text-xs opacity-30 lg:text-lg">
         Try it yourself, connect and go!
       </small>
     </>
