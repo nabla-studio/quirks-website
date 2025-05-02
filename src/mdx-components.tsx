@@ -6,6 +6,7 @@ import { Callout } from "fumadocs-ui/components/callout";
 import { TypeTable } from "fumadocs-ui/components/type-table";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import { Step, Steps } from "fumadocs-ui/components/steps";
+import { CodeBlock, Pre } from 'fumadocs-ui/components/codeblock';
 
 const mdxComponents: MDXComponents = {
   Popup,
@@ -27,5 +28,11 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     ...defaultComponents,
     ...components,
     ...mdxComponents,
+    // HTML `ref` attribute conflicts with `forwardRef`
+    pre: ({ ref: _ref, ...props }) => (
+      <CodeBlock {...props}>
+        <Pre>{props.children}</Pre>
+      </CodeBlock>
+    ),
   };
 }
