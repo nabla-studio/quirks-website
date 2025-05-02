@@ -1,11 +1,13 @@
 @config "../../../tailwind.config.ts";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
   .bento-card-base {
-    @apply rounded-std border-2 border-zinc-300 border-opacity-30;
+    @apply rounded-std border-2 border-zinc-300/30;
   }
   .row-width-xl {
     width: calc((82px * 16 + 20px * 12) * 2);

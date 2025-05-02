@@ -6,7 +6,7 @@ function Web3Modal() {
     <div className="bento-card-base relative flex min-h-[372px] flex-col gap-4.5 overflow-hidden min-[750px]:flex-row lg:col-span-5">
       <div className="z-20 flex flex-col justify-between">
         <div className="ml-10 mt-10 flex items-center gap-5">
-          <h3 className="text-lg leading-none lg:text-bento-h">Web3 Modal</h3>
+          <h3 className="text-lg leading-none lg:text-bento-h lg:leading-7">Web3 Modal</h3>
           <span className="inline-flex h-8.75 items-center justify-center rounded-std bg-primary px-5">
             <p className="text-sm">ALPHA</p>
           </span>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useChain, useConnect } from "@quirks/react";
-import { m } from "framer-motion";
+import { m } from "motion/react";
 import Image from "next/image";
 
 function AddressButton() {
@@ -15,7 +15,7 @@ function AddressButton() {
   return connected ? (
     <m.button
       type="button"
-      className="group m-auto mx-5 flex w-full max-w-[calc(100%-40px)] flex-col rounded-3xl border-2 border-solid border-white/50 px-5 py-4 lg:mx-auto lg:max-w-address lg:flex-row lg:items-center lg:rounded-[200px] lg:px-11"
+      className="group m-auto mx-5 flex w-full max-w-[calc(100%-40px)] flex-col rounded-3xl border-2 border-solid border-white/50 px-5 py-4 lg:mx-auto lg:max-w-200 lg:flex-row lg:items-center lg:rounded-[200px] lg:px-11"
       onClick={copyToClipboard}
       initial={{
         opacity: 0,

@@ -1,7 +1,7 @@
 "use client";
 
 import AnimatedImage from "@/components/animations/AnimatedImage";
-import { m } from "framer-motion";
+import { m } from "motion/react";
 
 export function ModalBanners() {
   return (

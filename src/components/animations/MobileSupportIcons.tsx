@@ -5,7 +5,7 @@ import {
   mobileSupportPopItem,
 } from "@/utils/animations";
 import { MOBILE_SUPPORT_ITEMS } from "@/utils/globals";
-import { m } from "framer-motion";
+import { m } from "motion/react";
 import Image from "next/image";
 
 function MobileSupportIcons() {

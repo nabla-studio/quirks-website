@@ -3,7 +3,7 @@
 import { useConfig, useConnect } from "@quirks/react";
 import Image from "next/image";
 import { useState } from "react";
-import { AnimatePresence, m } from "framer-motion";
+import { AnimatePresence, m } from "motion/react";
 import Link from "next/link";
 import type { Wallet } from "@quirks/core";
 
@@ -146,10 +146,10 @@ function ConnectButton() {
                 damping: 15,
               },
             }}
-            className="absolute bottom-0 left-1/2 h-[calc(100%-80px)] w-full rounded-t-3xl bg-dark pt-8 lg:w-auto lg:min-w-chain-menu lg:rounded-t-std lg:pt-14"
+            className="absolute bottom-0 left-1/2 h-[calc(100%-80px)] w-full rounded-t-3xl bg-dark pt-8 lg:w-auto lg:min-w-125 lg:rounded-t-std lg:pt-14"
           >
             <header className="mb-10 px-6 lg:px-14">
-              <h6 className="relative text-center text-xl font-semibold leading-10 lg:text-bento-h">
+              <h6 className="relative text-center text-xl font-semibold leading-10 lg:text-bento-h lg:leading-7">
                 Choose Wallet
                 <button
                   className="absolute right-0 top-1/2 -translate-y-1/2"

@@ -1,7 +1,7 @@
 "use client";
 
 import { useCounterAnimation } from "@/utils/useCounterAnimation";
-import { m } from "framer-motion";
+import { m } from "motion/react";
 import Link from "next/link";
 
 function TinyBundle() {
@@ -16,7 +16,7 @@ function TinyBundle() {
 
   return (
     <div className="bento-card-base flex flex-col px-10 pb-8 pt-10 lg:col-span-3 lg:col-start-3">
-      <h3 className="text-lg leading-none lg:text-bento-h">Tiny Bundle</h3>
+      <h3 className="text-lg leading-none lg:text-bento-h lg:leading-7">Tiny Bundle</h3>
       <div className="mt-30 flex flex-col max-lg:self-center lg:mt-14 lg:flex-row lg:items-center lg:justify-end lg:gap-x-[60px]">
         <div className="relative flex items-baseline gap-4 lg:translate-y-12">
           <m.p

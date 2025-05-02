@@ -6,7 +6,7 @@ import {
   useInView,
   m,
   type Variants,
-} from "framer-motion";
+} from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -113,7 +113,7 @@ const AnimatedDocsButton = () => {
       <m.div
         className={`pointer-events-none absolute bottom-20 right-0 lg:bottom-14 ${
           animationCompleted
-            ? "!left-0 !top-0 translate-x-[113px] translate-y-[28px]"
+            ? "left-0! top-0! translate-x-[113px] translate-y-[28px]"
             : ""
         }`}
         animate={controlsCursorGroup}

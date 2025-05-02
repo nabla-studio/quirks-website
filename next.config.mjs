@@ -1,13 +1,12 @@
 import { resolve } from "path";
-import createMDX from "fumadocs-mdx/config";
-import { rehypeCodeDefaultOptions } from "fumadocs-core/mdx-plugins";
-import { transformerTwoslash } from "fumadocs-twoslash";
+import { createMDX } from "fumadocs-mdx/next";
 import createBundleAnalyzer from "@next/bundle-analyzer";
-import { remarkInstall } from "fumadocs-docgen";
 import { cwd } from "process";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
+  serverExternalPackages: ["typescript", "twoslash"],
   webpack: (config) => {
     const noop = resolve(cwd(), "src", "etc", "noop", "index.js");
 
@@ -34,19 +33,6 @@ const withBundleAnalyzer = createBundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
 });
 
-const withMDX = createMDX({
-  rootContentPath: "./src/content",
-  buildSearchIndex: true,
-  mdxOptions: {
-    lastModifiedTime: "git",
-    rehypeCodeOptions: {
-      transformers: [
-        ...rehypeCodeDefaultOptions.transformers,
-        transformerTwoslash(),
-      ],
-    },
-    remarkPlugins: [[remarkInstall]],
-  },
-});
+const withMDX = createMDX();
 
 export default withMDX(withBundleAnalyzer(nextConfig));

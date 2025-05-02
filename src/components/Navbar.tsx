@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function Navbar() {
   return (
-    <header className="w-full max-w-wide-element self-center">
+    <header className="w-full max-w-334 self-center">
       <nav className="flex flex-col items-center justify-between px-5 pb-10 pt-12 text-white lg:flex-row lg:pb-16 lg:pt-24">
         <div className="flex flex-col items-center gap-x-9 gap-y-5 lg:flex-row">
           <Image

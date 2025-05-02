@@ -43,7 +43,7 @@ Add babel preset:
 module.exports = function (api) {
   api.cache(true);
   return {
-    presets: [..., '@quirks/react-native/babel'],
+    presets: ['@quirks/react-native/babel'],
   };
 };
 ```
@@ -52,7 +52,7 @@ module.exports = function (api) {
 
 The `generateConfig` utility simplifies integration with React Native by automatically creating a setup with all the basic configurations for RN. This setup is optional and can be customized if needed.
 
-```tsx twoslash title="App.tsx"
+```tsx title="App.tsx"
 import { generateConfig } from "@quirks/react-native";
 import { keplrMobile, leapMobile } from "@quirks/wallets";
 import {

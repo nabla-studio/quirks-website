@@ -1,6 +1,6 @@
 "use client";
 
-import { m } from "framer-motion";
+import { m } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 

@@ -5,7 +5,7 @@ import Link from "next/link";
 function MultiChain() {
   return (
     <div className="bento-card-base relative min-h-[334px] overflow-hidden pl-8 pt-8 lg:col-span-2 lg:col-start-1 lg:pl-10 lg:pt-10">
-      <h3 className="text-lg lg:text-bento-h">Multi Chain</h3>
+      <h3 className="text-lg lg:text-bento-h lg:leading-7">Multi Chain</h3>
       <div className="absolute -bottom-8 left-0 right-0 flex flex-col gap-2 lg:-bottom-9">
         {SHOWCASE_ICONS.map((row, i) => (
           <div
@@ -21,7 +21,7 @@ function MultiChain() {
                 href={websiteURL}
                 target="_blank"
                 key={`${name} ${i} icon`}
-                className="h-18.5 w-18.5 rounded-full border-8 border-mobile-support-inactive lg:h-chain-icon lg:w-chain-icon"
+                className="h-18.5 min-w-18.5 rounded-full border-8 border-mobile-support-inactive lg:h-20.5 lg:min-w-20.5"
               >
                 <Image
                   src={uri}
