@@ -18,7 +18,7 @@ Additionally, this method allows for the use of React Server Components with qui
 Install the package
 
 ```package-install
-@quirks/next
+@quirks/ssr
 ```
 
 ## Usage with App Router
@@ -37,7 +37,7 @@ import {
 import { QuirksConfig } from "@quirks/react";
 import { Config } from "@quirks/store";
 import { keplrExtension, leapExtension } from "@quirks/wallets";
-import { generateConfig } from "@quirks/next";
+import { generateConfig, initialStateWithCookie } from "@quirks/ssr";
 import { PropsWithChildren } from "react";
 // ---cut-start---
 import * as React from "react";
@@ -49,8 +49,13 @@ const config = generateConfig({
   assetsLists: [osmosisAssetList],
 });
 
-export const Provider = ({ children }: PropsWithChildren<unknown>) => {
-  return <QuirksConfig config={config}>{children}</QuirksConfig>;
+export const Provider = ({ children, quirksInitialState }: PropsWithChildren<{ quirksInitialState?: string }>) => {
+  const quirksConfigWithCookie = initialStateWithCookie(
+    config,
+    quirksInitialState,
+  );
+
+  return <QuirksConfig config={quirksConfigWithCookie}>{children}</QuirksConfig>;
 };
 ```
 
@@ -69,7 +74,7 @@ import {
 import { QuirksConfig } from "@quirks/react";
 import { Config } from "@quirks/store";
 import { keplrExtension, leapExtension } from "@quirks/wallets";
-import { generateConfig } from "@quirks/next";
+import { generateConfig, initialStateWithCookie } from "@quirks/ssr";
 import { PropsWithChildren } from "react";
 // ---cut-start---
 import * as React from "react";
@@ -81,26 +86,36 @@ const config = generateConfig({
   assetsLists: [osmosisAssetList],
 });
 
-export const Provider = ({ children }: PropsWithChildren<unknown>) => {
-  return <QuirksConfig config={config}>{children}</QuirksConfig>;
+export const Provider = ({ children, quirksInitialState }: PropsWithChildren<{ quirksInitialState?: string }>) => {
+  const quirksConfigWithCookie = initialStateWithCookie(
+    config,
+    quirksInitialState,
+  );
+
+  return <QuirksConfig config={quirksConfigWithCookie}>{children}</QuirksConfig>;
 };
 // ---cut---
 // @filename: layout.tsx
 import { ReactNode } from "react";
+import { cookies } from "next/headers";
 import { Provider } from "./provider";
 // ---cut-start---
 import * as React from "react";
 // ---cut-end---
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  /* From NextJS 15 `cookies` are async */
+  const results = await cookies();
+  const quirksInitialState = results.get("quirks")?.value;
+
   return (
     <html lang="en">
       <body>
-        <Provider>{children}</Provider>
+        <Provider quirksInitialState={quirksInitialState}>{children}</Provider>
       </body>
     </html>
   );
@@ -128,8 +143,10 @@ import {
 import { QuirksConfig } from "@quirks/react";
 import { Config } from "@quirks/store";
 import { keplrExtension, leapExtension } from "@quirks/wallets";
-import { generateConfig } from "@quirks/next";
+import { generateConfig, initialStateWithCookie } from "@quirks/ssr";
+import { getCookie } from "cookies-next";
 import type { AppProps } from "next/app";
+import type { InferGetServerSidePropsType, GetServerSideProps, GetServerSidePropsContext } from "next";
 // ---cut-start---
 import * as React from "react";
 // ---cut-end---
@@ -140,7 +157,20 @@ const config = generateConfig({
   assetsLists: [osmosisAssetList],
 });
 
-function App({ Component, pageProps }: AppProps) {
+export const getServerSideProps = (async ({ req, res }: GetServerSidePropsContext) => {
+  const quirksInitialState = await getCookie('quirks', { req, res });
+  
+  return {
+    props: { quirksInitialState: quirksInitialState || null }
+  }
+}) satisfies GetServerSideProps<{ quirksInitialState: string | null }>
+
+function App({ Component, pageProps, quirksInitialState }: AppProps & InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const quirksConfigWithCookie = initialStateWithCookie(
+    config,
+    quirksInitialState,
+  );
+
   return (
     <QuirksConfig config={config}>
       <Component {...pageProps} />

@@ -8,12 +8,34 @@ By using [cookies](/docs/getting-started/react/ssr-with-cookies), supporting [RS
   This functionality requires a version of @quirks/store >= 0.25.0
 </Callout>
 
-## getConnect
+## Retrieve quirks cookie state
+
+All the following utilities requires you to pass a raw cookie string to them,
+so then they'll be able to parse it and return you to correct state result.
+
+For example using nextjs you can retrieve by doing this:
+
+```ts
+import { cookies } from 'next/headers';
+
+const getQuirksState = async () => {
+  const results = await cookies();
+  const quirks = results.get('quirks');
+
+  return quirks?.value;
+}
+```
+
+### getConnect
 
 Returns information about the current wallet and about the status of the connection.
 
 ```ts twoslash
-import { getConnect } from "@quirks/next";
+import { getConnect } from "@quirks/ssr";
+
+// ---cut-start---
+const quirksRawCookie = '';
+// ---cut-end---
 
 const {
   status,
@@ -24,10 +46,10 @@ const {
   connectionError,
   rejected,
   walletName,
-} = getConnect();
+} = getConnect(quirksRawCookie);
 ```
 
-## getChain
+### getChain
 
 If you use the name of a previously configured chain as parameter, it will
 return information about that chain. If the wallet is connected, it will also
@@ -40,7 +62,11 @@ return the address for that wallet/chain pair.
 </Callout>
 
 ```ts twoslash
-import { getChain } from "@quirks/next";
+import { getChain } from "@quirks/ssr";
+
+// ---cut-start---
+const quirksRawCookie = '';
+// ---cut-end---
 
 /**
  * The name of the chain for which you want to obtain information
@@ -48,31 +74,43 @@ import { getChain } from "@quirks/next";
  */
 const chainName = "osmosis";
 
-const { address, accountName } = getChain(chainName);
+const { address, accountName } = getChain(quirksRawCookie, chainName);
 ```
 
-## getChains
+### getChains
 
 Returns information about all connected chains. If the wallet is connected,
 it will also return the address for that wallet/chain pairs.
 
 ```ts twoslash
-import { getChains } from "@quirks/next";
+import { getChains } from "@quirks/ssr";
 
-const { accounts, accountName, getAddresses, getAddress } = getChains();
+// ---cut-start---
+const quirksRawCookie = '';
+// ---cut-end---
+
+const { accounts, accountName, getAddresses, getAddress } = getChains(quirksRawCookie);
 ```
 
-## Example
+#### Example using NextJS
 
 ```tsx twoslash title="/app/server-component-example.tsx"
-import { getConnect, getChain } from "@quirks/next";
+import { getConnect, getChain } from "@quirks/ssr";
+import { cookies } from 'next/headers';
 // ---cut-start---
 import * as React from "react";
 // ---cut-end---
 
-export const ServerComponentExample = () => {
-  const { connected } = getConnect();
-  const { address } = getChain("osmosis");
+export const ServerComponentExample = async () => {
+  const results = await cookies();
+  const quirks = results.get("quirks")?.value;
+
+  if (!quirks) {
+    return null
+  }
+
+  const { connected } = getConnect(quirks);
+  const { address } = getChain(quirks, "osmosis");
 
   if (!connected) {
     return <div>Disconnected</div>;
