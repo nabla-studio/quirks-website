@@ -24,7 +24,7 @@
     "chain-registry": "^1.69.200",
     "cookies-next": "^5.1.0",
     "fast-glob": "^3.3.3",
-    "fumadocs-core": "^15.2.12",
+    "fumadocs-core": "^15.2.14",
     "fumadocs-mdx": "^11.6.1",
     "fumadocs-twoslash": "^3.1.1",
     "fumadocs-typescript": "^4.0.3",

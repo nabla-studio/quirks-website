@@ -9,6 +9,7 @@ var docs = defineDocs({
 var source_config_default = defineConfig({
   mdxOptions: {
     rehypeCodeOptions: {
+      langs: ["ts", "js", "tsx", "jsx"],
       themes: {
         light: "github-light",
         dark: "github-dark"
