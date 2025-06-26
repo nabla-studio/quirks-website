@@ -36,27 +36,32 @@ import {
   assets as osmosisAssetList,
 } from 'chain-registry/mainnet/osmosis';
 import { QuirksConfig } from "@quirks/react";
-import { Config } from "@quirks/store";
+import type { QuirksConfigStore } from "@quirks/store";
 import { keplrExtension, leapExtension } from "@quirks/wallets";
-import { generateConfig, initialStateWithCookie } from "@quirks/ssr";
+import { generateConfig } from "@quirks/ssr";
 import { PropsWithChildren } from "react";
 // ---cut-start---
 import * as React from "react";
 // ---cut-end---
 
-const config = generateConfig({
-  wallets: [keplrExtension, leapExtension],
-  chains: [osmosis],
-  assetsLists: [osmosisAssetList],
-});
+let store: QuirksConfigStore;
+
+const getConfig = (cookie: string | null | undefined) => {
+  if (store) {
+    return store;
+  }
+
+  store = generateConfig({
+    wallets: [keplrExtension, leapExtension],
+    chains: [osmosis],
+    assetsLists: [osmosisAssetList],
+  });
+
+  return store
+}
 
 export const Provider = ({ children, quirksInitialState }: PropsWithChildren<{ quirksInitialState?: string }>) => {
-  const quirksConfigWithCookie = initialStateWithCookie(
-    config,
-    quirksInitialState,
-  );
-
-  return <QuirksConfig config={quirksConfigWithCookie}>{children}</QuirksConfig>;
+  return <QuirksConfig store={getConfig(quirksInitialState)}>{children}</QuirksConfig>;
 };
 ```
 
@@ -73,27 +78,33 @@ import {
   assets as osmosisAssetList,
 } from 'chain-registry/mainnet/osmosis';
 import { QuirksConfig } from "@quirks/react";
-import { Config } from "@quirks/store";
 import { keplrExtension, leapExtension } from "@quirks/wallets";
-import { generateConfig, initialStateWithCookie } from "@quirks/ssr";
+import { generateConfig } from "@quirks/ssr";
 import { PropsWithChildren } from "react";
 // ---cut-start---
 import * as React from "react";
 // ---cut-end---
 
-const config = generateConfig({
-  wallets: [keplrExtension, leapExtension],
-  chains: [osmosis],
-  assetsLists: [osmosisAssetList],
-});
+import type { QuirksConfigStore } from "@quirks/store";
+
+let store: QuirksConfigStore;
+
+const getConfig = (cookie: string | null | undefined) => {
+  if (store) {
+    return store;
+  }
+
+  store = generateConfig({
+    wallets: [keplrExtension, leapExtension],
+    chains: [osmosis],
+    assetsLists: [osmosisAssetList],
+  });
+
+  return store
+}
 
 export const Provider = ({ children, quirksInitialState }: PropsWithChildren<{ quirksInitialState?: string }>) => {
-  const quirksConfigWithCookie = initialStateWithCookie(
-    config,
-    quirksInitialState,
-  );
-
-  return <QuirksConfig config={quirksConfigWithCookie}>{children}</QuirksConfig>;
+  return <QuirksConfig store={getConfig(quirksInitialState)}>{children}</QuirksConfig>;
 };
 // ---cut---
 // @filename: layout.tsx
@@ -142,9 +153,9 @@ import {
   assets as osmosisAssetList,
 } from 'chain-registry/mainnet/osmosis';
 import { QuirksConfig } from "@quirks/react";
-import { Config } from "@quirks/store";
+import type { QuirksConfigStore } from "@quirks/store";
 import { keplrExtension, leapExtension } from "@quirks/wallets";
-import { generateConfig, initialStateWithCookie } from "@quirks/ssr";
+import { generateConfig } from "@quirks/ssr";
 import { getCookie } from "cookies-next";
 import type { AppProps } from "next/app";
 import type { InferGetServerSidePropsType, GetServerSideProps, GetServerSidePropsContext } from "next";
@@ -152,11 +163,21 @@ import type { InferGetServerSidePropsType, GetServerSideProps, GetServerSideProp
 import * as React from "react";
 // ---cut-end---
 
-const config = generateConfig({
-  wallets: [keplrExtension, leapExtension],
-  chains: [osmosis],
-  assetsLists: [osmosisAssetList],
-});
+let store: QuirksConfigStore;
+
+const getConfig = (cookie: string | null | undefined) => {
+  if (store) {
+    return store;
+  }
+
+  store = generateConfig({
+    wallets: [keplrExtension, leapExtension],
+    chains: [osmosis],
+    assetsLists: [osmosisAssetList],
+  });
+
+  return store
+}
 
 export const getServerSideProps = (async ({ req, res }: GetServerSidePropsContext) => {
   const quirksInitialState = await getCookie('quirks', { req, res });
@@ -167,13 +188,8 @@ export const getServerSideProps = (async ({ req, res }: GetServerSidePropsContex
 }) satisfies GetServerSideProps<{ quirksInitialState: string | null }>
 
 function App({ Component, pageProps, quirksInitialState }: AppProps & InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const quirksConfigWithCookie = initialStateWithCookie(
-    config,
-    quirksInitialState,
-  );
-
   return (
-    <QuirksConfig config={config}>
+    <QuirksConfig store={getConfig(quirksInitialState)}>
       <Component {...pageProps} />
     </QuirksConfig>
   );

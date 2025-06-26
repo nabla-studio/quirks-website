@@ -21,23 +21,23 @@ import {
   assets as osmosisAssetList,
 } from 'chain-registry/mainnet/osmosis';
 import { QuirksConfig, QuirksNextProvider } from "@quirks/react";
-import { Config } from "@quirks/store";
 import { keplrExtension, leapExtension } from "@quirks/wallets";
 import { PropsWithChildren } from "react";
+import { createConfig } from "@quirks/store";
 // ---cut-start---
 import * as React from "react";
 // ---cut-end---
 
-const config: Config = {
+const store = createConfig({
   wallets: [keplrExtension, leapExtension],
   chains: [osmosis],
   assetsLists: [osmosisAssetList],
-};
+});
 
 export const Provider = ({ children }: PropsWithChildren<unknown>) => {
   return (
     <QuirksNextProvider>
-      <QuirksConfig config={config}>{children}</QuirksConfig>
+      <QuirksConfig store={store}>{children}</QuirksConfig>
     </QuirksNextProvider>
   );
 };
@@ -56,23 +56,23 @@ import {
   assets as osmosisAssetList,
 } from 'chain-registry/mainnet/osmosis';
 import { QuirksConfig, QuirksNextProvider } from "@quirks/react";
-import { Config } from "@quirks/store";
 import { keplrExtension, leapExtension } from "@quirks/wallets";
 import { PropsWithChildren } from "react";
+import { createConfig } from "@quirks/store";
 // ---cut-start---
 import * as React from "react";
 // ---cut-end---
 
-const config: Config = {
+const store = createConfig({
   wallets: [keplrExtension, leapExtension],
   chains: [osmosis],
   assetsLists: [osmosisAssetList],
-};
+});
 
 export const Provider = ({ children }: PropsWithChildren<unknown>) => {
   return (
     <QuirksNextProvider>
-      <QuirksConfig config={config}>{children}</QuirksConfig>
+      <QuirksConfig store={store}>{children}</QuirksConfig>
     </QuirksNextProvider>
   );
 };
@@ -118,23 +118,23 @@ import {
   assets as osmosisAssetList,
 } from 'chain-registry/mainnet/osmosis';
 import { QuirksConfig, QuirksNextProvider } from "@quirks/react";
-import { Config } from "@quirks/store";
 import { keplrExtension, leapExtension } from "@quirks/wallets";
+import { createConfig } from "@quirks/store";
 import type { AppProps } from "next/app";
 // ---cut-start---
 import * as React from "react";
 // ---cut-end---
 
-const config: Config = {
+const store = createConfig({
   wallets: [keplrExtension, leapExtension],
   chains: [osmosis],
   assetsLists: [osmosisAssetList],
-};
+});
 
 function App({ Component, pageProps }: AppProps) {
   return (
     <QuirksNextProvider>
-      <QuirksConfig config={config}>
+      <QuirksConfig store={store}>
         <Component {...pageProps} />
       </QuirksConfig>
     </QuirksNextProvider>

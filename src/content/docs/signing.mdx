@@ -21,10 +21,19 @@ you with a number of utilities within `@quirks/store`.
 Returns the current account address by `chainName`
 
 ```ts twoslash
-import { getAddress } from "@quirks/store";
+import { getAddress, createConfig } from "@quirks/store";
+
+/**
+* Your global store instance
+*/
+const store = createConfig({
+  wallets: [],
+  chains: [],
+  assetsLists: [],
+});
 
 const chainName = "osmosis";
-const address = getAddress(chainName);
+const address = getAddress(store, chainName);
 ```
 
 ### getChain
@@ -32,10 +41,19 @@ const address = getAddress(chainName);
 Returns chain info by `chainName`
 
 ```ts twoslash
-import { getChain } from "@quirks/store";
+import { getChain, createConfig } from "@quirks/store";
+
+/**
+* Your global store instance
+*/
+const store = createConfig({
+  wallets: [],
+  chains: [],
+  assetsLists: [],
+});
 
 const chainName = "osmosis";
-const chain = getChain(chainName);
+const chain = getChain(store, chainName);
 ```
 
 ### getOfflineSigner
@@ -44,10 +62,19 @@ Returns a valid signer class by `chainId` and `signerType` (`auto`, `amino`
 or `direct`).
 
 ```ts twoslash
-import { getOfflineSigner } from "@quirks/store";
+import { getOfflineSigner, createConfig } from "@quirks/store";
+
+/**
+* Your global store instance
+*/
+const store = createConfig({
+  wallets: [],
+  chains: [],
+  assetsLists: [],
+});
 
 const chainId = "osmosis-1";
-const signer = getOfflineSigner(chainId, "auto");
+const signer = getOfflineSigner(store, chainId, "auto");
 //                                        ^|
 ```
 
@@ -56,10 +83,19 @@ const signer = getOfflineSigner(chainId, "auto");
 Returns an instance of CosmJS Signing Stargate Client
 
 ```ts twoslash
-import { getSigningStargateClient } from "@quirks/store";
+import { getSigningStargateClient, createConfig } from "@quirks/store";
+
+/**
+* Your global store instance
+*/
+const store = createConfig({
+  wallets: [],
+  chains: [],
+  assetsLists: [],
+});
 
 const chainName = "osmosis";
-const signer = getSigningStargateClient(chainName, "auto");
+const signer = getSigningStargateClient(store, chainName, "auto");
 //                                                  ^|
 ```
 
@@ -68,10 +104,19 @@ const signer = getSigningStargateClient(chainName, "auto");
 Returns an instance of CosmJS Signing CosmWasm Stargate Client
 
 ```ts twoslash
-import { getSigningCosmWasmClient } from "@quirks/store";
+import { getSigningCosmWasmClient, createConfig } from "@quirks/store";
+
+/**
+* Your global store instance
+*/
+const store = createConfig({
+  wallets: [],
+  chains: [],
+  assetsLists: [],
+});
 
 const chainName = "osmosis";
-const signer = getSigningCosmWasmClient(chainName, "auto");
+const signer = getSigningCosmWasmClient(store, chainName, "auto");
 //                                                  ^|
 ```
 
@@ -82,10 +127,20 @@ Signs a transaction using CosmJS Stargate Client on a given `chainName`.
 Allows specifying **messages**, **fees**, **signer type**, **memo**, **explicitSignerData** and **timeoutHeight**.
 
 ```ts twoslash
-import { sign } from "@quirks/store";
+import { sign, createConfig } from "@quirks/store";
+
+/**
+* Your global store instance
+*/
+const store = createConfig({
+  wallets: [],
+  chains: [],
+  assetsLists: [],
+});
 
 const chainName = "osmosis";
 const txRaw = sign(
+  store,
   chainName,
   [],
   "auto",
@@ -108,10 +163,20 @@ Signs a CosmWasm transaction using CosmJS Stargate Client on a given
 Allows specifying **messages**, **fees**, **signer type**, **memo**, **explicitSignerData** and **timeoutHeight**.
 
 ```ts twoslash
-import { signCW } from "@quirks/store";
+import { signCW, createConfig } from "@quirks/store";
+
+/**
+* Your global store instance
+*/
+const store = createConfig({
+  wallets: [],
+  chains: [],
+  assetsLists: [],
+});
 
 const chainName = "osmosis";
 const txRaw = signCW(
+  store,
   chainName,
   [],
   "auto",
@@ -133,12 +198,21 @@ specifying the **signer** and **message data**. (Useful for use cases such
 as auth token generation).
 
 ```ts twoslash
-import { signArbitrary, getAddress } from "@quirks/store";
+import { signArbitrary, getAddress, createConfig } from "@quirks/store";
+
+/**
+* Your global store instance
+*/
+const store = createConfig({
+  wallets: [],
+  chains: [],
+  assetsLists: [],
+});
 
 const chainName = "osmosis";
 const chainId = "osmosis-1";
-const address = await getAddress(chainName);
-const signature = signArbitrary(chainId, address, "string to sign");
+const address = await getAddress(store, chainName);
+const signature = signArbitrary(store, chainId, address, "string to sign");
 ```
 
 ### broadcast
@@ -147,11 +221,19 @@ Broadcasts a `TxRaw` transaction on a given `chainName`. Optional parameters
 allow specifying **timeout** and **poll interval**.
 
 ```ts twoslash
-import { sign, broadcast } from "@quirks/store";
+import { sign, broadcast, createConfig } from "@quirks/store";
 
+/**
+* Your global store instance
+*/
+const store = createConfig({
+  wallets: [],
+  chains: [],
+  assetsLists: [],
+});
 const chainName = "osmosis";
-const txRaw = await sign(chainName, [], "auto", "auto", undefined);
-const txResponse = await broadcast(chainName, txRaw, 60_000, 3_000);
+const txRaw = await sign(store, chainName, [], "auto", "auto", undefined);
+const txResponse = await broadcast(store, chainName, txRaw, 60_000, 3_000);
 ```
 
 ### broadcastSync
@@ -162,11 +244,19 @@ It's useful for use cases where you want to trace the tx using some other
 method, such as websocket or state machines.
 
 ```ts twoslash
-import { sign, broadcastSync } from "@quirks/store";
+import { sign, broadcastSync, createConfig } from "@quirks/store";
 
+/**
+* Your global store instance
+*/
+const store = createConfig({
+  wallets: [],
+  chains: [],
+  assetsLists: [],
+});
 const chainName = "osmosis";
-const txRaw = await sign(chainName, [], "auto", "auto", undefined);
-const txResponse = await broadcastSync(chainName, txRaw);
+const txRaw = await sign(store, chainName, [], "auto", "auto", undefined);
+const txResponse = await broadcastSync(store, chainName, txRaw);
 ```
 
 ## Sign a `send` message
@@ -195,13 +285,22 @@ for you.
 
     ```ts twoslash title="send.ts"
 
-import { sign, getAddress, broadcast } from "@quirks/store";
+import { sign, getAddress, broadcast, createConfig } from "@quirks/store";
+
+/**
+* Your global store instance
+*/
+const store = createConfig({
+  wallets: [],
+  chains: [],
+  assetsLists: [],
+});
 
 export const send = async () => {
       const cosmos = (await import("osmojs")).cosmos;
       const { send } = cosmos.bank.v1beta1.MessageComposer.withTypeUrl;
 
-      const address = getAddress("osmosis");
+      const address = getAddress(store, "osmosis");
 
       const msg = send({
         amount: [
@@ -214,9 +313,9 @@ export const send = async () => {
         fromAddress: address,
       });
 
-      const txRaw = await sign("osmosis", [msg]);
+      const txRaw = await sign(store, "osmosis", [msg]);
 
-      const res = await broadcast("osmosis", txRaw);
+      const res = await broadcast(store, "osmosis", txRaw);
 
       return res;
 
@@ -234,13 +333,22 @@ to optimise the **bundle size**.
 
 ```tsx twoslash title="send-button.ts"
 // @filename: send.ts
-import { sign, getAddress, broadcast } from "@quirks/store";
+import { sign, getAddress, broadcast, createConfig } from "@quirks/store";
+
+/**
+* Your global store instance
+*/
+const store = createConfig({
+  wallets: [],
+  chains: [],
+  assetsLists: [],
+});
 
 export const send = async () => {
   const cosmos = (await import("osmojs")).cosmos;
   const { send } = cosmos.bank.v1beta1.MessageComposer.withTypeUrl;
 
-  const address = getAddress("osmosis");
+  const address = getAddress(store, "osmosis");
 
   const msg = send({
     amount: [
@@ -253,9 +361,9 @@ export const send = async () => {
     fromAddress: address,
   });
 
-  const txRaw = await sign("osmosis", [msg]);
+  const txRaw = await sign(store, "osmosis", [msg]);
 
-  const res = await broadcast("osmosis", txRaw);
+  const res = await broadcast(store, "osmosis", txRaw);
 
   return res;
 };

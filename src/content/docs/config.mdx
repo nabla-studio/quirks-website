@@ -14,7 +14,7 @@ Below is an in-depth look at all the elements that make up the
 ### Usage
 
 ```ts twoslash
-import { type Config, ssrPersistOptions } from "@quirks/store";
+import { createConfig, ssrPersistOptions } from "@quirks/store";
 import {
   keplrExtension,
   leapExtension,
@@ -27,7 +27,7 @@ import {
   assets as osmosisAssetList,
 } from 'chain-registry/mainnet/osmosis';
 
-const config: Config = {
+const store = createConfig({
   wallets: [
     keplrExtension,
     leapExtension,
@@ -50,7 +50,7 @@ const config: Config = {
       },
     },
   },
-};
+});
 ```
 
 ### Types

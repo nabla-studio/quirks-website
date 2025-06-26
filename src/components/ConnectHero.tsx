@@ -3,6 +3,7 @@
 import AddressButton from "@/components/AddressButton";
 import ConnectButton from "@/components/ConnectButton";
 import DisconnectButton from "@/components/DisconnectButton";
+import { store } from "@/config/quirks";
 import { useConnect } from "@quirks/react";
 import { getAddress, sign, broadcast } from "@quirks/store";
 import { AnimatePresence, m } from "motion/react";
@@ -13,7 +14,7 @@ const send = async () => {
   const cosmos = (await import("osmojs")).cosmos;
   const { send } = cosmos.bank.v1beta1.MessageComposer.withTypeUrl;
 
-  const address = getAddress("osmosis");
+  const address = getAddress(store, "osmosis");
 
   const msg = send({
     amount: [
@@ -26,9 +27,9 @@ const send = async () => {
     fromAddress: address,
   });
 
-  const txRaw = await sign("osmosis", [msg]);
+  const txRaw = await sign(store, "osmosis", [msg]);
 
-  const res = await broadcast("osmosis", txRaw);
+  const res = await broadcast(store, "osmosis", txRaw);
 };
 
 function ConnectHero() {
@@ -60,7 +61,7 @@ function ConnectHero() {
 
   return (
     <>
-      <section className="relative flex min-h-[551px] w-full flex-col items-center self-center overflow-hidden rounded-std bg-linear-to-b from-primary to-connect-wallet-b">
+      <section className="rounded-std from-primary to-connect-wallet-b relative flex min-h-[551px] w-full flex-col items-center self-center overflow-hidden bg-linear-to-b">
         <ConnectButton />
         <DisconnectButton />
         <AddressButton />
@@ -97,7 +98,7 @@ function ConnectHero() {
                 loading || success || error ? "active w-[272px]" : ""
               } ${loading ? "loading" : ""} ${success ? "success" : ""} ${
                 error ? "error" : ""
-              } group absolute bottom-0 left-1/2 flex min-h-[78px] w-56 items-center justify-center overflow-hidden rounded-[200px] bg-secondary px-6 transition-all duration-300 ease-in-out lg:px-9`}
+              } group bg-secondary absolute bottom-0 left-1/2 flex min-h-[78px] w-56 items-center justify-center overflow-hidden rounded-[200px] px-6 transition-all duration-300 ease-in-out lg:px-9`}
               initial={{
                 y: "100%",
                 x: "-50%",
@@ -127,7 +128,7 @@ function ConnectHero() {
               disabled={loading || success || error}
             >
               <div className="relative flex h-full w-full">
-                <span className="relative left-1/2 -translate-x-1/2 text-lg font-semibold leading-10! transition-all duration-300 ease-in-out group-[.active]:left-0 group-[.active]:-translate-x-0 group-[.active]:text-base lg:text-2xl group-[.active]:lg:text-1.1xl">
+                <span className="group-[.active]:lg:text-1.1xl relative left-1/2 -translate-x-1/2 text-lg leading-10! font-semibold transition-all duration-300 ease-in-out group-[.active]:left-0 group-[.active]:-translate-x-0 group-[.active]:text-base lg:text-2xl">
                   {loading ? "Waiting" : !success && !error ? "Test It" : ""}
                   {success ? "Success" : ""}
                   {error ? "Failed" : ""}
@@ -138,7 +139,7 @@ function ConnectHero() {
                   alt="Loading"
                   width={20}
                   height={20}
-                  className="absolute right-0 top-2 opacity-0 transition-all duration-300 ease-in-out group-[.loading]:animate-spin group-[.loading]:opacity-100 lg:h-6 lg:w-6"
+                  className="absolute top-2 right-0 opacity-0 transition-all duration-300 ease-in-out group-[.loading]:animate-spin group-[.loading]:opacity-100 lg:h-6 lg:w-6"
                 />
 
                 <Image
@@ -146,14 +147,14 @@ function ConnectHero() {
                   alt="Success"
                   width={20}
                   height={20}
-                  className="absolute right-0 top-2 opacity-0 transition-all duration-300 ease-in-out group-[.success]:opacity-100 lg:h-6 lg:w-6"
+                  className="absolute top-2 right-0 opacity-0 transition-all duration-300 ease-in-out group-[.success]:opacity-100 lg:h-6 lg:w-6"
                 />
                 <Image
                   src="/icons/failed.svg"
                   alt="Fail"
                   width={20}
                   height={20}
-                  className="absolute right-0 top-2 opacity-0 transition-all duration-300 ease-in-out group-[.error]:opacity-100 lg:h-6 lg:w-6"
+                  className="absolute top-2 right-0 opacity-0 transition-all duration-300 ease-in-out group-[.error]:opacity-100 lg:h-6 lg:w-6"
                 />
               </div>
             </m.button>
