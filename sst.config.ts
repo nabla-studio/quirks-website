@@ -20,8 +20,7 @@ export default $config({
         DOMAIN_CERT_ARN && {
         domain: {
           name: DOMAIN_NAME,
-          dns: false,
-          cert: DOMAIN_CERT_ARN,
+          dns: sst.cloudflare.dns(),
           redirects: [`www.${DOMAIN_NAME}`],
         },
       }),
