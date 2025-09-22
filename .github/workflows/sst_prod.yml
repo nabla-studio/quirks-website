@@ -55,7 +55,8 @@ jobs:
       - name: Deploy
         env:
           DOMAIN_NAME: ${{ secrets.DOMAIN_NAME }}
-          DOMAIN_CERT_ARN: ${{ secrets.DOMAIN_CERT_ARN }}
+          SITE_URL: ${{ secrets.DOMAIN_NAME }}
+          ZONE_ID: ${{ secrets.ZONE_ID }}
           CLOUDFLARE_API_TOKEN: ${{secrets.CLOUDFLARE_API_TOKEN}}
           DO_NOT_TRACK: 1
           

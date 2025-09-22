@@ -57,6 +57,7 @@ jobs:
         if: ${{ github.event.action != 'closed' }}
         env:
           CLOUDFLARE_API_TOKEN: ${{secrets.CLOUDFLARE_API_TOKEN}}
+          ZONE_ID: ${{ secrets.ZONE_ID }}
           DO_NOT_TRACK: 1
           
         run: bun sst deploy --stage=pr-${{ github.event.number }}
@@ -66,6 +67,7 @@ jobs:
         if: ${{ github.event.action == 'closed' }}
         env:
           CLOUDFLARE_API_TOKEN: ${{secrets.CLOUDFLARE_API_TOKEN}}
+          ZONE_ID: ${{ secrets.ZONE_ID }}
           DO_NOT_TRACK: 1
           
         run: bun sst remove --stage=pr-${{ github.event.number }}
