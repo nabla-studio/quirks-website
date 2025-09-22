@@ -4,13 +4,13 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "build:analyze": "ANALYZE=true next build",
-    "start": "next start",
+    "dev": "next dev --turbopack",
     "lint": "next lint",
     "postbuild": "next-sitemap --config next-sitemap.config.mjs",
-    "postinstall": "fumadocs-mdx"
+    "postinstall": "fumadocs-mdx",
+    "start": "next start"
   },
   "dependencies": {
     "@quirks/core": "^0.20.0",
@@ -41,6 +41,7 @@
     "remark-gfm": "^4.0.1",
     "remark-mdx": "^3.1.0",
     "remark-stringify": "^11.0.0",
+    "sst": "3.17.13",
     "twoslash": "^0.3.1"
   },
   "devDependencies": {
