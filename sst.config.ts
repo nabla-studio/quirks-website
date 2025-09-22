@@ -2,7 +2,7 @@
 /// <reference path="./.sst/platform/config.d.ts" />
 
 // Extract environment variables
-const { DOMAIN_NAME, DOMAIN_CERT_ARN } = process.env;
+const { DOMAIN_NAME, ZONE_ID } = process.env;
 
 export default $config({
   app(input) {
@@ -16,11 +16,12 @@ export default $config({
   async run() {
     new sst.aws.Nextjs("Website", {
       // Add custom domain only if provided
-      ...(DOMAIN_NAME &&
-        DOMAIN_CERT_ARN && {
+      ...(DOMAIN_NAME && {
         domain: {
           name: DOMAIN_NAME,
-          dns: sst.cloudflare.dns(),
+          dns: sst.cloudflare.dns({
+            zone: ZONE_ID
+          }),
           redirects: [`www.${DOMAIN_NAME}`],
         },
       }),
